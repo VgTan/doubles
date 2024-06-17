@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../App.css";
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
 
 function Home() {
   const settings = {
@@ -20,7 +19,6 @@ function Home() {
 
   return (
     <div>
-      <Navbar/>
       <section
         className="flex items-center justify-center h-screen mb-12 bg-fixed bg-center bg-cover"
         style={{ backgroundImage: `url("../images/homepage.png")` }}

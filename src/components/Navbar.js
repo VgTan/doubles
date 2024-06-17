@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../index.css";
+import { Link } from "react-router-dom";
 function Navbar() {
   const [isClicked, setisClicked] = useState(false);
 
@@ -44,7 +45,7 @@ function Navbar() {
             <div className="m-auto relative mt-2 h-1.5 w-12 rounded border-[1px] border-white transition duration-duration-150 z-[100]"></div>
           </label>
           <div className="fixed peer-checked:backdrop-blur-[2px] peer-checked:bg-[#00000065] w-full h-full top-0 left-0 transition duration-500"></div>
-          
+
           <div
             id="component"
             className="peer-checked:-translate-x-0 fixed inset-0 translate-x-[-100%] w-[100%] shadow-xl transition duration-300 p-0 m-0"
@@ -53,32 +54,35 @@ function Navbar() {
               <div className="grid grid-cols-1 h-[70%]">
                 <ul className="h-[50%]">
                   <li>
-                    <a
-                      href="/"
+                    <Link
+                      to="/"
                       className="group font-poppins lg:text-xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
                     >
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li className="mt-5">
-                    <a
-                      href="/aboutus"
+                    <Link
+                      to="/about"
                       className="group font-poppins lg:text-xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
                     >
                       About Us
-                    </a>
+                    </Link>
                   </li>
                   <li className="mt-5">
-                    <a
-                      href="/packages"
+                    <Link
+                      to="/about"
                       className="group font-poppins lg:text-xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
                     >
                       Packages
-                    </a>
+                    </Link>
                   </li>
                 </ul>
                 <div className="flex gap-10 justify-start items-end">
-                  <a href="https://www.instagram.com/doublesagency/" target="_blank">
+                  <a
+                    href="https://www.instagram.com/doublesagency/"
+                    target="_blank"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="28"
