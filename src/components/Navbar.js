@@ -71,7 +71,7 @@ function Navbar() {
                   </li>
                   <li className="mt-5">
                     <Link
-                      to="/about"
+                      to="/package"
                       className="group font-poppins lg:text-xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
                     >
                       Packages
