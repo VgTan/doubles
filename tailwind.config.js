@@ -5,7 +5,13 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      poppins: ["Poppins", "sans-serif"],
+      bungee: ["Bungee Outline", "sans-serif"],
+    },
   },
-  plugins: [],
+  plugins: [
+    require("@designbycode/tailwindcss-text-stroke"),
+  ],
 }
 

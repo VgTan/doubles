@@ -1,0 +1,102 @@
+.strokeme {
+  color: white;
+  text-shadow: -2px -2px 0 #4a5568, 2px -2px 0 #4a5568, -2px 2px 0 #4a5568,
+    2px 2px 0 #4a5568;
+}
+
+.hover-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-container img {
+  transition: transform 0.5s ease;
+}
+
+.hover-container:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: #0a425157;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: width 0.5s ease, height 0.5s ease;
+}
+
+.hover-container:hover .overlay {
+  width: 100%;
+  height: 100%;
+}
+
+.overlay-content {
+  opacity: 0;
+  transition: opacity 0.3s ease 0.5s; /* Delay to start after overlay expands */
+}
+
+.hover-container:hover .overlay-content {
+  opacity: 1;
+}
+
+.text-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.text-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: red;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+  z-index: -1;
+}
+.hover-container:hover .text-container::before {
+  transform: translateX(0);
+}
+.hover-container:hover .text-container h1,
+.hover-container:hover .text-container p {
+  color: white;
+}
+
+.text-container {
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5) 50%, #000 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.text-container:before {
+  content: "";
+  background: rgba(255, 0, 0, 0.5);
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.text-container:hover {
+  background-position: 0;
+}
+
+.text-container:hover::before {
+  width: 100%;
+}
