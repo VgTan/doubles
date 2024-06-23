@@ -23,20 +23,18 @@ function Home() {
         className="flex items-center justify-center h-screen mb-12 bg-fixed bg-center bg-cover"
         style={{ backgroundImage: `url("../images/homepage.png")` }}
       >
-        <div>
-          <div className="p-5 text-9xl text-white tracking-wider font-black font-bungee">
+        <div className="text-center">
+          <div className="p-5 text-5xl md:text-7xl lg:text-9xl text-white tracking-wider font-black font-bungee">
             DOUBLE S
           </div>
-          <div className="text-center text-4xl text-white tracking-widest font-bold font-poppins">
+          <div className="text-2xl md:text-3xl lg:text-4xl text-white tracking-widest font-bold font-poppins">
             CREATIVE AGENCY
           </div>
-          <div className="flex items-center justify-center absolute inset-x-0 bottom-10 text-center pt-10">
+          <div className="flex items-center justify-center absolute inset-x-0 bottom-10 pt-10">
             <svg
-              className="w-10 h-10 text-white animate-bounce"
+              className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white animate-bounce"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
               fill="none"
               viewBox="0 0 24 24"
             >
@@ -55,18 +53,22 @@ function Home() {
       <div className="font-poppins">
         <div>
           {/* Experience */}
-          <div className="m-20 mx-44 flex justify-between">
-            <div className="flex pr-10 w-3/4">
-              <div className="flex">
+          <div className="mx-5 md:mx-10 lg:mx-20 xl:mx-44 my-10 flex flex-col lg:flex-row justify-between">
+            <div className="flex flex-col lg:flex-row pr-0 lg:pr-10 w-full lg:w-3/4">
+              <div className="flex mb-5 lg:mb-0">
                 <div className="pr-5">
-                  <p className="text-7xl font-extrabold text-[#FF8C92]">03</p>
+                  <p className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#FF8C92]">
+                    03
+                  </p>
                 </div>
                 <div>
-                  <p className="text-[#0A4251] text-3xl font-bold">
+                  <p className="text-[#0A4251] text-2xl md:text-3xl lg:text-3xl font-bold">
                     Years Experience
                   </p>
-                  <p className="text-[#0A4251] text-3xl font-bold">In Field</p>
-                  <p className="text-[#0A4251] pt-4">
+                  <p className="text-[#0A4251] text-2xl md:text-3xl lg:text-3xl font-bold">
+                    In Field
+                  </p>
+                  <p className="text-[#0A4251] pt-4 text-base md:text-lg lg:text-base">
                     At Double S Agency, we offer a comprehensive suite of
                     services designed to elevate your brand's social media
                     presence. we began our journey with a vision to
@@ -76,88 +78,89 @@ function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex w-2/6">
-              <ul className="list-outside text-[#0A4251] tracking-wider pr-5 space-y-5 text-left">
+            <div className="flex w-full lg:w-2/6">
+              <ul className="list-outside text-[#0A4251] tracking-wider pr-5 space-y-3 md:space-y-4 lg:space-y-5 text-left pl-20 md:pl-24 xl:pl-0">
                 <li className="flex items-center space-x-3 rtl:space-x-reverse">
                   <svg
-                    className="w-5 h-5 text-[#FF8C92]"
+                    className="w-4 h-4 md:w-5 md:h-5 text-[#FF8C92]"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M3 4a1 1 0 0 0-.822 1.57L6.632 12l-4.454 6.43A1 1 0 0 0 3 20h13.153a1 1 0 0 0 .822-.43l4.847-7a1 1 0 0 0 0-1.14l-4.847-7a1 1 0 0 0-.822-.43H3Z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     />
                   </svg>
-                  <span>SOCIAL MEDIA MANAGEMENT</span>
+                  <span className="text-sm md:text-base lg:text-lg">
+                    SOCIAL MEDIA MANAGEMENT
+                  </span>
                 </li>
                 <li className="flex items-center space-x-3 rtl:space-x-reverse">
                   <svg
-                    className="w-5 h-5 text-[#FF8C92]"
+                    className="w-4 h-4 md:w-5 md:h-5 text-[#FF8C92]"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M3 4a1 1 0 0 0-.822 1.57L6.632 12l-4.454 6.43A1 1 0 0 0 3 20h13.153a1 1 0 0 0 .822-.43l4.847-7a1 1 0 0 0 0-1.14l-4.847-7a1 1 0 0 0-.822-.43H3Z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     />
                   </svg>
-                  <span>PHOTOGRAPHY</span>
+                  <span className="text-sm md:text-base lg:text-lg">
+                    PHOTOGRAPHY
+                  </span>
                 </li>
                 <li className="flex items-center space-x-3 rtl:space-x-reverse">
                   <svg
-                    className="w-5 h-5 text-[#FF8C92]"
+                    className="w-4 h-4 md:w-5 md:h-5 text-[#FF8C92]"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M3 4a1 1 0 0 0-.822 1.57L6.632 12l-4.454 6.43A1 1 0 0 0 3 20h13.153a1 1 0 0 0 .822-.43l4.847-7a1 1 0 0 0 0-1.14l-4.847-7a1 1 0 0 0-.822-.43H3Z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     />
                   </svg>
-                  <span>GRAPHIC DESIGN</span>
+                  <span className="text-sm md:text-base lg:text-lg">
+                    GRAPHIC DESIGN
+                  </span>
                 </li>
                 <li className="flex items-center space-x-3 rtl:space-x-reverse">
                   <svg
-                    className="w-5 h-5 text-[#FF8C92]"
+                    className="w-4 h-4 md:w-5 md:h-5 text-[#FF8C92]"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M3 4a1 1 0 0 0-.822 1.57L6.632 12l-4.454 6.43A1 1 0 0 0 3 20h13.153a1 1 0 0 0 .822-.43l4.847-7a1 1 0 0 0 0-1.14l-4.847-7a1 1 0 0 0-.822-.43H3Z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     />
                   </svg>
-                  <span>LIVE STREAMING</span>
+                  <span className="text-sm md:text-base lg:text-lg">
+                    LIVE STREAMING
+                  </span>
                 </li>
               </ul>
             </div>
           </div>
+
           {/* Experience */}
 
           {/* Parallax Border */}
           <div
-            className="flex items-center justify-center h-72 bg-fixed bg-top bg-cover"
+            className="flex items-center justify-center h-72 bg-fixed bg-top md:bg-cover "
             style={{ backgroundImage: `url("../images/border1.png")` }}
           >
             <div>
@@ -170,54 +173,54 @@ function Home() {
 
           {/* Why Choose Us */}
           <div className="bg-[#0A4251] text-center py-12">
-            <div className="mx-20 mt-10 mb-10">
-              <h2 className="text-5xl font-extrabold text-[#fce6b9]">
+            <div className="mx-5 md:mx-10 lg:mx-20 mt-10 mb-10">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-[#fce6b9] mb-4">
                 Why Choose Us?
               </h2>
-              <p className="text-xl text-white mt-2 mb-20">
+              <p className="text-lg md:text-xl text-white mb-8">
                 Enhance Your Brand Using Our Service
               </p>
-              <div className="flex justify-evenly space-x-12 mt-8">
+              <div className="flex flex-col md:flex-row items-center justify-center md:justify-evenly space-y-8 md:space-y-0 md:space-x-12">
                 <div className="flex flex-col items-center">
                   <img
                     src="./images/videocont.svg"
                     alt="Video Content"
-                    className="w-28 h-28"
+                    className="w-24 md:w-28 h-24 md:h-28"
                   />
-                  <p className="text-white font-semibold mt-4 text-xl">
+                  <p className="text-white font-semibold mt-4 text-lg md:text-xl">
                     Video Content
                   </p>
-                  <p className="text-white mt-4">
+                  <p className="text-white mt-4 text-sm md:text-base">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
                   </p>
                 </div>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center mt-8 md:mt-0">
                   <img
                     src="./images/graphiccont.svg"
                     alt="Graphic Content"
-                    className="w-28 h-28"
+                    className="w-24 md:w-28 h-24 md:h-28"
                   />
-                  <p className="text-white font-semibold mt-4 text-xl">
+                  <p className="text-white font-semibold mt-4 text-lg md:text-xl">
                     Graphic Content
                   </p>
-                  <p className="text-white mt-4">
+                  <p className="text-white mt-4 text-sm md:text-base">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
                   </p>
                 </div>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center mt-8 md:mt-0">
                   <img
                     src="./images/writecont.svg"
-                    alt="Video Content"
-                    className="w-28 h-28"
+                    alt="Written Content"
+                    className="w-24 md:w-28 h-24 md:h-28"
                   />
-                  <p className="text-white font-semibold mt-4 text-xl">
+                  <p className="text-white font-semibold mt-4 text-lg md:text-xl">
                     Written Content
                   </p>
-                  <p className="text-white mt-4">
+                  <p className="text-white mt-4 text-sm md:text-base">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
@@ -226,18 +229,19 @@ function Home() {
               </div>
             </div>
           </div>
+
           {/* Why Choose Us */}
 
           {/* Our Work */}
           <div className="text-center py-12">
-            <div className="mt-10 mb-10">
-              <h2 className="text-5xl font-extrabold text-[#0A4251]">
+            <div className="mx-5 md:mx-10 lg:mx-20 mt-10 mb-10">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-[#0A4251] mb-4">
                 Our Work
               </h2>
-              <p className="text-xl text-[#0A4251] mt-2 mb-20">
+              <p className="text-lg md:text-xl text-[#0A4251] mt-2 mb-8">
                 Take A Look At Our Previous Work
               </p>
-              <div className="grid grid-cols-4 gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                 <div className="relative w-full overflow-hidden bg-cover bg-no-repeat">
                   <img src="/images/product1.png" className="w-full" />
                   <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
@@ -278,10 +282,10 @@ function Home() {
           {/* Our Packages */}
           <div className="text-center py-12 font-poppins">
             <div className="mx-36 mb-10">
-              <h2 className="text-5xl font-extrabold text-[#0A4251]">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-[#0A4251] mb-4">
                 Our Packages
               </h2>
-              <p className="text-xl text-[#0A4251] mt-2 mb-20">
+              <p className="text-lg md:text-xl text-[#0A4251] mt-2 mb-8">
                 Pick A Pack Best-Suited For Your Brand
               </p>
               <div className="flex flex-col">
@@ -417,41 +421,47 @@ function Home() {
           {/* Our Packages */}
 
           {/* Our Testimonial */}
-          <div className="bg-[#fce6b992] p-16">
+          <div className="bg-[#fce6b992] p-8 md:p-16">
             <div className="w-full">
-              <div className="grid grid-cols-5 justify-center p-7">
+              <div className="grid grid-cols-1 md:grid-cols-5 justify-center p-7">
                 <div className="flex flex-col col-start-1 col-span-2">
-                  <h2 className="text-5xl font-bold text-[#0A4251] mb-4">
+                  <h2 className="text-4xl md:text-5xl font-bold text-[#0A4251] mb-4">
                     Our Testimonials
                   </h2>
-                  <p className="text-2xl text-[#0A4251]">They Trust Us</p>
+                  <p className="text-2xl md:text-3xl text-[#0A4251]">
+                    They Trust Us
+                  </p>
                 </div>
-                <div className="flex justify-start col-start-3 col-span-5">
-                  <div className="flex flex-col">
-                    <div className="mb-10">
-                      <p className="text-2xl text-[#0A4251]">
+                <div className="flex justify-start col-start-3 md:col-start-3 col-span-1 md:col-span-3">
+                  <div className="flex flex-col pl-12 md:pb-10 xl:pb-0">
+                    <div className="mb-6 md:mb-10">
+                      <p className="text-lg md:text-2xl text-[#0A4251]">
                         Discover what our clients have to say about working with
                         us.
                       </p>
                     </div>
-                    <div className="flex flex-row gap-8 text-center justify-between">
+                    <div className="flex flex-row gap-4 md:gap-8 text-center justify-between">
                       <div>
-                        <span className="text-6xl text-[#0A4251] font-bold">
+                        <span className="text-4xl md:text-6xl text-[#0A4251] font-bold">
                           48+
                         </span>
-                        <p className="text-2xl text-[#0A4251]">Working Hours</p>
+                        <p className="text-lg md:text-2xl text-[#0A4251]">
+                          Working Hours
+                        </p>
                       </div>
                       <div>
-                        <span className="text-6xl text-[#0A4251] font-bold">
+                        <span className="text-4xl md:text-6xl text-[#0A4251] font-bold">
                           10+
                         </span>
-                        <p className="text-2xl text-[#0A4251]">Brands</p>
+                        <p className="text-lg md:text-2xl text-[#0A4251]">
+                          Brands
+                        </p>
                       </div>
                       <div>
-                        <span className="text-6xl text-[#0A4251] font-bold">
+                        <span className="text-4xl md:text-6xl text-[#0A4251] font-bold">
                           100+
                         </span>
-                        <p className="text-2xl text-[#0A4251]">
+                        <p className="text-lg md:text-2xl text-[#0A4251]">
                           Customer Engaged
                         </p>
                       </div>
@@ -459,80 +469,80 @@ function Home() {
                   </div>
                 </div>
               </div>
-              <Slider {...settings} className="-mt-14">
-                <div className="">
-                  <div className="grid grid-cols-5 gap-4 items-center">
-                    <div className="flex flex-col justify-start col-start-1 col-end-2">
+              <Slider {...settings} className="-mt-8 md:-mt-14">
+                <div className="px-4 md:px-0">
+                  <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+                    <div className="flex justify-start col-span-1 md:col-start-1 md:col-end-2">
                       <img
                         src="/images/clients/sushi.png"
                         alt="Logo"
                         className="w-full"
                       />
                     </div>
-                    <div className="flex flex-col justify-start col-start-3 col-span-5">
-                      <p className="text-2xl text-[#0A4251] mb-5">
+                    <div className="flex flex-col justify-start col-span-1 md:col-start-3 md:col-span-3">
+                      <p className="text-lg md:text-2xl text-[#0A4251] mb-3 md:mb-5 pl-12">
                         "Lorem ipsum dolor sit amet, consectetur adipiscing
                         elit. Sed do eiusmod tempor incididunt ut labore et
                         dolore magna aliqua."
                       </p>
-                      <p className="text-[#0A4251]">- Silvia Irawan, Manager</p>
+                      <p className="text-[#0A4251] pl-12">- Silvia Irawan, Manager</p>
                     </div>
                   </div>
                 </div>
-                <div className="">
-                  <div className="grid grid-cols-5 gap-4 items-center">
-                    <div className="flex flex-col justify-start col-start-1 col-end-2">
+                <div className="px-4 md:px-0">
+                  <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+                    <div className="flex justify-start col-span-1 md:col-start-1 md:col-end-2">
                       <img
                         src="/images/clients/nooma.png"
                         alt="Logo"
                         className="w-full"
                       />
                     </div>
-                    <div className="flex flex-col justify-start col-start-3 col-span-5">
-                      <p className="text-2xl text-[#0A4251] mb-5">
+                    <div className="flex flex-col justify-start col-span-1 md:col-start-3 md:col-span-3">
+                      <p className="text-lg md:text-2xl text-[#0A4251] mb-3 md:mb-5 pl-12">
                         "Lorem ipsum dolor sit amet, consectetur adipiscing
                         elit. Sed do eiusmod tempor incididunt ut labore et
                         dolore magna aliqua."
                       </p>
-                      <p className="text-[#0A4251]">- Silvia Irawan, Manager</p>
+                      <p className="text-[#0A4251] pl-12">- Silvia Irawan, Manager</p>
                     </div>
                   </div>
                 </div>
-                <div className="">
-                  <div className="grid grid-cols-5 gap-4 items-center">
-                    <div className="flex flex-col justify-start col-start-1 col-end-2">
+                <div className="px-4 md:px-0">
+                  <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+                    <div className="flex justify-start col-span-1 md:col-start-1 md:col-end-2">
                       <img
                         src="/images/clients/uspizza.png"
                         alt="Logo"
                         className="w-full"
                       />
                     </div>
-                    <div className="flex flex-col justify-start col-start-3 col-span-5">
-                      <p className="text-2xl text-[#0A4251] mb-5">
+                    <div className="flex flex-col justify-start col-span-1 md:col-start-3 md:col-span-3">
+                      <p className="text-lg md:text-2xl text-[#0A4251] mb-3 md:mb-5 pl-12">
                         "Lorem ipsum dolor sit amet, consectetur adipiscing
                         elit. Sed do eiusmod tempor incididunt ut labore et
                         dolore magna aliqua."
                       </p>
-                      <p className="text-[#0A4251]">- Silvia Irawan, Manager</p>
+                      <p className="text-[#0A4251] pl-12">- Silvia Irawan, Manager</p>
                     </div>
                   </div>
                 </div>
-                <div className="">
-                  <div className="grid grid-cols-5 gap-4 items-center">
-                    <div className="flex flex-col justify-start col-start-1 col-end-2">
+                <div className="px-4 md:px-0">
+                  <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+                    <div className="flex justify-start col-span-1 md:col-start-1 md:col-end-2">
                       <img
                         src="/images/clients/hongtang.png"
                         alt="Logo"
                         className="w-full"
                       />
                     </div>
-                    <div className="flex flex-col justify-start col-start-3 col-span-5">
-                      <p className="text-2xl text-[#0A4251] mb-5">
+                    <div className="flex flex-col justify-start col-span-1 md:col-start-3 md:col-span-3">
+                      <p className="text-lg md:text-2xl text-[#0A4251] mb-3 md:mb-5 pl-12">
                         "Lorem ipsum dolor sit amet, consectetur adipiscing
                         elit. Sed do eiusmod tempor incididunt ut labore et
                         dolore magna aliqua."
                       </p>
-                      <p className="text-[#0A4251]">- Silvia Irawan, Manager</p>
+                      <p className="text-[#0A4251] pl-12">- Silvia Irawan, Manager</p>
                     </div>
                   </div>
                 </div>
@@ -622,11 +632,9 @@ function Home() {
           {/* Our Client */}
 
           <Footer />
-
         </div>
       </div>
     </div>
-    
   );
 }
 
