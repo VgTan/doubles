@@ -30,7 +30,7 @@ function Home() {
           <div className="text-2xl md:text-3xl lg:text-4xl text-white tracking-widest font-bold font-poppins">
             CREATIVE AGENCY
           </div>
-          <div className="flex items-center justify-center absolute inset-x-0 bottom-10 pt-10">
+          <div className="flex items-center justify-center absolute z-0 inset-x-0 bottom-10 text-center pt-10">
             <svg
               className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white animate-bounce"
               aria-hidden="true"
@@ -244,35 +244,35 @@ function Home() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                 <div className="relative w-full overflow-hidden bg-cover bg-no-repeat">
                   <img src="/images/product1.png" className="w-full" />
-                  <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
+                  <div className="absolute z-0 bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
                 </div>
                 <div className="relative w-full overflow-hidden bg-cover bg-no-repeat">
                   <img src="/images/product2.png" className="w-full" />
-                  <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
+                  <div className="absolute z-0 bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
                 </div>
                 <div className="relative w-full overflow-hidden bg-cover bg-no-repeat">
                   <img src="/images/product3.png" className="w-full" />
-                  <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
+                  <div className="absolute z-0 bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
                 </div>
                 <div className="relative w-full overflow-hidden bg-cover bg-no-repeat">
                   <img src="/images/product4.png" className="w-full" />
-                  <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
+                  <div className="absolute z-0 bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
                 </div>
                 <div className="relative w-full overflow-hidden bg-cover bg-no-repeat">
                   <img src="/images/product5.png" className="w-full" />
-                  <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
+                  <div className="absolute z-0 bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
                 </div>
                 <div className="relative w-full overflow-hidden bg-cover bg-no-repeat">
                   <img src="/images/product6.png" className="w-full" />
-                  <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
+                  <div className="absolute z-0 bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
                 </div>
                 <div className="relative w-full overflow-hidden bg-cover bg-no-repeat">
                   <img src="/images/product7.png" className="w-full" />
-                  <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
+                  <div className="absolute z-0 bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
                 </div>
                 <div className="relative w-full overflow-hidden bg-cover bg-no-repeat">
                   <img src="/images/product8.png" className="w-full" />
-                  <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
+                  <div className="absolute z-0 bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
                 </div>
               </div>
             </div>
