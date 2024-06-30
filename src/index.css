@@ -2,18 +2,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer components {
-    .hamburger div:first-child {
-        @apply rotate-45 translate-y-2 bg-white z-[1];
-    }
-
-    .hamburger div:nth-child(2) {
-        @apply -rotate-45 -translate-y-1.5 bg-white z-[1];
-
-    }
-    .hamburger div:last-child{
-        @apply -rotate-45 -translate-y-5 bg-white z-[1];
-    }
-    
-}
