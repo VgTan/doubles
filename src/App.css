@@ -1,3 +1,6 @@
+body {
+  overflow-x: hidden;
+}
 .App {
   text-align: center;
 }
@@ -9,7 +12,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite .1s linear;
+    animation: App-logo-spin infinite 0.1s linear;
   }
 }
 
@@ -34,5 +37,208 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.typewriter-anim::after,
+.typewriter-anim::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.typewriter-anim::before {
+  background: url("../public/images/homepage.png") no-repeat center center fixed;
+  background-size: cover;
+  animation: typeWriter 1.5s ease 0.5s forwards;
+}
+
+.typewriter-anim::after {
+  width: 10px;
+  background: rgb(0, 60, 60);
+  animation: typeWriterBlock 1.5s ease 0.5s forwards;
+}
+
+@keyframes typeWriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes typeWriterBlock {
+  99% {
+    opacity: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes breathing {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    /* opacity: 0.7; */
+    scale: 1.03;
+    /* line-height: 2.5rem; */
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.typewriter-anim2::after,
+.typewriter-anim2::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.typewriter-anim2::before {
+  background: url("../public/images/homepage.png") no-repeat center center fixed;
+  background-size: cover;
+  animation: typeWrite 3s steps(15) 1s infinite;
+}
+
+.typewriter-anim2::after {
+  width: 7px;
+  background: rgb(0, 60, 60);
+  animation: typeWrite 3s steps(15) 1s infinite, blink 500ms steps(15) infinite;
+}
+
+.typeAnim {
+  transition: 1s ease-in-out;
+}
+
+.typeAnim.show {
+  left: 100%;
+}
+
+/* .typeAnim::after, .typeAnim::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.typeAnim::before {
+  background: white;
+  animation: typeWriter;
+  animation-timeline: view(0%);
+} */
+
+/* .typeAnim::after {
+  background: rgba(252, 230, 185);
+  animation: typeWriter 5s ease forwards;
+} */
+
+@keyframes typeWrite {
+  40%,
+  70% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+}
+
+.autoshow-anim {
+  animation: autoShowAnimation;
+  animation-timeline: view(30% auto);
+}
+
+@keyframes autoShowAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.list.animate:first-child {
+  animation: showUp .5s ease forwards 0.3s;
+}
+
+.list.animate:first-child + * {
+  animation: showUp .5s ease forwards 0.6s;
+}
+
+.list.animate:first-child + * + * {
+  animation: showUp .5s ease forwards 0.9s;
+}
+
+.list.animate:first-child + * + * + * {
+  animation: showUp .5s ease forwards 1.2s;
+}
+
+.list.animate:first-child + * + * + * + * {
+  animation: showUp .5s ease forwards 1.5s;
+}
+
+.list.animate:first-child + * + * + * + * + * {
+  animation: showUp .5s ease forwards 1.8s;
+}
+
+.list.animate:first-child + * + * + * + * + * + * {
+  animation: showUp .5s ease forwards 2.1s;
+}
+
+.list.animate:first-child + * + * + * + * + * + * + * {
+  animation: showUp .5s ease forwards 2.4s;
+}
+
+@keyframes showUp {
+  from {
+    transform: scale(0) rotate(30deg);
+  }
+  to {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.zoomAnim {
+  animation: zoomAnimation;
+  animation-timeline: view(50% auto);
+}
+
+@keyframes zoomAnimation {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.autoshowLeft-anim {
+  animation: fromLeft .5s ease-in-out;
+}
+
+@keyframes fromLeft {
+  from{
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
   }
 }
