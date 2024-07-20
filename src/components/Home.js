@@ -659,7 +659,7 @@ function Home() {
               <p className="text-lg md:text-xl text-[#0A4251] md:mt-2 mb-4 md:mb-8 autoshow-anim">
                 Proud To Partner With These Amazing Brand
               </p>
-              <div className="grid grid-cols-3">
+              <div className="grid grid-cols-3 md:grid-cols-5">
                 <img
                   src="/images/clients/sushi.png"
                   alt="Logo"

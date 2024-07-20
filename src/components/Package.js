@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import Slider from "react-slick";
+import "../App.css";
 
 function Package() {
   const settings = {
