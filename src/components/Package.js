@@ -24,11 +24,18 @@ function Package() {
     },
   };
 
+  const handleRedirect = () => {
+    const userConfirmed = window.confirm("Message Us about your chosen package");
+    if (userConfirmed) {
+      window.open("https://ig.me/m/doublesagency", "_blank");
+    }
+  };
+
   return (
     <div className="font-poppins">
       <div className="">
         <div
-          className="flex items-center justify-center h-72 bg-fixed bg-top bg-contain font-poppins"
+          className="flex items-center justify-center h-72 bg-fixed bg-left bg-cover font-poppins"
           style={{ backgroundImage: `url("../images/header.png")` }}
         >
           <div>
@@ -87,13 +94,12 @@ function Package() {
                   <li>Production Session (concept, shooting, and editing)</li>
                 </ul>
                 <div class="mt-5 flex justify-between">
-                  <a
-                    target="_blank"
-                    href="https://wa.me/6287878113656?text=Halo+kak!+Aku+mau+paket+Graphic+Design"
+                  <button
+                    onClick={handleRedirect}
                     class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
                   >
                     Start Creating
-                  </a>
+                  </button>
                   <p className="text-2xl self-center font-bold">5 Mio.</p>
                 </div>
               </div>
@@ -131,13 +137,12 @@ function Package() {
                   <li>Production Session (concept, shooting, and editing)</li>
                 </ul>
                 <div class="mt-5 flex justify-between">
-                  <a
-                    target="_blank"
-                    href="https://wa.me/6287878113656?text=Halo+kak!+Aku+mau+paket+Graphic+Design"
+                <button
+                    onClick={handleRedirect}
                     class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
                   >
                     Start Creating
-                  </a>
+                  </button>
                   <p className="text-2xl self-center font-bold">10 Mio.</p>
                 </div>
               </div>
@@ -164,13 +169,12 @@ function Package() {
                   <li>Production Session (concept, shooting, and editing)</li>
                 </ul>
                 <div class="mt-5 flex justify-between">
-                  <a
-                    target="_blank"
-                    href="https://wa.me/6287878113656?text=Halo+kak!+Aku+mau+paket+Graphic+Design"
+                <button
+                    onClick={handleRedirect}
                     class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
                   >
                     Start Creating
-                  </a>
+                  </button>
                   <p className="text-2xl self-center font-bold">3 Mio.</p>
                 </div>
               </div>
@@ -199,13 +203,12 @@ function Package() {
                   <li>Production Session (concept, shooting, and editing)</li>
                 </ul>
                 <div class="mt-5 flex justify-between">
-                  <a
-                    target="_blank"
-                    href="https://wa.me/6287878113656?text=Halo+kak!+Aku+mau+paket+Graphic+Design"
+                <button
+                    onClick={handleRedirect}
                     class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
                   >
                     Start Creating
-                  </a>
+                  </button>
                   <p className="text-2xl self-center font-bold">3 Mio.</p>
                 </div>
               </div>
@@ -230,13 +233,12 @@ function Package() {
                   <li>Talent</li>
                 </ul>
                 <div class="mt-5 flex justify-between">
-                  <a
-                    target="_blank"
-                    href="https://wa.me/6287878113656?text=Halo+kak!+Aku+mau+paket+Graphic+Design"
+                <button
+                    onClick={handleRedirect}
                     class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
                   >
                     Start Creating
-                  </a>
+                  </button>
                   <p className="text-2xl self-center font-bold">3 Mio.</p>
                 </div>
               </div>
@@ -261,13 +263,12 @@ function Package() {
                   <li>20 Designs</li>
                 </ul>
                 <div class="mt-5 flex justify-between">
-                  <a
-                    target="_blank"
-                    href="https://wa.me/6287878113656?text=Halo+kak!+Aku+mau+paket+Graphic+Design"
+                <button
+                    onClick={handleRedirect}
                     class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
                   >
                     Start Creating
-                  </a>
+                  </button>
                   <p className="text-2xl self-center font-bold">4 Mio.</p>
                 </div>
               </div>
@@ -276,29 +277,29 @@ function Package() {
         </div>
 
         <div className="bg-white grid grid-cols-1 md:grid-cols-2 p-8 sm:p-12 md:p-20 md:px-32 lg:px-44">
-          <div className="mb-8 md:mb-0 pr-0 md:pr-32">
+          <div className="mt-10 md:mt-0 mb-8 md:mb-0 pr-0 md:pr-32">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0A4251]">
               Timeline Project
             </h1>
-            <p className="text-base sm:text-lg pt-3 font-normal text-[#0A4251]">
+            <p className="text-base sm:text-lg pt-1 md:pt-3 font-normal text-[#0A4251]">
               See the Milestone and Deadlines
             </p>
             <div className="flex flex-wrap space-x-3 pt-5">
-              <div class="w-6 h-6 bg-[#0A4251] rounded-full"></div>
-              <div class="w-6 h-6 bg-[#0A4251] rounded-full"></div>
-              <div class="w-6 h-6 bg-[#0A4251] rounded-full"></div>
+              <div class="w-4 h-4 md:w-6 md:h-6 bg-[#0A4251] rounded-full"></div>
+              <div class="w-4 h-4 md:w-6 md:h-6 bg-[#0A4251] rounded-full"></div>
+              <div class="w-4 h-4 md:w-6 md:h-6 bg-[#0A4251] rounded-full"></div>
             </div>
           </div>
 
-          <div className="">
+          <div className="md:mb-0 mb-20">
             <Slider {...settings}>
               <div className="flex align-middle border-0 border-l-8 border-[#0A4251] h-80">
                 <div className="flex items-center">
                   <div className="text-wrap">
-                    <h1 className="pl-4 md:pl-10 text-3xl md:text-4xl font-semibold text-[#0A4251]">
-                      Dealing
+                    <h1 className="pt-4 md:pt-0 pl-4 md:pl-10 text-2xl md:text-4xl font-semibold text-[#0A4251]">
+                      1. Dealing
                     </h1>
-                    <p className="pt-2 pl-4 md:pl-10 text-base md:text-lg font-base text-[#0A4251]">
+                    <p className="pt-2 pl-4 md:pl-10 text-md md:text-lg font-base text-[#0A4251]">
                       MateS offers flexible payment options based on your
                       selected package, with a minimum commitment of{" "}
                       <span className="font-semibold underline-offset-3 underline">
@@ -320,10 +321,10 @@ function Package() {
               <div className="flex align-middle border-0 border-l-8 border-[#0A4251] h-80">
                 <div className="flex items-center">
                   <div className="text-wrap">
-                    <h1 className="pl-4 md:pl-10 text-3xl md:text-4xl font-semibold text-[#0A4251]">
-                      Concept Meeting
+                    <h1 className="pt-4 md:pt-0 pl-4 md:pl-10 text-2xl md:text-4xl font-semibold text-[#0A4251]">
+                      2. Concept Meeting
                     </h1>
-                    <p className="pt-2 pl-4 md:pl-10 text-base md:text-lg font-base text-[#0A4251]">
+                    <p className="pt-2 pl-4 md:pl-10 text-md md:text-lg font-base text-[#0A4251]">
                       The Team and MateS{" "}
                       <span className="font-semibold">
                         collaborate closely to discuss and plan the project
@@ -345,10 +346,10 @@ function Package() {
               <div className="flex align-middle border-0 border-l-8 border-[#0A4251] h-80">
                 <div className="flex items-center">
                   <div className="text-wrap">
-                    <h1 className="pl-4 md:pl-10 text-3xl md:text-4xl font-semibold text-[#0A4251]">
-                      Excecutions
+                    <h1 className="pt-4 md:pt-0 pl-4 md:pl-10 text-2xl md:text-4xl font-semibold text-[#0A4251]">
+                      3. Excecutions
                     </h1>
-                    <p className="pt-2 pl-4 md:pl-10 text-base md:text-lg font-base text-[#0A4251]">
+                    <p className="pt-2 pl-4 md:pl-10 text-md md:text-lg font-base text-[#0A4251]">
                       The Team transforms the planned concept into{" "}
                       <span className="font-semibold">
                         engaging and creative content
@@ -368,10 +369,10 @@ function Package() {
               <div className="flex align-middle border-0 border-l-8 border-[#0A4251] h-80">
                 <div className="flex items-center">
                   <div className="text-wrap">
-                    <h1 className="pl-4 md:pl-10 text-3xl md:text-4xl font-semibold text-[#0A4251]">
-                      Evaluation
+                    <h1 className="pt-4 md:pt-0 pl-4 md:pl-10 text-2xl md:text-4xl font-semibold text-[#0A4251]">
+                      4. Evaluation
                     </h1>
-                    <p className="pt-2 pl-4 md:pl-10 text-base md:text-lg font-base text-[#0A4251]">
+                    <p className="pt-2 pl-4 md:pl-10 text-md md:text-lg font-base text-[#0A4251]">
                       Conduct{" "}
                       <span className="font-semibold">monthly evaluations</span>{" "}
                       and generate comprehensive reports to monitor progress.
