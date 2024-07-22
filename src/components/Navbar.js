@@ -48,15 +48,15 @@ function Navbar() {
 
           <div
             id="component"
-            className="fixed peer-checked:-translate-x-0 fixed inset-0 translate-x-[-100%] w-[100%] shadow-xl transition duration-300 p-0 m-0"
+            className="peer-checked:-translate-x-0 fixed inset-0 translate-x-[-100%] w-[100%] shadow-xl transition duration-300 p-0 m-0"
           >
-            <div className="flex relative bg-[#eceaea] lg:w-[40%] w-[60%] h-screen shadow-2xl items-center justify-start md:pl-14 p-10">
+            <div className="flex relative bg-[#eceaea] md:w-[40%] w-[60%] h-screen shadow-2xl items-center justify-start md:pl-14 pl-10">
               <div className="grid grid-cols-1 h-[70%]">
                 <ul className="md:h-[50%]">
                   <li>
                     <Link
                       to="/"
-                      className="group font-poppins lg:text-xl text-sm text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
+                      className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
                     >
                       Home
                     </Link>
@@ -64,7 +64,7 @@ function Navbar() {
                   <li className="mt-5">
                     <Link
                       to="/about"
-                      className="group font-poppins lg:text-xl text-sm text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
+                      className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
                     >
                       About Us
                     </Link>
@@ -72,7 +72,7 @@ function Navbar() {
                   <li className="mt-5">
                     <Link
                       to="/package"
-                      className="group font-poppins lg:text-xl text-sm text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
+                      className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
                     >
                       Packages
                     </Link>
