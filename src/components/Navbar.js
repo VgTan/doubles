@@ -20,14 +20,14 @@ function Navbar() {
   });
   return (
     <div id="header" className="fixed z-[100] transition duration-300 w-screen">
-      <div className="flex items-center overflow-hidden p-5">
+      <div className="flex items-center overflow-hidden md:px-8 md:p-5 p-3 px-5">
         <img
-          className="w-16 text-white"
+          className="md:w-16 w-10 text-white"
           aria-hidden="true"
           src="/images/logo.png"
           alt="Logo"
         />
-        <div className="flex items-center justify-end w-full h-full pr-10">
+        <div className="flex items-center justify-end w-full h-full md:pr-10 pr-5">
           <input
             type="checkbox"
             name="hamburger"
@@ -40,23 +40,23 @@ function Navbar() {
             className="peer-checked:hamburger block cursor-pointer z-[10]"
             onClick={(e) => handleClick()}
           >
-            <div className="m-auto relative h-1.5 w-12 rounded border-[1px] border-white transition duration-150 z-[100]"></div>
-            <div className="m-auto relative h-1.5 mt-2 w-12 rounded border-[1px] border-white transition duration-duration-150 z-[100]"></div>
-            <div className="m-auto relative mt-2 h-1.5 w-12 rounded border-[1px] border-white transition duration-duration-150 z-[100]"></div>
+            <div className="m-auto relative md:h-1.5 md:w-12 h-1 w-8 rounded border-[1px] border-white transition duration-150 z-[100]"></div>
+            <div className="m-auto relative md:mt-2 md:h-1.5 md:w-12 h-1 w-8 mt-1 rounded border-[1px] border-white transition duration-duration-150 z-[100]"></div>
+            <div className="m-auto relative md:mt-2 md:h-1.5 md:w-12 h-1 w-8 mt-1 rounded border-[1px] border-white transition duration-duration-150 z-[100]"></div>
           </label>
           <div className="fixed peer-checked:backdrop-blur-[2px] peer-checked:bg-[#00000065] peer-checked:w-full peer-checked:h-full top-0 left-0 transition duration-500"></div>
 
           <div
             id="component"
-            className="peer-checked:-translate-x-0 fixed inset-0 translate-x-[-100%] w-[100%] shadow-xl transition duration-300 p-0 m-0"
+            className="fixed peer-checked:-translate-x-0 fixed inset-0 translate-x-[-100%] w-[100%] shadow-xl transition duration-300 p-0 m-0"
           >
-            <div className="flex relative bg-[#eceaea] lg:w-[40%] w-[50%] h-screen shadow-2xl items-center justify-start pl-14">
+            <div className="flex relative bg-[#eceaea] lg:w-[40%] w-[60%] h-screen shadow-2xl items-center justify-start md:pl-14 p-10">
               <div className="grid grid-cols-1 h-[70%]">
-                <ul className="h-[50%]">
+                <ul className="md:h-[50%]">
                   <li>
                     <Link
                       to="/"
-                      className="group font-poppins lg:text-xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
+                      className="group font-poppins lg:text-xl text-sm text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
                     >
                       Home
                     </Link>
@@ -64,7 +64,7 @@ function Navbar() {
                   <li className="mt-5">
                     <Link
                       to="/about"
-                      className="group font-poppins lg:text-xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
+                      className="group font-poppins lg:text-xl text-sm text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
                     >
                       About Us
                     </Link>
@@ -72,21 +72,20 @@ function Navbar() {
                   <li className="mt-5">
                     <Link
                       to="/package"
-                      className="group font-poppins lg:text-xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
+                      className="group font-poppins lg:text-xl text-sm text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
                     >
                       Packages
                     </Link>
                   </li>
                 </ul>
-                <div className="flex gap-10 justify-start items-end">
+                <div className="flex md:gap-10 gap-8 justify-start items-end">
                   <a
                     href="https://www.instagram.com/doublesagency/"
                     target="_blank"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="28"
-                      height="28"
+                      className="md:w-[28px] md:h-[28px] w-[22px]"
                       fill="currentColor"
                       class="bi bi-instagram"
                       viewBox="0 0 16 16"
@@ -97,8 +96,7 @@ function Navbar() {
                   <a href="https://wa.me/6287878113656" target="_blank">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="28"
-                      height="28"
+                      className="md:w-[28px] md:h-[28px] w-[22px]"
                       fill="currentColor"
                       class="bi bi-whatsapp"
                       viewBox="0 0 16 16"
@@ -108,10 +106,10 @@ function Navbar() {
                   </a>
                 </div>
               </div>
-              <div className="absolute z-[5] h-screen w-[20%] top-0 right-0 bg-[#0A4251]">
-                <div className="flex justify-center pt-5">
+              <div className="absolute z-[5] h-screen md:w-[20%] w-[25%] top-0 right-0 bg-[#0A4251]">
+                <div className="flex justify-center md:pt-5 pt-3">
                   <img
-                    className="w-16 text-white"
+                    className="md:w-16 w-10 text-white"
                     aria-hidden="true"
                     src="/images/logo.png"
                     alt="Logo"

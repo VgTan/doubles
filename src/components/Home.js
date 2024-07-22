@@ -23,7 +23,6 @@ function Home() {
       let counter = setInterval(function () {
         startValue += 1;
         val.textContent = startValue + "+";
-        console.log(startValue);
         if (startValue == endValue) {
           clearInterval(counter);
         }
