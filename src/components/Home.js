@@ -327,7 +327,7 @@ function Home() {
                     <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
                   </div>
                   <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0">
-                    <img src="/images/product2.jpg" className="w-full" />
+                    <img src="/images/product2.JPG" className="w-full" />
                     <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
                   </div>
                   <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0">
