@@ -122,27 +122,6 @@ body {
 .typeAnim.show {
   left: 100%;
 }
-
-/* .typeAnim::after, .typeAnim::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.typeAnim::before {
-  background: white;
-  animation: typeWriter;
-  animation-timeline: view(0%);
-} */
-
-/* .typeAnim::after {
-  background: rgba(252, 230, 185);
-  animation: typeWriter 5s ease forwards;
-} */
-
 @keyframes typeWrite {
   40%,
   70% {
@@ -159,21 +138,6 @@ body {
   }
 }
 
-.autoshow-anim {
-  animation: autoShowAnimation;
-  animation-timeline: view(30% auto);
-}
-
-@keyframes autoShowAnimation {
-  from {
-    opacity: 0;
-    transform: translateY(200px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .list.animate:first-child {
   animation: showUp .5s ease forwards 0.3s;
@@ -213,20 +177,6 @@ body {
   }
   to {
     transform: scale(1) rotate(0deg);
-  }
-}
-
-.zoomAnim {
-  animation: zoomAnimation;
-  animation-timeline: view(50% auto);
-}
-
-@keyframes zoomAnimation {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
   }
 }
 
