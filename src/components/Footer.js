@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div class="w-full min-h-screen flex items-center justify-center bg-[#e87171c4]">
-      <div class="md:w-2/3 w-full px-8 md:px-4 text-white flex flex-col">
+    <div class="w-full md:min-h-screen flex md:items-center justify-center bg-[#e87171c4]">
+      <div class="md:w-2/3 w-full py-12 md:py-0 px-8 md:px-4 text-white flex flex-col">
         <div class="w-full text-5xl md:text-7xl font-bold">
           <h1 class="w-full md:w-2/3">How can we help you. get in touch</h1>
         </div>
@@ -14,17 +14,18 @@ function Footer() {
             Let's Start Your New Journey To A Bright Future in Social Media{" "}
           </p>
           <div class="w-44 pt-6 md:pt-0">
-            <a 
-            href="https://ig.me/m/doublesagency"
-            target="_blank"
-            className="bg-[#0A4251] justify-center text-center rounded-xl shadow px-10 py-3 flex items-center tracking-wide font-bold hover:bg-[#0a4251ee] cursor-pointer">
+            <a
+              href="https://ig.me/m/doublesagency"
+              target="_blank"
+              className="bg-[#0A4251] justify-center text-center rounded-xl shadow px-10 py-3 flex items-center tracking-wide font-bold hover:bg-[#0a4251ee] cursor-pointer"
+            >
               Contact US
             </a>
           </div>
         </div>
-        <div class="flex flex-col">
-          <div class="flex mt-24 mb-12 flex-row justify-between items-center">
-            <div class="-mt-16">
+        <div className="flex flex-col">
+          <div className="flex mt-24 mb-12 flex-row justify-between items-center">
+            <div className="-mt-16">
               <img src="/images/mainlogo.png" className="w-24 rounded-full" />
             </div>
             <Link
@@ -35,19 +36,28 @@ function Footer() {
             </Link>
             <Link
               to="/package"
-              className="hidden md:block cursor-pointer text-white hover:text-[#0A4251] uppercase">
+              className="hidden md:block cursor-pointer text-white hover:text-[#0A4251] uppercase"
+            >
               Services
             </Link>
-            <a class="hidden md:block cursor-pointer text-white hover:text-[#0A4251] uppercase">
+            <a
+              href="#whyus"
+              className="hidden md:block cursor-pointer text-white hover:text-[#0A4251] uppercase"
+            >
               Why us
             </a>
-            <a class="hidden md:block cursor-pointer text-white hover:text-[#0A4251] uppercase">
+            <a
+              href="https://ig.me/m/doublesagency"
+              target="_blank"
+              className="hidden md:block cursor-pointer text-white hover:text-[#0A4251] uppercase"
+            >
               Contact
             </a>
-            <div class="flex flex-row space-x-8 items-center justify-between">
+            <div className="flex flex-row space-x-8 items-center justify-between">
               <a
-              href="https://www.instagram.com/doublesagency/"
-              target="_blank">
+                href="https://www.instagram.com/doublesagency/"
+                target="_blank"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
