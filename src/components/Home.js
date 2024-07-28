@@ -243,7 +243,7 @@ function Home() {
           {/* Parallax Border */}
 
           {/* Why Choose Us */}
-          <div id="whyus" className="bg-[#0A4251] text-center md:py-12 py-2">
+          <div id="whyus" className="bg-[#0A4251] text-center md:py-12 py-6">
             <Reveal>
               <div className="mx-10 md:mx-10 lg:mx-20 md:mt-10 mt-0 mb-10 autoshow-anim transit">
                 <h2 className="text-3xl md:text-5xl font-extrabold text-[#fce6b9] md:mb-4">
