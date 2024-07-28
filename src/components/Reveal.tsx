@@ -10,7 +10,7 @@ export const Reveal = ({ children, width = "fit-content" }: Props) => {
     const control = useAnimation();
     const ref = useRef<HTMLDivElement>(null);
     const { scrollY } = useScroll();
-    const isInView = useInView(ref);
+    const isInView = useInView(ref, {once:true});
   
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export const Reveal = ({ children, width = "fit-content" }: Props) => {
   }, [isInView, control]);
   
     return (
-      <div ref={ref} style={{ width }}>
+      <div ref={ref}>
         <motion.div
           variants={{
             before: { opacity: 0, y: 75 },
@@ -30,7 +30,7 @@ export const Reveal = ({ children, width = "fit-content" }: Props) => {
           }}
           initial="before"
           animate={control}
-          transition={{ duration: 1, delay: 0.25 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
         >
           {children}
         </motion.div>
