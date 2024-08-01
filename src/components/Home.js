@@ -6,6 +6,7 @@ import "../App.css";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { Reveal } from "./Reveal.tsx";
+import { Helmet } from "react-helmet-async";
 function Home() {
   const elementRef = useRef(null);
   const valuesRef = useRef([]);
@@ -88,6 +89,11 @@ function Home() {
 
   return (
     <div>
+    <Helmet>
+      <title>Home</title>
+      <meta name="description" content="See how our Agency work"/>
+      <link rel="canonical" href="/"/>
+    </Helmet>
       <section
         className="flex items-center justify-center h-screen md:mb-12 bg-fixed bg-center bg-cover"
         style={{ backgroundImage: `url("../images/homepage.png")` }}
