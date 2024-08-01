@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import Slider from "react-slick";
 import "../App.css";
 import { Reveal } from "./Reveal.tsx";
+import { Helmet } from "react-helmet-async";
 
 function Package() {
   const settings = {
