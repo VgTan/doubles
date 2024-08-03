@@ -33,7 +33,7 @@ function Package() {
   return (
     <>
       <Helmet>
-        <title>Double S Agency - Our Package</title>
+        <title>Double S Agency</title>
         <meta name="description" content="" />
         <link rel="canonical" href="/about" />
       </Helmet>

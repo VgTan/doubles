@@ -90,9 +90,9 @@ function Home() {
   return (
     <div>
       <Helmet>
-        <title>Double S Creative Agency - HOME</title>
-        <meta name="description" content="See how our Agency work" />
-        <link rel="cano`nical" href="/" />
+        <title>Double S Agency</title>
+        <meta name="description" content="" />
+        <link rel="canonical" href="/" />
       </Helmet>
       <section
         className="flex items-center justify-center h-screen md:mb-12 bg-fixed bg-center bg-cover"
