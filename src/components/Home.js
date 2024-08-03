@@ -93,7 +93,7 @@ function Home() {
         <title>Double S Creative Agency In Indonesia</title>
         <meta
           name="description"
-          content="Double S Agency is a social media management agency that help your brand. Double S Agency is a social media management agency that help your brand. At Double S Agency, we offer a comprehensive suite of
+          content="Double S is a social media agency that help your brand. Double S Agency is a social media management agency that help your brand. At Double S Agency, we offer a comprehensive suite of
           services designed to elevate your brand's social media
           presence."
         />
