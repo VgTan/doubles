@@ -99,13 +99,13 @@ function Home() {
         style={{ backgroundImage: `url("../images/homepage.png")` }}
       >
         <div className="text-center">
-          <div className="typewriter-anim relative p-5 text-5xl md:text-7xl lg:text-9xl text-white tracking-wider font-black font-bungee">
+          <h1 className="typewriter-anim relative p-5 text-5xl md:text-7xl lg:text-9xl text-white tracking-wider font-black font-bungee w-full">
             DOUBLE S
-          </div>
+          </h1>
           <div className="flex justify-center items-center">
-            <div className="typewriter-anim2 relative w-max text-2xl md:text-3xl lg:text-4xl text-white tracking-widest font-bold font-poppins">
+            <h2 className="typewriter-anim2 relative w-max text-2xl md:text-3xl lg:text-4xl text-white tracking-widest font-bold font-poppins">
               CREATIVE AGENCY
-            </div>
+            </h2>
           </div>
           <div className="flex items-center justify-center absolute inset-x-0 bottom-10 pt-10">
             <svg
