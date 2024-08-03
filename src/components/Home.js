@@ -106,7 +106,7 @@ function Home() {
           </h1>
           <div className="flex justify-center items-center">
             <div className="typewriter-anim2 relative w-max text-2xl md:text-3xl lg:text-4xl text-white tracking-widest font-bold font-poppins">
-              SOCIAL MEDIA AGENCY
+              CREATIVE AGENCY
             </div>
           </div>
           <div className="flex items-center justify-center absolute inset-x-0 bottom-10 pt-10">
