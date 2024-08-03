@@ -7,7 +7,6 @@ import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { Reveal } from "./Reveal.tsx";
 import { Helmet } from "react-helmet-async";
-import SEO from "./SEO.jsx";
 function Home() {
   const elementRef = useRef(null);
   const valuesRef = useRef([]);
@@ -90,12 +89,6 @@ function Home() {
 
   return (
     <div>
-      <SEO
-        title="Double S Social Media Agency | Home"
-        description="Double S Agency specializes in social media management to boost your brand's online presence. Our services include content creation, strategy, and analytics to elevate your brand's digital impact."
-        name="Double S"
-        type="website"
-      />
       <section
         className="flex items-center justify-center h-screen md:mb-12 bg-fixed bg-center bg-cover"
         style={{ backgroundImage: `url("../images/homepage.png")` }}
