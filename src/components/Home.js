@@ -103,10 +103,10 @@ function Home() {
         className="flex items-center justify-center h-screen md:mb-12 bg-fixed bg-center bg-cover"
         style={{ backgroundImage: `url("../images/homepage.png")` }}
       >
-        <div className="text-center">
-          <h1 className="typewriter-anim relative p-5 text-5xl md:text-7xl lg:text-9xl text-white tracking-wider font-black font-bungee w-full">
+        <h1 className="text-center">
+          <div className="typewriter-anim relative p-5 text-5xl md:text-7xl lg:text-9xl text-white tracking-wider font-black font-bungee w-full">
             DOUBLE S
-          </h1>
+          </div>
           <div className="flex justify-center items-center">
             <h2 className="typewriter-anim2 relative w-max text-2xl md:text-3xl lg:text-4xl text-white tracking-widest font-bold font-poppins">
               CREATIVE AGENCY
@@ -129,7 +129,7 @@ function Home() {
               />
             </svg>
           </div>
-        </div>
+        </h1>
       </section>
       <div className="font-poppins">
         <div>
@@ -303,7 +303,7 @@ function Home() {
                   <div className="flex flex-col items-center">
                     <img
                       src="./images/videocont.svg"
-                      alt="Video Content"
+                      alt="Double S Video Content"
                       className="w-20 md:w-28 h-20 md:h-28"
                     />
                     <p className="text-white font-semibold mt-4 text-lg md:text-xl">
@@ -319,7 +319,7 @@ function Home() {
                   <div className="flex flex-col items-center mt-8 md:mt-0">
                     <img
                       src="./images/graphiccont.svg"
-                      alt="Graphic Content"
+                      alt="Double S Graphic Content"
                       className="w-20 md:w-28 h-20 md:h-28"
                     />
                     <p className="text-white font-semibold mt-4 text-lg md:text-xl">
@@ -335,7 +335,7 @@ function Home() {
                   <div className="flex flex-col items-center mt-8 md:mt-0">
                     <img
                       src="./images/writecont.svg"
-                      alt="Written Content"
+                      alt="Double S Written Content"
                       className="w-20 md:w-28 h-20 md:h-28"
                     />
                     <p className="text-white font-semibold mt-4 text-lg md:text-xl">
@@ -660,7 +660,7 @@ function Home() {
                     <div className="flex justify-start col-span-1 md:col-start-1 md:col-end-2">
                       <img
                         src="/images/clients/uspizza.png"
-                        alt="Logo"
+                        alt="Double S Logo"
                         className="w-full h-auto md:w-full md:h-full object-contain"
                       />
                     </div>
@@ -680,7 +680,7 @@ function Home() {
                     <div className="flex justify-start col-span-1 md:col-start-1 md:col-end-2">
                       <img
                         src="/images/clients/greyhound.png"
-                        alt="Logo"
+                        alt="Double S Logo"
                         className="w-full h-auto md:w-full md:h-full object-contain"
                       />
                     </div>
@@ -700,7 +700,7 @@ function Home() {
                     <div className="flex justify-start col-span-1 md:col-start-1 md:col-end-2">
                       <img
                         src="/images/clients/tuva.png"
-                        alt="Logo"
+                        alt="Double S Logo"
                         className="w-full h-auto md:w-full md:h-full object-contain"
                       />
                     </div>
@@ -733,97 +733,97 @@ function Home() {
                 <div className="grid grid-cols-3 md:grid-cols-5">
                   <img
                     src="/images/clients/sushi.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/bakmie.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/bakso.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/eleanor.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/goodhouse.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/hongtang.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/madja.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/mpok.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/nooma.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/ot.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/sugoi.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/uspizza.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/greyhound.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/pempek.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/bakmi51.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/tuva.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/kungfu.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/seribu.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/kyoto.png"
-                    alt="Logo"
+                    alt="Double S Logo"
                     className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                 </div>
