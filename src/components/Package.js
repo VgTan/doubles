@@ -301,32 +301,32 @@ function Package() {
             </div>
           </div>
 
-          <div className="bg-white grid grid-cols-1 md:grid-cols-2 p-8 sm:p-12 md:p-20 md:px-32 lg:px-44">
+          <div className="bg-white grid grid-cols-1 lg:grid-cols-2 p-8 sm:p-12 lg:p-20 lg:px-32 lg:px-44">
             <Reveal>
-              <div className="mt-10 md:mt-0 mb-8 md:mb-0 pr-0 md:pr-32">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0A4251]">
+              <div className="mt-10 lg:mt-0 mb-8 lg:mb-0 pr-0 lg:pr-32">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A4251]">
                   Timeline Project
                 </h1>
-                <p className="text-base sm:text-lg pt-1 md:pt-3 font-normal text-[#0A4251]">
+                <p className="text-base sm:text-lg pt-1 lg:pt-3 font-normal text-[#0A4251]">
                   See the Milestone and Deadlines
                 </p>
                 <div className="flex flex-wrap space-x-3 pt-5">
-                  <div class="w-4 h-4 md:w-6 md:h-6 bg-[#0A4251] rounded-full"></div>
-                  <div class="w-4 h-4 md:w-6 md:h-6 bg-[#0A4251] rounded-full"></div>
-                  <div class="w-4 h-4 md:w-6 md:h-6 bg-[#0A4251] rounded-full"></div>
+                  <div class="w-4 h-4 lg:w-6 lg:h-6 bg-[#0A4251] rounded-full"></div>
+                  <div class="w-4 h-4 lg:w-6 lg:h-6 bg-[#0A4251] rounded-full"></div>
+                  <div class="w-4 h-4 lg:w-6 lg:h-6 bg-[#0A4251] rounded-full"></div>
                 </div>
               </div>
             </Reveal>
             <Reveal>
-              <div className="md:mb-0 mb-20">
+              <div className="lg:mb-0 mb-20">
                 <Slider {...settings}>
                   <div className="flex align-middle border-0 border-l-8 border-[#0A4251] h-80">
                     <div className="flex items-center">
                       <div className="text-wrap">
-                        <h1 className="pt-4 md:pt-0 pl-4 md:pl-10 text-2xl md:text-4xl font-semibold text-[#0A4251]">
+                        <h1 className="pt-4 lg:pt-0 pl-4 lg:pl-10 text-2xl lg:text-4xl font-semibold text-[#0A4251]">
                           1. Dealing
                         </h1>
-                        <p className="pt-2 pl-4 md:pl-10 text-md md:text-lg font-base text-[#0A4251]">
+                        <p className="pt-2 pl-4 lg:pl-10 text-md lg:text-lg font-base text-[#0A4251]">
                           MateS offers flexible payment options based on your
                           selected package, with a minimum commitment of{" "}
                           <span className="font-semibold underline-offset-3 underline">
@@ -348,10 +348,10 @@ function Package() {
                   <div className="flex align-middle border-0 border-l-8 border-[#0A4251] h-80">
                     <div className="flex items-center">
                       <div className="text-wrap">
-                        <h1 className="pt-4 md:pt-0 pl-4 md:pl-10 text-2xl md:text-4xl font-semibold text-[#0A4251]">
+                        <h1 className="pt-4 lg:pt-0 pl-4 lg:pl-10 text-2xl lg:text-4xl font-semibold text-[#0A4251]">
                           2. Concept Meeting
                         </h1>
-                        <p className="pt-2 pl-4 md:pl-10 text-md md:text-lg font-base text-[#0A4251]">
+                        <p className="pt-2 pl-4 lg:pl-10 text-md lg:text-lg font-base text-[#0A4251]">
                           The Team and MateS{" "}
                           <span className="font-semibold">
                             collaborate closely to discuss and plan the project
@@ -373,10 +373,10 @@ function Package() {
                   <div className="flex align-middle border-0 border-l-8 border-[#0A4251] h-80">
                     <div className="flex items-center">
                       <div className="text-wrap">
-                        <h1 className="pt-4 md:pt-0 pl-4 md:pl-10 text-2xl md:text-4xl font-semibold text-[#0A4251]">
+                        <h1 className="pt-4 lg:pt-0 pl-4 lg:pl-10 text-2xl lg:text-4xl font-semibold text-[#0A4251]">
                           3. Excecutions
                         </h1>
-                        <p className="pt-2 pl-4 md:pl-10 text-md md:text-lg font-base text-[#0A4251]">
+                        <p className="pt-2 pl-4 lg:pl-10 text-md lg:text-lg font-base text-[#0A4251]">
                           The Team transforms the planned concept into{" "}
                           <span className="font-semibold">
                             engaging and creative content
@@ -398,10 +398,10 @@ function Package() {
                   <div className="flex align-middle border-0 border-l-8 border-[#0A4251] h-80">
                     <div className="flex items-center">
                       <div className="text-wrap">
-                        <h1 className="pt-4 md:pt-0 pl-4 md:pl-10 text-2xl md:text-4xl font-semibold text-[#0A4251]">
+                        <h1 className="pt-4 lg:pt-0 pl-4 lg:pl-10 text-2xl lg:text-4xl font-semibold text-[#0A4251]">
                           4. Evaluation
                         </h1>
-                        <p className="pt-2 pl-4 md:pl-10 text-md md:text-lg font-base text-[#0A4251]">
+                        <p className="pt-2 pl-4 lg:pl-10 text-md lg:text-lg font-base text-[#0A4251]">
                           Conduct{" "}
                           <span className="font-semibold">
                             monthly evaluations
