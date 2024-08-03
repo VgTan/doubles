@@ -171,7 +171,7 @@ function Home() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-sm md:text-base lg:text- text-nowrap">
+                    <span className="text-sm md:text-base lg:text-lg text-nowrap">
                       SOCIAL MEDIA MANAGEMENT
                     </span>
                   </li>
@@ -243,7 +243,7 @@ function Home() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-sm md:text-base lg:text- text-nowrap">
+                    <span className="text-sm md:text-base lg:text-lg text-nowrap">
                       KOL OR INFLUENCER
                     </span>
                   </li>
@@ -261,7 +261,7 @@ function Home() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-sm md:text-base lg:text- text-nowrap">
+                    <span className="text-sm md:text-base lg:text-lg text-nowrap">
                       ADVERTISING
                     </span>
                   </li>
