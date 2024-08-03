@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { Reveal } from "./Reveal.tsx";
 import { Helmet } from "react-helmet-async";
+import SEO from "./SEO.jsx";
 function Home() {
   const elementRef = useRef(null);
   const valuesRef = useRef([]);
@@ -89,35 +90,24 @@ function Home() {
 
   return (
     <div>
-      <Helmet>
-        <title>Social Media Agency Indonesia | Home</title>
-        <meta
-          name="description"
-          content="Double S Agency specializes in social media management to boost your brand's online presence. Our services include content creation, strategy, and analytics to elevate your brand's digital impact."
-        />
-        <link rel="canonical" href="https://www.doublescreative.online/" />
-
-        <meta
-          property="og:title"
-          content="Double S Agency | Expert Social Media Management"
-        />
-        <meta
-          property="og:description"
-          content="Double S Agency provides expert social media management services to help your brand grow online. From content creation to strategy, we offer solutions tailored to your needs."
-        />
-      </Helmet>
+      <SEO
+        title="Double S Social Media Agency "
+        description="Double S Agency specializes in social media management to boost your brand's online presence. Our services include content creation, strategy, and analytics to elevate your brand's digital impact."
+        name="Double S"
+        type="company profile"
+      />
       <section
         className="flex items-center justify-center h-screen md:mb-12 bg-fixed bg-center bg-cover"
         style={{ backgroundImage: `url("../images/homepage.png")` }}
       >
-        <h1 className="text-center">
-          <div className="typewriter-anim relative p-5 text-5xl md:text-7xl lg:text-9xl text-white tracking-wider font-black font-bungee w-full">
+        <div className="text-center">
+          <h1 className="typewriter-anim relative p-5 text-5xl md:text-7xl lg:text-9xl text-white tracking-wider font-black font-bungee w-full">
             DOUBLE S
-          </div>
+          </h1>
           <div className="flex justify-center items-center">
-            <h2 className="typewriter-anim2 relative w-max text-2xl md:text-3xl lg:text-4xl text-white tracking-widest font-bold font-poppins">
+            <div className="typewriter-anim2 relative w-max text-2xl md:text-3xl lg:text-4xl text-white tracking-widest font-bold font-poppins">
               CREATIVE AGENCY
-            </h2>
+            </div>
           </div>
           <div className="flex items-center justify-center absolute inset-x-0 bottom-10 pt-10">
             <svg
@@ -136,7 +126,7 @@ function Home() {
               />
             </svg>
           </div>
-        </h1>
+        </div>
       </section>
       <div className="font-poppins">
         <div>
