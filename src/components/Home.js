@@ -91,7 +91,7 @@ function Home() {
   return (
     <div>
       <SEO
-        title="Double S Social Media Agency "
+        title="Double S Social Media Agency | Home"
         description="Double S Agency specializes in social media management to boost your brand's online presence. Our services include content creation, strategy, and analytics to elevate your brand's digital impact."
         name="Double S"
         type="company profile"

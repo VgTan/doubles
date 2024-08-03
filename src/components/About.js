@@ -4,10 +4,17 @@ import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { Reveal } from "./Reveal.tsx";
 import { Helmet } from "react-helmet-async";
+import SEO from "./SEO.jsx";
 
 function About() {
   return (
     <>
+      <SEO
+        title="Double S Social Media Agency | About"
+        description="Double S Agency specializes in social media management to boost your brand's online presence. Our services include content creation, strategy, and analytics to elevate your brand's digital impact."
+        name="Double S"
+        type="company profile"
+      />
       <div className="font-poppins">
         <div
           className="flex items-center justify-center h-72 bg-fixed bg-left bg-cover font-poppins"

@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "../App.css";
 import { Reveal } from "./Reveal.tsx";
 import { Helmet } from "react-helmet-async";
+import SEO from "./SEO.jsx";
 
 function Package() {
   const settings = {
@@ -32,6 +33,12 @@ function Package() {
 
   return (
     <>
+      <SEO
+        title="Double S Social Media Agency | Packages"
+        description="Double S Agency specializes in social media management to boost your brand's online presence. Our services include content creation, strategy, and analytics to elevate your brand's digital impact."
+        name="Double S"
+        type="company profile"
+      />
       <div className="font-poppins">
         <div className="">
           <div
