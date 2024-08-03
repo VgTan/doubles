@@ -91,8 +91,13 @@ function Home() {
     <div>
       <Helmet>
         <title>Double S Agency | Home </title>
-        <meta name="description" content="Double S Agency is a social media management agency that help your brand" />
-        <link rel="canonical" href="/" />
+        <meta
+          name="description"
+          content="Double S Agency is a social media management agency that help your brand. Double S Agency is a social media management agency that help your brand. At Double S Agency, we offer a comprehensive suite of
+          services designed to elevate your brand's social media
+          presence."
+        />
+        <link rel="canonical" href="https://www.doublescreative.online/" />
       </Helmet>
       <section
         className="flex items-center justify-center h-screen md:mb-12 bg-fixed bg-center bg-cover"
