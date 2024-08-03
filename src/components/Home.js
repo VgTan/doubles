@@ -87,7 +87,7 @@ function Home() {
   };
 
   return (
-    <div>
+    <div className="overflow-clip">
       <section
         className="flex items-center justify-center h-screen md:mb-12 bg-fixed bg-center bg-cover"
         style={{ backgroundImage: `url("../images/homepage.png")` }}
@@ -150,7 +150,7 @@ function Home() {
                 </div>
               </div>
               <div className="flex w-full lg:w-2/6">
-                <ul className="list-outside text-[#0A4251] tracking-wider pr-5 space-y-3 md:space-y-4 lg:space-y-5 text-left pl-16  md:pl-24 xl:pl-0">
+                <ul className="list-outside text-[#0A4251] tracking-wider pr-5 space-y-3 md:space-y-4 lg:space-y-2 text-left pl-16  md:pl-24 xl:pl-0">
                   <li className="flex items-center space-x-3 rtl:space-x-reverse">
                     <svg
                       className="w-4 h-4 md:w-5 md:h-5 text-[#FF8C92]"
@@ -165,7 +165,7 @@ function Home() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-sm md:text-base lg:text-lg text-nowrap">
+                    <span className="text-sm md:text-base lg:text- text-nowrap">
                       SOCIAL MEDIA MANAGEMENT
                     </span>
                   </li>
@@ -221,6 +221,42 @@ function Home() {
                     </svg>
                     <span className="text-sm md:text-base lg:text-lg">
                       LIVE STREAMING
+                    </span>
+                  </li>
+                  <li className="flex items-center space-x-3 rtl:space-x-reverse">
+                    <svg
+                      className="w-4 h-4 md:w-5 md:h-5 text-[#FF8C92]"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M3 4a1 1 0 0 0-.822 1.57L6.632 12l-4.454 6.43A1 1 0 0 0 3 20h13.153a1 1 0 0 0 .822-.43l4.847-7a1 1 0 0 0 0-1.14l-4.847-7a1 1 0 0 0-.822-.43H3Z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span className="text-sm md:text-base lg:text- text-nowrap">
+                      KOL OR INFLUENCER
+                    </span>
+                  </li>
+                  <li className="flex items-center space-x-3 rtl:space-x-reverse">
+                    <svg
+                      className="w-4 h-4 md:w-5 md:h-5 text-[#FF8C92]"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M3 4a1 1 0 0 0-.822 1.57L6.632 12l-4.454 6.43A1 1 0 0 0 3 20h13.153a1 1 0 0 0 .822-.43l4.847-7a1 1 0 0 0 0-1.14l-4.847-7a1 1 0 0 0-.822-.43H3Z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span className="text-sm md:text-base lg:text- text-nowrap">
+                      ADVERTISING
                     </span>
                   </li>
                 </ul>
@@ -321,38 +357,72 @@ function Home() {
                 <div className="list grid grid-cols-2 lg:grid-cols-4 gap-5">
                   <div
                     ref={elementRef}
-                    className="list relative w-full overflow-hidden bg-cover bg-no-repeat scale-0"
+                    className="list relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[15.5rem]"
                   >
-                    <img src="/images/product1.png" className="w-full" />
-                    <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
+                    {/* <img src="/images/product1.png" className="w-full object-contain" /> */}
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      className="absolute w-full -translate-y-1/2 top-1/3"
+                    >
+                      <source src="/video/vid1.mp4" type="video/mp4" />
+                    </video>
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0">
-                    <img src="/images/product2.jpg" className="w-full" />
-                    <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[15.5rem]">
+                    <img
+                      src="/images/product2.jpg"
+                      className="w-full object-contain"
+                    />
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0">
-                    <img src="/images/product3.png" className="w-full" />
-                    <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[15.5rem]">
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      className="absolute w-full -translate-y-1/2 top-1/2"
+                    >
+                      <source src="/video/vid2.mp4" type="video/mp4" />
+                    </video>
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0">
-                    <img src="/images/product4.png" className="w-full" />
-                    <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[15.5rem]">
+                    <img
+                      src="/images/product5.png"
+                      className="w-full object-contain"
+                    />
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0">
-                    <img src="/images/product5.png" className="w-full" />
-                    <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[15.5rem]">
+                    <img
+                      src="/images/product3.png"
+                      className="w-full object-contain"
+                    />
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0">
-                    <img src="/images/product6.png" className="w-full" />
-                    <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
+
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[15.5rem]">
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      className="absolute w-full -translate-y-[50%] top-1/2"
+                    >
+                      <source src="/video/vid3.mp4" type="video/mp4" />
+                    </video>
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0">
-                    <img src="/images/product7.png" className="w-full" />
-                    <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[15.5rem]">
+                    <img
+                      src="/images/product6.png"
+                      className="w-full object-contain"
+                    />
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0">
-                    <img src="/images/product8.png" className="w-full" />
-                    <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-red-700 bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-30"></div>
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[15.5rem]">
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      className="absolute w-full -translate-y-[60%] top-1/2"
+                    >
+                      <source src="/video/vid4.mp4" type="video/mp4" />
+                    </video>
                   </div>
                 </div>
               </div>
@@ -415,8 +485,8 @@ function Home() {
                       </p>
                       <p className="text-xs md:text-sm text-[#0A4251] text-left w-full md:w-3/4 font-medium mt-2 md:mt-0">
                         Enhance your Instagram presence with our package,
-                        including content planning, photography, graphic design,
-                        and story creation for a cohesive and engaging feed.
+                        including content planning, photography, reels, graphic design,
+                        and story creation for an engaging feed.
                       </p>
                     </div>
                   </div>
@@ -498,10 +568,10 @@ function Home() {
                   </div>
                 </div>
                 <div className="flex justify-center zoomAnim">
-                  <div className="flex justify-center mt-10 md:mt-20 bg-[#0A4251] rounded-full p-5 px-8 hover:bg-[#0a4251ee] cursor-pointer">
+                  <div className="flex justify-center mt-10 md:mt-20 bg-[#0A4251] rounded-full p-2 md:p-4 px-4 md:px-6 hover:bg-[#0a4251ee] cursor-pointer">
                     <Link
                       to="/package"
-                      className="text-4xl text-[#fce6b9] font-bold tracking-normal "
+                      className="text-lg md:text-2xl text-[#fce6b9] font-bold tracking-normal "
                     >
                       Learn More
                     </Link>
@@ -537,7 +607,7 @@ function Home() {
                         <span
                           ref={(el) => (valuesRef.current[0] = el)}
                           data-val="48"
-                          className="countNum text-3xl md:text-6xl text-[#0A4251] font-bold"
+                          className="countNum text-2xl md:text-6xl text-[#0A4251] font-bold"
                         >
                           0+
                         </span>
@@ -548,8 +618,8 @@ function Home() {
                       <div>
                         <span
                           ref={(el) => (valuesRef.current[1] = el)}
-                          data-val="15"
-                          className="countNum text-3xl md:text-6xl text-[#0A4251] font-bold"
+                          data-val="25"
+                          className="countNum text-2xl md:text-6xl text-[#0A4251] font-bold"
                         >
                           0+
                         </span>
@@ -560,8 +630,8 @@ function Home() {
                       <div>
                         <span
                           ref={(el) => (valuesRef.current[2] = el)}
-                          data-val="100"
-                          className="countNum text-3xl md:text-6xl text-[#0A4251] font-bold"
+                          data-val="1000"
+                          className="countNum text-2xl md:text-6xl text-[#0A4251] font-bold"
                         >
                           0+
                         </span>
@@ -578,7 +648,7 @@ function Home() {
                   <div className="grid grid-cols-3 md:grid-cols-5 gap-4 items-center">
                     <div className="flex justify-start col-span-1 md:col-start-1 md:col-end-2">
                       <img
-                        src="/images/clients/sushi.png"
+                        src="/images/clients/uspizza.png"
                         alt="Logo"
                         className="w-full h-auto md:w-full md:h-full object-contain"
                       />
@@ -589,7 +659,7 @@ function Home() {
                         banget!!"
                       </p>
                       <p className="text-xs md:text-2xl text-[#0A4251] pl-4 md:pl-12 font-medium">
-                        - Silvia Irawan, Manager
+                        - L****, Brand Manager
                       </p>
                     </div>
                   </div>
@@ -598,17 +668,18 @@ function Home() {
                   <div className="grid grid-cols-3 md:grid-cols-5 gap-4 items-center">
                     <div className="flex justify-start col-span-1 md:col-start-1 md:col-end-2">
                       <img
-                        src="/images/clients/nooma.png"
+                        src="/images/clients/greyhound.png"
                         alt="Logo"
                         className="w-full h-auto md:w-full md:h-full object-contain"
                       />
                     </div>
                     <div className="flex flex-col justify-start col-span-2 md:col-start-3 md:col-span-3">
                       <p className="text-sm md:text-2xl text-[#0A4251] mb-3 md:mb-5 pl-4 md:pl-12">
-                        "Bagus banget content nya, rapi juga!!"
+                        "Kontennya udah ok banget, aku mau suggest untuk brand
+                        yang lain juga"
                       </p>
                       <p className="text-xs md:text-2xl text-[#0A4251] pl-4 md:pl-12 font-medium">
-                        - Silvia Irawan, Manager
+                        - A****, Brand Manager
                       </p>
                     </div>
                   </div>
@@ -617,37 +688,18 @@ function Home() {
                   <div className="grid grid-cols-3 md:grid-cols-5 gap-4 items-center">
                     <div className="flex justify-start col-span-1 md:col-start-1 md:col-end-2">
                       <img
-                        src="/images/clients/uspizza.png"
+                        src="/images/clients/tuva.png"
                         alt="Logo"
                         className="w-full h-auto md:w-full md:h-full object-contain"
                       />
                     </div>
                     <div className="flex flex-col justify-start col-span-2 md:col-start-3 md:col-span-3">
                       <p className="text-sm md:text-2xl text-[#0A4251] mb-3 md:mb-5 pl-4 md:pl-12">
-                        "Suka banget sama kontennya planning nya juga"
+                        "video pertama views-nya lumayan banyak nih, di tiktok
+                        juga. Makasih ya guys"
                       </p>
                       <p className="text-xs md:text-2xl text-[#0A4251] pl-4 md:pl-12 font-medium">
-                        - Silvia Irawan, Manager
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="px-4 md:px-0">
-                  <div className="grid grid-cols-3 md:grid-cols-5 gap-4 items-center">
-                    <div className="flex justify-start col-span-1 md:col-start-1 md:col-end-2">
-                      <img
-                        src="/images/clients/hongtang.png"
-                        alt="Logo"
-                        className="w-full h-auto md:w-full md:h-full object-contain"
-                      />
-                    </div>
-                    <div className="flex flex-col justify-start col-span-2 md:col-start-3 md:col-span-3">
-                      <p className="text-sm md:text-2xl text-[#0A4251] mb-3 md:mb-5 pl-4 md:pl-12">
-                        "Aku suka banget kontennya bahkan sebelum boost udah
-                        gede engagementnya"
-                      </p>
-                      <p className="text-xs md:text-2xl text-[#0A4251] pl-4 md:pl-12 font-medium">
-                        - Silvia Irawan, Manager
+                        - G****, Brand Owner
                       </p>
                     </div>
                   </div>
@@ -671,82 +723,97 @@ function Home() {
                   <img
                     src="/images/clients/sushi.png"
                     alt="Logo"
-                    className="autoshow-anim transit w-full grayscale hover:grayscale-0 transition duration-500"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/bakmie.png"
                     alt="Logo"
-                    className="autoshow-anim transit w-full grayscale hover:grayscale-0 transition duration-500"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/bakso.png"
                     alt="Logo"
-                    className="autoshow-anim transit w-full grayscale hover:grayscale-0 transition duration-500"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/eleanor.png"
                     alt="Logo"
-                    className="autoshow-anim transit w-full grayscale hover:grayscale-0 transition duration-500"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/goodhouse.png"
                     alt="Logo"
-                    className="autoshow-anim transit w-full grayscale hover:grayscale-0 transition duration-500"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/hongtang.png"
                     alt="Logo"
-                    className="autoshow-anim transit w-full grayscale hover:grayscale-0 transition duration-500"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/madja.png"
                     alt="Logo"
-                    className="autoshow-anim transit w-full grayscale hover:grayscale-0 transition duration-500"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/mpok.png"
                     alt="Logo"
-                    className="autoshow-anim transit w-full grayscale hover:grayscale-0 transition duration-500"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/nooma.png"
                     alt="Logo"
-                    className="autoshow-anim transit w-full grayscale hover:grayscale-0 transition duration-500"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/ot.png"
                     alt="Logo"
-                    className="autoshow-anim transit w-full grayscale hover:grayscale-0 transition duration-500"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/sugoi.png"
                     alt="Logo"
-                    className="autoshow-anim transit w-full grayscale hover:grayscale-0 transition duration-500"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/uspizza.png"
                     alt="Logo"
-                    className="autoshow-anim transit w-full grayscale hover:grayscale-0 transition duration-500"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/greyhound.png"
                     alt="Logo"
-                    className="autoshow-anim transit w-full grayscale hover:grayscale-0 transition duration-500"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/pempek.png"
                     alt="Logo"
-                    className="autoshow-anim transit w-full grayscale hover:grayscale-0 transition duration-500"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/bakmi51.png"
                     alt="Logo"
-                    className="autoshow-anim transit w-full grayscale hover:grayscale-0 transition duration-500"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                   <img
                     src="/images/clients/tuva.png"
                     alt="Logo"
-                    className="autoshow-anim transit w-full grayscale hover:grayscale-0 transition duration-500"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
+                  />
+                  <img
+                    src="/images/clients/kungfu.png"
+                    alt="Logo"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
+                  />
+                  <img
+                    src="/images/clients/seribu.png"
+                    alt="Logo"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
+                  />
+                  <img
+                    src="/images/clients/kyoto.png"
+                    alt="Logo"
+                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
                   />
                 </div>
               </div>

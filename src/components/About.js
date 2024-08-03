@@ -69,7 +69,7 @@ function About() {
       {/* About Silvia */}
       <div className="mx-10 md:mx-44 mt-20 md:mt-32">
         <h1 className="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0A4251]">
-          Our Team
+          Founder
         </h1>
         <p className="text-[#0A4251] text-center text-base sm:text-lg md:mt-2 mb-4 sm:mb-16">
           Get To Know Our Agency

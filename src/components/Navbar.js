@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../index.css";
-import { Link } from "react-router-dom";
+import { a } from "react-router-dom";
 function Navbar() {
   const [isClicked, setisClicked] = useState(false);
 
@@ -54,28 +54,28 @@ function Navbar() {
               <div className="grid grid-cols-1 h-[70%]">
                 <ul className="md:h-[50%]">
                   <li>
-                    <Link
+                    <a href="/"
                       to="/"
                       className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
                     >
                       Home
-                    </Link>
+                    </a>
                   </li>
                   <li className="mt-5">
-                    <Link
+                    <a href="/about"
                       to="/about"
                       className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
                     >
                       About Us
-                    </Link>
+                    </a>
                   </li>
                   <li className="mt-5">
-                    <Link
+                    <a href="/package"
                       to="/package"
                       className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
                     >
                       Packages
-                    </Link>
+                    </a>
                   </li>
                 </ul>
                 <div className="flex md:gap-10 gap-8 justify-start items-end">
