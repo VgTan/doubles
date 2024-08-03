@@ -34,10 +34,7 @@ function Package() {
     <>
       <Helmet>
         <title>Double S Agency - Our Package</title>
-        <meta
-          name="description"
-          content=""
-        />
+        <meta name="description" content="" />
         <link rel="canonical" href="/about" />
       </Helmet>
       <div className="font-poppins">
@@ -70,12 +67,9 @@ function Package() {
                 Pick A Pack Best-Suited For Your Brand
               </p>
             </Reveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-14 justify-items-center px-8 md:px-56">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 justify-items-center px-7 md:px-16 lg:px-32">
               <Reveal>
-                <div
-                  class="bg-white p-8 max-w-lg rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col"
-                  href="#"
-                >
+                <div class="bg-white p-8 pb-20 h-full max-w-full rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col relative">
                   <div className="relative">
                     <img
                       src="/images/package/instagram.png"
@@ -93,80 +87,36 @@ function Package() {
                     <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
                       Tiktok & Instagram Package
                     </h1>
-                    <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
-                      <li>8 Reels</li>
-                      <li>7 Graphic Design</li>
-                      <li>Story (every other day)</li>
-                      <li>15 Post/month (adjustable)</li>
-                      <li>Talent 2-3 Person</li>
-                      <li>Content Writing</li>
-                      <li>Research</li>
-                      <li>Monthly Report</li>
-                      <li>
-                        Production Session (concept, shooting, and editing)
-                      </li>
-                    </ul>
-                    <div class="mt-5 flex justify-between">
-                      <button
-                        onClick={handleRedirect}
-                        class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
-                      >
-                        Start Creating
-                      </button>
-                      <p className="text-2xl self-center font-bold">5 Mio.</p>
+                    <div>
+                      <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
+                        <li>8 Reels</li>
+                        <li>7 Graphic Design</li>
+                        <li>Story (every other day)</li>
+                        <li>15 Post/month (adjustable)</li>
+                        <li>Talent 2-3 Person</li>
+                        <li>Content Writing</li>
+                        <li>Research</li>
+                        <li>Monthly Report</li>
+                        <li>
+                          Production Session (concept, shooting, and editing)
+                        </li>
+                      </ul>
                     </div>
+                  </div>
+                  <div class="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
+                    <button
+                      onClick={handleRedirect}
+                      class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
+                    >
+                      Start Creating
+                    </button>
+                    <p className="text-2xl self-center font-bold">5 Mio.</p>
                   </div>
                 </div>
               </Reveal>
               <Reveal>
                 <div
-                  class="bg-white p-8 max-w-lg rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col"
-                  href="#"
-                >
-                  <div className="relative">
-                    <img
-                      src="/images/package/brand.png"
-                      class="shadow rounded-lg overflow-hidden border"
-                    />
-                    <div class="absolute top-0 right-0">
-                      <div class="w-32 h-8 absolute top-4 -right-8">
-                        <div class="h-full w-full bg-red-500 text-white text-center leading-8 font-semibold transform rotate-45">
-                          MOST BENEFIT
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="mt-6 sm:mt-8">
-                    <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
-                      Branding & Campaign Package
-                    </h1>
-                    <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
-                      <li>Branding Concept</li>
-                      <li>Campaign/month</li>
-                      <li>15-30 Post/month (adjustable)</li>
-                      <li>Talent 2-3 Person</li>
-                      <li>Content Writing</li>
-                      <li>Research</li>
-                      <li>Monthly Report</li>
-                      <li>
-                        Production Session (concept, shooting, and editing)
-                      </li>
-                    </ul>
-                    <div class="mt-5 flex justify-between">
-                      <button
-                        onClick={handleRedirect}
-                        class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
-                      >
-                        Start Creating
-                      </button>
-                      <p className="text-2xl self-center font-bold">10 Mio.</p>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-              <Reveal>
-                <div
-                  class="bg-white p-8 max-w-lg rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col"
+                  class="bg-white p-8 pb-20 h-full max-w-full rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col relative"
                   href="#"
                 >
                   <img
@@ -177,31 +127,70 @@ function Package() {
                     <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
                       Tiktok Package
                     </h1>
-                    <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
-                      <li>15 Post/month (adjustable)</li>
-                      <li>Talent 2-3 Person</li>
-                      <li>Content Writing</li>
-                      <li>Research</li>
-                      <li>Monthly Report</li>
-                      <li>
-                        Production Session (concept, shooting, and editing)
-                      </li>
-                    </ul>
-                    <div class="mt-5 flex justify-between">
-                      <button
-                        onClick={handleRedirect}
-                        class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
-                      >
-                        Start Creating
-                      </button>
-                      <p className="text-2xl self-center font-bold">3 Mio.</p>
+                    <div>
+                      <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
+                        <li>15 Post/month (adjustable)</li>
+                        <li>Talent 2-3 Person</li>
+                        <li>Content Writing</li>
+                        <li>Research</li>
+                        <li>Monthly Report</li>
+                        <li>
+                          Production Session (concept, shooting, and editing)
+                        </li>
+                      </ul>
                     </div>
+                  </div>
+                  <div class="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
+                    <button
+                      onClick={handleRedirect}
+                      class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
+                    >
+                      Start Creating
+                    </button>
+                    <p className="text-2xl self-center font-bold">3 Mio.</p>
                   </div>
                 </div>
               </Reveal>
               <Reveal>
                 <div
-                  class="bg-white p-8 max-w-lg  rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col"
+                  class="bg-white p-8 pb-20 h-full max-w-full rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col relative"
+                  href="#"
+                >
+                  <img
+                    src="/images/package/tiktok.png"
+                    class="shadow rounded-lg overflow-hidden border"
+                  />
+                  <div class="mt-6 sm:mt-8">
+                    <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
+                      Tiktok Package
+                    </h1>
+                    <div>
+                      <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
+                        <li>15 Post/month (adjustable)</li>
+                        <li>Talent 2-3 Person</li>
+                        <li>Content Writing</li>
+                        <li>Research</li>
+                        <li>Monthly Report</li>
+                        <li>
+                          Production Session (concept, shooting, and editing)
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
+                    <button
+                      onClick={handleRedirect}
+                      class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
+                    >
+                      Start Creating
+                    </button>
+                    <p className="text-2xl self-center font-bold">3 Mio.</p>
+                  </div>
+                </div>
+              </Reveal>
+              <Reveal>
+                <div
+                  class="bg-white p-8 pb-20 max-w-full rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col relative"
                   href="#"
                 >
                   <img
@@ -212,33 +201,35 @@ function Package() {
                     <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
                       Instagram Package
                     </h1>
-                    <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
-                      <li>8 Reels</li>
-                      <li>7 Graphic Design</li>
-                      <li>Story (every other day)</li>
-                      <li>Talent 2-3 Person</li>
-                      <li>Content Writing</li>
-                      <li>Research</li>
-                      <li>Monthly Report</li>
-                      <li>
-                        Production Session (concept, shooting, and editing)
-                      </li>
-                    </ul>
-                    <div class="mt-5 flex justify-between">
-                      <button
-                        onClick={handleRedirect}
-                        class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
-                      >
-                        Start Creating
-                      </button>
-                      <p className="text-2xl self-center font-bold">3 Mio.</p>
+                    <div>
+                      <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
+                        <li>8 Reels</li>
+                        <li>7 Graphic Design</li>
+                        <li>Story (every other day)</li>
+                        <li>Talent 2-3 Person</li>
+                        <li>Content Writing</li>
+                        <li>Research</li>
+                        <li>Monthly Report</li>
+                        <li>
+                          Production Session (concept, shooting, and editing)
+                        </li>
+                      </ul>
                     </div>
+                  </div>
+                  <div class="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
+                    <button
+                      onClick={handleRedirect}
+                      class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
+                    >
+                      Start Creating
+                    </button>
+                    <p className="text-2xl self-center font-bold">3 Mio.</p>
                   </div>
                 </div>
               </Reveal>
               <Reveal>
                 <div
-                  class="bg-white p-8 max-w-lg  rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col"
+                  class="bg-white p-8 pb-20 h-full max-w-full rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col relative"
                   href="#"
                 >
                   <img
@@ -249,27 +240,29 @@ function Package() {
                     <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
                       Photography Package
                     </h1>
-                    <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
-                      <li>1 Photographer</li>
-                      <li>Studio</li>
-                      <li>20 Photos</li>
-                      <li>Talent</li>
-                    </ul>
-                    <div class="mt-5 flex justify-between">
-                      <button
-                        onClick={handleRedirect}
-                        class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
-                      >
-                        Start Creating
-                      </button>
-                      <p className="text-2xl self-center font-bold">3 Mio.</p>
+                    <div>
+                      <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
+                        <li>1 Photographer</li>
+                        <li>Studio</li>
+                        <li>20 Photos</li>
+                        <li>Talent</li>
+                      </ul>
                     </div>
+                  </div>
+                  <div class="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
+                    <button
+                      onClick={handleRedirect}
+                      class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
+                    >
+                      Start Creating
+                    </button>
+                    <p className="text-2xl self-center font-bold">3 Mio.</p>
                   </div>
                 </div>
               </Reveal>
               <Reveal>
                 <div
-                  class="bg-white p-8 max-w-lg  rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col"
+                  class="bg-white p-8 pb-20 h-full max-w-full rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col relative"
                   href="#"
                 >
                   <img
@@ -280,21 +273,23 @@ function Package() {
                     <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
                       Graphic Design Package
                     </h1>
-                    <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
-                      <li>Content Writing</li>
-                      <li>Basic Design</li>
-                      <li>20 Photos</li>
-                      <li>20 Designs</li>
-                    </ul>
-                    <div class="mt-5 flex justify-between">
-                      <button
-                        onClick={handleRedirect}
-                        class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
-                      >
-                        Start Creating
-                      </button>
-                      <p className="text-2xl self-center font-bold">4 Mio.</p>
+                    <div>
+                      <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
+                        <li>Content Writing</li>
+                        <li>Basic Design</li>
+                        <li>20 Photos</li>
+                        <li>20 Designs</li>
+                      </ul>
                     </div>
+                  </div>
+                  <div class="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
+                    <button
+                      onClick={handleRedirect}
+                      class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
+                    >
+                      Start Creating
+                    </button>
+                    <p className="text-2xl self-center font-bold">4 Mio.</p>
                   </div>
                 </div>
               </Reveal>

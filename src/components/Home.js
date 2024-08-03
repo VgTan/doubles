@@ -92,7 +92,7 @@ function Home() {
     <Helmet>
       <title>Double S Creative Agency - HOME</title>
       <meta name="description" content="See how our Agency work"/>
-      <link rel="canonical" href="/"/>
+      <link rel="cano`nical" href="/"/>
     </Helmet>
       <section
         className="flex items-center justify-center h-screen md:mb-12 bg-fixed bg-center bg-cover"

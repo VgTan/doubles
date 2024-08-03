@@ -22,8 +22,8 @@ export const Reveal = ({ children, width = "fit-content" }: Props) => {
   }, [isInView, control]);
   
     return (
-      <div ref={ref}>
         <motion.div
+        ref={ref}
           variants={{
             before: { opacity: 0, y: 75 },
             after: { opacity: 1, y: 0 },
@@ -34,6 +34,5 @@ export const Reveal = ({ children, width = "fit-content" }: Props) => {
         >
           {children}
         </motion.div>
-      </div>
     );
   };
