@@ -32,11 +32,6 @@ function Package() {
 
   return (
     <>
-      <Helmet>
-        <title>Double S Agency | Package </title>
-        <meta name="description" content="" />
-        <link rel="canonical" href="/about" />
-      </Helmet>
       <div className="font-poppins">
         <div className="">
           <div

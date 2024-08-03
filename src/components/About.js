@@ -8,11 +8,6 @@ import { Helmet } from "react-helmet-async";
 function About() {
   return (
     <>
-      <Helmet>
-        <title>Double S Agency | About Us </title>
-        <meta name="description" content="Who are the people behind DoubleS Agency?" />
-        <link rel="canonical" href="/about" />
-      </Helmet>
       <div className="font-poppins">
         <div
           className="flex items-center justify-center h-72 bg-fixed bg-left bg-cover font-poppins"
