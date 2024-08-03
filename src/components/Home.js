@@ -90,7 +90,7 @@ function Home() {
   return (
     <div>
       <Helmet>
-        <title>Double S Agency In Indonesia | Home</title>
+        <title>Social Media Agency Indonesia | Home</title>
         <meta
           name="description"
           content="Double S is a social media agency that help your brand. Double S Agency is a social media management agency that help your brand. At Double S Agency, we offer a comprehensive suite of
@@ -98,6 +98,17 @@ function Home() {
           presence."
         />
         <link rel="canonical" href="https://www.doublescreative.online/" />
+
+        <meta property="og:title" content="Double S Agency" />
+        <meta
+          property="og:description"
+          content="Double S is a social media agency that help your brand. Double S Agency is a social media management agency that help your brand. At Double S Agency, we offer a comprehensive suite of
+          services designed to elevate your brand's social media
+          presence."
+        />
+        <meta property="og:image" content="/images/mainlogo.png" />
+        <meta property="og:url" content="https://www.doublescreative.online/" />
+        <meta property="og:type" content="website" />
       </Helmet>
       <section
         className="flex items-center justify-center h-screen md:mb-12 bg-fixed bg-center bg-cover"
