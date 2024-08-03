@@ -90,8 +90,8 @@ function Home() {
   return (
     <div>
       <Helmet>
-        <title>Double S Agency</title>
-        <meta name="description" content="" />
+        <title>Double S Agency | Home </title>
+        <meta name="description" content="Double S Agency is a social media management agency that help your brand" />
         <link rel="canonical" href="/" />
       </Helmet>
       <section

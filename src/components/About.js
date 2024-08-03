@@ -9,7 +9,7 @@ function About() {
   return (
     <>
       <Helmet>
-        <title>Double S Agency - About Us</title>
+        <title>Double S Agency | About Us </title>
         <meta name="description" content="Who are the people behind DoubleS Agency?" />
         <link rel="canonical" href="/about" />
       </Helmet>
