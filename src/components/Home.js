@@ -382,7 +382,7 @@ function Home() {
                   </div>
                   <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[18rem]">
                     <img
-                      src="/images/product2.jpg"
+                      src="/images/product2.JPG"
                       className="w-full object-contain"
                     />
                   </div>
