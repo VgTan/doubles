@@ -90,7 +90,7 @@ function Home() {
   return (
     <div>
     <Helmet>
-      <title>Home</title>
+      <title>Double S Creative Agency - HOME</title>
       <meta name="description" content="See how our Agency work"/>
       <link rel="canonical" href="/"/>
     </Helmet>

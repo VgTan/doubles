@@ -33,7 +33,7 @@ function Package() {
   return (
     <>
       <Helmet>
-        <title>Package</title>
+        <title>Double S Agency - Our Package</title>
         <meta
           name="description"
           content=""
