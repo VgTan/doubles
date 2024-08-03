@@ -375,9 +375,9 @@ function Home() {
                 <div className="list grid grid-cols-2 lg:grid-cols-4 gap-5">
                   <div
                     ref={elementRef}
-                    className="list relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[18rem]"
+                    className="list relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[10rem] md:h-[18rem]"
                   >
-                    {/* <img src="/images/product1.png" className="w-full object-contain" /> */}
+                    {/* <img src="/images/product1.png" className="w-full h-full object-cover" /> */}
                     <video
                       autoPlay
                       muted
@@ -387,13 +387,13 @@ function Home() {
                       <source src="/video/vid1.mp4" type="video/mp4" />
                     </video>
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[18rem]">
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[10rem] md:h-[18rem]">
                     <img
                       src="/images/product2.JPG"
-                      className="w-full object-contain"
+                      className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[18rem]">
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[10rem] md:h-[18rem]">
                     <video
                       autoPlay
                       muted
@@ -403,20 +403,20 @@ function Home() {
                       <source src="/video/vid2.mp4" type="video/mp4" />
                     </video>
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[18rem]">
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[10rem] md:h-[18rem]">
                     <img
                       src="/images/product5.png"
-                      className="w-full object-contain"
+                      className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[18rem]">
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[10rem] md:h-[18rem]">
                     <img
                       src="/images/product3.png"
-                      className="w-full object-contain"
+                      className="w-full h-full object-cover"
                     />
                   </div>
 
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[18rem]">
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[10rem] md:h-[18rem]">
                     <video
                       autoPlay
                       muted
@@ -426,13 +426,13 @@ function Home() {
                       <source src="/video/vid3.mp4" type="video/mp4" />
                     </video>
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[18rem]">
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[10rem] md:h-[18rem]">
                     <img
                       src="/images/product6.png"
-                      className="w-full object-contain"
+                      className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[18rem]">
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[10rem] md:h-[18rem]">
                     <video
                       autoPlay
                       muted
