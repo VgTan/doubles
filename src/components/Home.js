@@ -89,27 +89,23 @@ function Home() {
 
   return (
     <div>
-      {/* <Helmet>
+      <Helmet>
         <title>Social Media Agency Indonesia | Home</title>
         <meta
           name="description"
-          content="Double S is a social media agency that help your brand. Double S Agency is a social media management agency that help your brand. At Double S Agency, we offer a comprehensive suite of
-          services designed to elevate your brand's social media
-          presence."
+          content="Double S Agency specializes in social media management to boost your brand's online presence. Our services include content creation, strategy, and analytics to elevate your brand's digital impact."
         />
         <link rel="canonical" href="https://www.doublescreative.online/" />
 
-        <meta property="og:title" content="Double S Agency" />
+        <meta
+          property="og:title"
+          content="Double S Agency | Expert Social Media Management"
+        />
         <meta
           property="og:description"
-          content="Double S is a social media agency that help your brand. Double S Agency is a social media management agency that help your brand. At Double S Agency, we offer a comprehensive suite of
-          services designed to elevate your brand's social media
-          presence."
+          content="Double S Agency provides expert social media management services to help your brand grow online. From content creation to strategy, we offer solutions tailored to your needs."
         />
-        <meta property="og:image" content="/images/mainlogo.png" />
-        <meta property="og:url" content="https://www.doublescreative.online/" />
-        <meta property="og:type" content="website" />
-      </Helmet> */}
+      </Helmet>
       <section
         className="flex items-center justify-center h-screen md:mb-12 bg-fixed bg-center bg-cover"
         style={{ backgroundImage: `url("../images/homepage.png")` }}
