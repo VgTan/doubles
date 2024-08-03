@@ -89,7 +89,7 @@ function Home() {
 
   return (
     <div>
-      <Helmet>
+      {/* <Helmet>
         <title>Social Media Agency Indonesia | Home</title>
         <meta
           name="description"
@@ -109,7 +109,7 @@ function Home() {
         <meta property="og:image" content="/images/mainlogo.png" />
         <meta property="og:url" content="https://www.doublescreative.online/" />
         <meta property="og:type" content="website" />
-      </Helmet>
+      </Helmet> */}
       <section
         className="flex items-center justify-center h-screen md:mb-12 bg-fixed bg-center bg-cover"
         style={{ backgroundImage: `url("../images/homepage.png")` }}
