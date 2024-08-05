@@ -86,10 +86,10 @@ function Package() {
                     </h1>
                     <div>
                       <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
-                        <li>8 Reels</li>
+                        <li>8 Reels/Tiktok Posts</li>
                         <li>7 Graphic Design</li>
                         <li>Story (every other day)</li>
-                        <li>15 Post/month (adjustable)</li>
+                        <li>15 Posts/month (adjustable)</li>
                         <li>Talent 2-3 Person</li>
                         <li>Content Writing</li>
                         <li>Research</li>
