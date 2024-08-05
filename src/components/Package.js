@@ -30,7 +30,7 @@ function Package() {
       "Message Us about your chosen package"
     );
     if (userConfirmed) {
-      window.open("https://ig.me/m/doublesagency", "_blank");
+      window.open("https://wa.me/6281218051574?text=Hello%20Double%20S%20Agency%20😊!%20I'm%20interested%20in%20your%20service,%20can%20we%20discuss%20about%20it%20more?", "_blank");
     }
   };
 
@@ -64,27 +64,27 @@ function Package() {
             Pick A Pack Best-Suited For Your Brand
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 justify-items-center px-7 md:px-16 lg:px-32">
-            <div class="bg-white p-8 pb-20 max-w-full rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col relative">
+            <div className="bg-white p-8 pb-20 max-w-full rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col relative">
               <div className="relative">
                 <img
                   src="/images/package/instagram.png"
-                  class="shadow rounded-lg overflow-hidden border"
+                  className="shadow rounded-lg overflow-hidden border"
                 />
-                <div class="absolute top-0 right-0">
-                  <div class="w-32 h-8 absolute top-4 -right-8">
-                    <div class="h-full w-full bg-red-500 text-white text-center leading-8 font-semibold transform rotate-45">
+                <div className="absolute top-0 right-0">
+                  <div className="w-32 h-8 absolute top-4 -right-8">
+                    <div className="h-full w-full bg-red-500 text-white text-center leading-8 font-semibold transform rotate-45">
                       BEST DEAL
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="mt-6 sm:mt-8">
+              <div className="mt-6 sm:mt-8">
                 <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
                   Tiktok & Instagram Package
                 </h1>
                 <div>
                   <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
-                    <li>8 Reels</li>
+                    <li>8 Reels/Tiktok Posts</li>
                     <li>7 Graphic Design</li>
                     <li>Story (every other day)</li>
                     <li>15 Post/month (adjustable)</li>
@@ -96,7 +96,7 @@ function Package() {
                   </ul>
                 </div>
               </div>
-              <div class="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
+              <div className="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
                 <button
                   onClick={handleRedirect}
                   class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
@@ -116,15 +116,15 @@ function Package() {
                   src="/images/package/brand.png"
                   class="shadow rounded-lg overflow-hidden border"
                 />
-                <div class="absolute top-0 right-0">
-                  <div class="w-32 h-8 absolute top-4 -right-8">
-                    <div class="h-full w-full bg-red-500 text-white text-center leading-8 font-semibold transform rotate-45">
+                <div className="absolute top-0 right-0">
+                  <div className="w-32 h-8 absolute top-4 -right-8">
+                    <div className="h-full w-full bg-red-500 text-white text-center leading-8 font-semibold transform rotate-45">
                       MOST BENEFIT
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="mt-6 sm:mt-8">
+              <div className="mt-6 sm:mt-8">
                 <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
                   Branding & Campaign Package
                 </h1>
@@ -141,7 +141,7 @@ function Package() {
                   </ul>
                 </div>
               </div>
-              <div class="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
+              <div className="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
                 <button
                   onClick={handleRedirect}
                   class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
@@ -160,7 +160,7 @@ function Package() {
                 src="/images/package/tiktok.png"
                 class="shadow rounded-lg overflow-hidden border"
               />
-              <div class="mt-6 sm:mt-8">
+              <div className="mt-6 sm:mt-8">
                 <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
                   Tiktok Package
                 </h1>
@@ -175,7 +175,7 @@ function Package() {
                   </ul>
                 </div>
               </div>
-              <div class="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
+              <div className="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
                 <button
                   onClick={handleRedirect}
                   class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
@@ -194,7 +194,7 @@ function Package() {
                 src="/images/package/insta.png"
                 class="shadow rounded-lg overflow-hidden border"
               />
-              <div class="mt-6 sm:mt-8">
+              <div className="mt-6 sm:mt-8">
                 <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
                   Instagram Package
                 </h1>
@@ -211,7 +211,7 @@ function Package() {
                   </ul>
                 </div>
               </div>
-              <div class="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
+              <div className="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
                 <button
                   onClick={handleRedirect}
                   class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
@@ -230,7 +230,7 @@ function Package() {
                 src="/images/package/photograph.png"
                 class="shadow rounded-lg overflow-hidden border"
               />
-              <div class="mt-6 sm:mt-8">
+              <div className="mt-6 sm:mt-8">
                 <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
                   Photography Package
                 </h1>
@@ -243,7 +243,7 @@ function Package() {
                   </ul>
                 </div>
               </div>
-              <div class="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
+              <div className="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
                 <button
                   onClick={handleRedirect}
                   class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
@@ -262,7 +262,7 @@ function Package() {
                 src="/images/package/instagram.png"
                 class="shadow rounded-lg overflow-hidden border"
               />
-              <div class="mt-6 sm:mt-8">
+              <div className="mt-6 sm:mt-8">
                 <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
                   Graphic Design Package
                 </h1>
@@ -275,7 +275,7 @@ function Package() {
                   </ul>
                 </div>
               </div>
-              <div class="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
+              <div className="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
                 <button
                   onClick={handleRedirect}
                   class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
@@ -285,10 +285,80 @@ function Package() {
                 <p className="text-2xl self-center font-bold">4 Mio.</p>
               </div>
             </div>
+
+            <div
+              class="bg-white p-8 pb-20 max-w-full rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col relative"
+              href="#"
+            >
+              <img
+                src="/images/package/tiktok.png"
+                class="shadow rounded-lg overflow-hidden border"
+              />
+              <div className="mt-6 sm:mt-8">
+                <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
+                  KOL & Influencer Package
+                </h1>
+                <div>
+                  <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
+                    <li>Content Writing</li>
+                    <li>Instagram Stories and posts</li>
+                    <li>Product reviews</li>
+                    <li>Nano Influencer</li>
+                    <li>Micro Influencer</li>
+                    <li>Macro Influencer</li>
+                    <li>Mega Influencer</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
+                <button
+                  onClick={handleRedirect}
+                  class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
+                >
+                  Start Creating
+                </button>
+                <p className="text-2xl self-center font-bold">Starts from 1 Mio.</p>
+              </div>
+            </div>
+
+            <div
+              class="bg-white p-8 pb-20 max-w-full rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col relative"
+              href="#"
+            >
+              <img
+                src="/images/package/brand.png"
+                class="shadow rounded-lg overflow-hidden border"
+              />
+              <div className="mt-6 sm:mt-8">
+                <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
+                Advertisement Package
+                </h1>
+                <div>
+                  <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
+                    <li>Content Writing</li>
+                    <li>Ad campaign setup and management</li>
+                    <li>Instagram Ads</li>
+                    <li>TikTok Ads</li>
+                    <li>Facebook Ads</li>
+                    <li>and Others</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
+                <button
+                  onClick={handleRedirect}
+                  class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
+                >
+                  Start Creating
+                </button>
+                <p className="text-2xl self-center font-bold">Adjustable.</p>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <div className="bg-white grid grid-cols-1 lg:grid-cols-2 p-8 sm:p-12 lg:p-20 lg:px-32 lg:px-44">
+        <div className="bg-white grid grid-cols-1 lg:grid-cols-2 p-8 sm:p-12 lg:p-20 lg:px-32">
           <div className="mt-10 lg:mt-0 mb-8 lg:mb-0 pr-0 lg:pr-32">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A4251]">
               Timeline Project
@@ -297,9 +367,9 @@ function Package() {
               See the Milestone and Deadlines
             </p>
             <div className="flex flex-wrap space-x-3 pt-5">
-              <div class="w-4 h-4 lg:w-6 lg:h-6 bg-[#0A4251] rounded-full"></div>
-              <div class="w-4 h-4 lg:w-6 lg:h-6 bg-[#0A4251] rounded-full"></div>
-              <div class="w-4 h-4 lg:w-6 lg:h-6 bg-[#0A4251] rounded-full"></div>
+              <div className="w-4 h-4 lg:w-6 lg:h-6 bg-[#0A4251] rounded-full"></div>
+              <div className="w-4 h-4 lg:w-6 lg:h-6 bg-[#0A4251] rounded-full"></div>
+              <div className="w-4 h-4 lg:w-6 lg:h-6 bg-[#0A4251] rounded-full"></div>
             </div>
           </div>
 

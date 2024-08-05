@@ -281,7 +281,7 @@ function Home() {
           {/* Why Choose Us */}
           <div id="whyus" className="bg-[#0A4251] text-center md:py-12 py-2">
             <Reveal>
-              <div className="mx-10 md:mx-10 lg:mx-20 md:mt-10 mt-0 mb-10 autoshow-anim transit">
+              <div className="mx-10 md:mx-10 lg:mx-20 mt-10 mb-10 autoshow-anim transit">
                 <h2 className="text-3xl md:text-5xl font-extrabold text-[#fce6b9] md:mb-4">
                   Why Choose Us?
                 </h2>
@@ -354,12 +354,11 @@ function Home() {
                 <p className="text-lg md:text-xl text-[#0A4251] mt-2 mb-8 autoshow-anim transit">
                   Take A Look At Our Previous Work
                 </p>
-                <div className="list grid grid-cols-2 lg:grid-cols-4 gap-5">
+                <div className="list grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
                   <div
                     ref={elementRef}
-                    className="list relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[15.5rem]"
+                    className="list relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[11rem] md:h-[23rem]"
                   >
-                    {/* <img src="/images/product1.png" className="w-full object-contain" /> */}
                     <video
                       autoPlay
                       muted
@@ -369,13 +368,13 @@ function Home() {
                       <source src="/video/vid1.mp4" type="video/mp4" />
                     </video>
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[15.5rem]">
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[11rem] md:h-[23rem]">
                     <img
                       src="/images/product2.jpg"
                       className="w-full object-contain"
                     />
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[15.5rem]">
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[11rem] md:h-[23rem]">
                     <video
                       autoPlay
                       muted
@@ -385,20 +384,20 @@ function Home() {
                       <source src="/video/vid2.mp4" type="video/mp4" />
                     </video>
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[15.5rem]">
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[11rem] md:h-[23rem]">
                     <img
                       src="/images/product5.png"
                       className="w-full object-contain"
                     />
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[15.5rem]">
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[11rem] md:h-[23rem]">
                     <img
                       src="/images/product3.png"
                       className="w-full object-contain"
                     />
                   </div>
 
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[15.5rem]">
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[11rem] md:h-[23rem]">
                     <video
                       autoPlay
                       muted
@@ -408,13 +407,13 @@ function Home() {
                       <source src="/video/vid3.mp4" type="video/mp4" />
                     </video>
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[15.5rem]">
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[11rem] md:h-[23rem]">
                     <img
                       src="/images/product6.png"
                       className="w-full object-contain"
                     />
                   </div>
-                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[15.5rem]">
+                  <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[11rem] md:h-[23rem]">
                     <video
                       autoPlay
                       muted
