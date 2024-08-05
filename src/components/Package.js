@@ -4,7 +4,6 @@ import Footer from "./Footer";
 import Slider from "react-slick";
 import "../App.css";
 import { Reveal } from "./Reveal.tsx";
-import { Helmet } from "react-helmet-async";
 
 function Package() {
   const settings = {
@@ -26,7 +25,10 @@ function Package() {
       "Message Us about your chosen package"
     );
     if (userConfirmed) {
-      window.open("https://ig.me/m/doublesagency", "_blank");
+      window.open(
+        "https://wa.me/6281218051574?text=Hello%20Double%20S%20Agency%20😊!%20I'm%20interested%20in%20your%20service,%20can%20we%20discuss%20about%20it%20more?",
+        "_blank"
+      );
     }
   };
 
@@ -289,6 +291,79 @@ function Package() {
                 </div>
               </Reveal>
             </div>
+            <Reveal>
+              <div
+                class="bg-white p-8 pb-20 max-w-full rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col relative"
+                href="#"
+              >
+                <img
+                  src="/images/package/tiktok.png"
+                  class="shadow rounded-lg overflow-hidden border"
+                />
+                <div className="mt-6 sm:mt-8">
+                  <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
+                    KOL & Influencer Package
+                  </h1>
+                  <div>
+                    <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
+                      <li>Content Writing</li>
+                      <li>Instagram Stories and posts</li>
+                      <li>Product reviews</li>
+                      <li>Nano Influencer</li>
+                      <li>Micro Influencer</li>
+                      <li>Macro Influencer</li>
+                      <li>Mega Influencer</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
+                  <button
+                    onClick={handleRedirect}
+                    class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
+                  >
+                    Start Creating
+                  </button>
+                  <p className="text-2xl self-center font-bold">
+                    Starts from 1 Mio.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+            <Reveal>
+              <div
+                class="bg-white p-8 pb-20 max-w-full rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col relative"
+                href="#"
+              >
+                <img
+                  src="/images/package/brand.png"
+                  class="shadow rounded-lg overflow-hidden border"
+                />
+                <div className="mt-6 sm:mt-8">
+                  <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
+                    Advertisement Package
+                  </h1>
+                  <div>
+                    <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
+                      <li>Content Writing</li>
+                      <li>Ad campaign setup and management</li>
+                      <li>Instagram Ads</li>
+                      <li>TikTok Ads</li>
+                      <li>Facebook Ads</li>
+                      <li>and Others</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
+                  <button
+                    onClick={handleRedirect}
+                    class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
+                  >
+                    Start Creating
+                  </button>
+                  <p className="text-2xl self-center font-bold">Adjustable.</p>
+                </div>
+              </div>
+            </Reveal>
           </div>
 
           <div className="bg-white grid grid-cols-1 lg:grid-cols-2 p-8 sm:p-12 lg:p-20 lg:px-32 lg:px-44">
