@@ -47,7 +47,7 @@ function Footer() {
               Why us
             </a>
             <a
-              href="https://ig.me/m/doublesagency"
+              href="/contactus"
               target="_blank"
               className="hidden md:block cursor-pointer text-white hover:text-[#0A4251] uppercase"
             >

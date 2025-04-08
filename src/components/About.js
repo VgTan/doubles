@@ -11,7 +11,7 @@ function About() {
       <div className="font-poppins">
         <div
           className="flex items-center justify-center h-72 bg-fixed bg-left bg-cover font-poppins"
-          style={{ backgroundImage: `url("../images/header.png")` }}
+          style={{ backgroundImage: `url("../images/header.webp")` }}
         >
           <div>
             <div className="p-5 font-bold text-center drop-shadow-3xl">
@@ -60,14 +60,14 @@ function About() {
                 <div className="mr-4">
                   <img
                     className="w-48 h-60 md:w-64 md:h-96 bg-gray-200 object-cover"
-                    src="./images/package/instagram.png"
+                    src="./images/package/instagram.webp"
                     alt="Doubles"
                   />
                 </div>
                 <div className="flex-shrink-0 pt-12 md:pt-24">
                   <img
                     className="w-36 h-60 md:w-64 md:h-96 bg-gray-200 object-cover"
-                    src="./images/package/tiktok.png"
+                    src="./images/package/tiktok.webp"
                     alt="Doubles"
                   />
                 </div>
@@ -156,7 +156,7 @@ function About() {
                 <div className="flex-shrink-0 mt-4 md:mt-0 ml-4">
                   <img
                     className="w-32 h-32 md:w-96 md:h-96 bg-gray-200 object-cover"
-                    src="./images/silvia1.png"
+                    src="./images/silvia1.webp"
                     alt="Silvia larger"
                   />
                 </div>{" "}
@@ -192,244 +192,216 @@ function About() {
           {/* Original Grid Layout (Hidden on Mobile) */}
           <div className="hidden md:grid md:grid-cols-4 md:gap-10 md:mt-4 md:px-44 md:py-20">
             <div className="">
-              <Reveal>
-                <h1 className="text-6xl font-bold text-white">01</h1>
-              </Reveal>
-              <Reveal>
-                <div className="mt-5 mb-5 hover-container">
+              <h1 className="text-6xl font-bold text-white">01</h1>
+              <div className="mt-5 mb-5 hover-container">
+                <img
+                  src="./images/via1.png"
+                  alt="Bricia Beute"
+                  className="w-full h-auto object-cover"
+                />
+                <div className="overlay">
+                  <div className="overlay-content">
+                    <img
+                      src="./images/clients/bb.png"
+                      alt="Logo"
+                      className="w-32 h-32"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="mb-5">
+                <h1 className="text-4xl font-bold text-[#0A4251] text-container">
+                  BRICIA BEUTE
+                </h1>
+                <p className="text-xl text-gray-500 -mt-2">Skincare</p>
+              </div>
+            </div>
+
+            <div className="mt-28">
+              <div className="mb-5">
+                <h1 className="text-4xl font-bold text-[#0A4251] text-container">
+                  WEAR YEONA
+                </h1>
+                <p className="text-xl text-gray-500 -mt-2">Clothing</p>
+              </div>
+              <div className="mt-5 mb-5 hover-container">
+                <img
+                  src="./images/via2.png"
+                  alt="Sample Image"
+                  className="w-full h-auto object-cover"
+                />
+                <div className="overlay">
+                  <div className="overlay-content">
+                    <img
+                      src="./images/clients/yeona.png"
+                      alt="Logo"
+                      className="w-32 h-32"
+                    />
+                  </div>
+                </div>
+              </div>
+              <h1 className="text-6xl font-bold text-white">02</h1>
+            </div>
+
+            <div className="">
+              <h1 className="text-6xl font-bold text-white">03</h1>
+              <div className="mt-5 mb-5 hover-container">
+                <img
+                  src="./images/via3.png"
+                  alt="Sample Image"
+                  className="w-full h-auto object-cover"
+                />
+                <div className="overlay">
+                  <div className="overlay-content">
+                    <img
+                      src="./images/clients/cof.png"
+                      alt="Logo"
+                      className="w-32 h-32"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="mb-5">
+                <h1 className="text-3xl font-bold text-[#0A4251] text-container">
+                  CITY OF ACTIVITY
+                </h1>
+                <p className="text-xl text-gray-500 -mt-2">News & Marketing</p>
+              </div>
+            </div>
+
+            <div className="mt-28">
+              <div className="mb-5">
+                <h1 className="text-4xl font-bold text-[#0A4251] text-container">
+                  SHOP AT BLOW
+                </h1>
+                <p className="text-xl text-gray-500 -mt-2">Footwear</p>
+              </div>
+              <div className="mt-5 mb-5 hover-container">
+                <img
+                  src="./images/via4.png"
+                  alt="Sample Image"
+                  className="w-full h-auto object-cover"
+                />
+                <div className="overlay">
+                  <div className="overlay-content">
+                    <img
+                      src="./images/clients/bl.png"
+                      alt="Logo"
+                      className="w-32 h-32"
+                    />
+                  </div>
+                </div>
+              </div>
+              <h1 className="text-6xl font-bold text-white">04</h1>
+            </div>
+          </div>
+
+          {/* Mobile Only Horizontally Scrollable Section */}
+          <div className="md:hidden overflow-x-auto px-10">
+            <div className="flex w-full space-x-4 py-10">
+              <div className="flex-none w-48">
+                <div className="relative mb-5 hover-container">
                   <img
                     src="./images/via1.png"
                     alt="Bricia Beute"
-                    className="w-full h-auto object-cover"
+                    className="w-full h-64 object-cover"
                   />
                   <div className="overlay">
                     <div className="overlay-content">
                       <img
                         src="./images/clients/bb.png"
                         alt="Logo"
-                        className="w-32 h-32"
+                        className="w-20 h-20 md:w-32 md:h-32"
                       />
                     </div>
                   </div>
                 </div>
-              </Reveal>
-              <Reveal>
                 <div className="mb-5">
-                  <h1 className="text-4xl font-bold text-[#0A4251] text-container">
+                  <h1 className="text-xl md:text-2xl font-bold text-[#0A4251] text-container">
                     BRICIA BEUTE
                   </h1>
-                  <p className="text-xl text-gray-500 -mt-2">Skincare</p>
+                  <p className="text-lg text-gray-500 -mt-2">Skincare</p>
                 </div>
-              </Reveal>
-            </div>
+              </div>
 
-            <div className="mt-28">
-              <Reveal>
-                <div className="mb-5">
-                  <h1 className="text-4xl font-bold text-[#0A4251] text-container">
-                    WEAR YEONA
-                  </h1>
-                  <p className="text-xl text-gray-500 -mt-2">Clothing</p>
-                </div>
-              </Reveal>
-              <Reveal>
-                <div className="mt-5 mb-5 hover-container">
+              <div className="flex-none w-48">
+                <div className="relative mb-5 hover-container">
                   <img
                     src="./images/via2.png"
-                    alt="Sample Image"
-                    className="w-full h-auto object-cover"
+                    alt="Wear Yeona"
+                    className="w-full h-64 object-cover"
                   />
                   <div className="overlay">
                     <div className="overlay-content">
                       <img
                         src="./images/clients/yeona.png"
                         alt="Logo"
-                        className="w-32 h-32"
+                        className="w-20 h-20 md:w-32 md:h-32"
                       />
                     </div>
                   </div>
                 </div>
-              </Reveal>
-              <Reveal>
-                <h1 className="text-6xl font-bold text-white">02</h1>
-              </Reveal>
-            </div>
+                <div className="mb-5">
+                  <h1 className="text-xl md:text-2xl font-bold text-[#0A4251] text-container">
+                    WEAR YEONA
+                  </h1>
+                  <p className="text-lg text-gray-500 -mt-2">Clothing</p>
+                </div>
+              </div>
 
-            <div className="">
-              <Reveal>
-                <h1 className="text-6xl font-bold text-white">03</h1>
-              </Reveal>
-              <Reveal>
-                <div className="mt-5 mb-5 hover-container">
+              <div className="flex-none w-48">
+                <div className="relative mb-5 hover-container">
                   <img
                     src="./images/via3.png"
-                    alt="Sample Image"
-                    className="w-full h-auto object-cover"
+                    alt="City of Activity"
+                    className="w-full h-64 object-cover"
                   />
                   <div className="overlay">
                     <div className="overlay-content">
                       <img
                         src="./images/clients/cof.png"
                         alt="Logo"
-                        className="w-32 h-32"
+                        className="w-20 h-20 md:w-32 md:h-32"
                       />
                     </div>
                   </div>
                 </div>
-              </Reveal>
-              <Reveal>
                 <div className="mb-5">
-                  <h1 className="text-3xl font-bold text-[#0A4251] text-container">
+                  <h1 className="text-xl md:text-2xl font-bold text-[#0A4251] text-container">
                     CITY OF ACTIVITY
                   </h1>
-                  <p className="text-xl text-gray-500 -mt-2">
+                  <p className="text-lg text-gray-500 -mt-2">
                     News & Marketing
                   </p>
                 </div>
-              </Reveal>
-            </div>
+              </div>
 
-            <div className="mt-28">
-              <Reveal>
-                <div className="mb-5">
-                  <h1 className="text-4xl font-bold text-[#0A4251] text-container">
-                    SHOP AT BLOW
-                  </h1>
-                  <p className="text-xl text-gray-500 -mt-2">Footwear</p>
-                </div>
-              </Reveal>
-              <Reveal>
-                <div className="mt-5 mb-5 hover-container">
+              <div className="flex-none w-48">
+                <div className="relative mb-5 hover-container">
                   <img
                     src="./images/via4.png"
-                    alt="Sample Image"
-                    className="w-full h-auto object-cover"
+                    alt="Shop at Blow"
+                    className="w-full h-64 object-cover"
                   />
                   <div className="overlay">
                     <div className="overlay-content">
                       <img
                         src="./images/clients/bl.png"
                         alt="Logo"
-                        className="w-32 h-32"
+                        className="w-20 h-20 md:w-32 md:h-32"
                       />
                     </div>
                   </div>
                 </div>
-              </Reveal>
-              <Reveal>
-                <h1 className="text-6xl font-bold text-white">04</h1>
-              </Reveal>
-            </div>
-          </div>
-
-          {/* Mobile Only Horizontally Scrollable Section */}
-          <Reveal>
-            <div className="md:hidden overflow-x-auto px-10">
-              <div className="flex w-full space-x-4 py-10">
-                <div className="flex-none w-48">
-                  <div className="relative mb-5 hover-container">
-                    <img
-                      src="./images/via1.png"
-                      alt="Bricia Beute"
-                      className="w-full h-64 object-cover"
-                    />
-                    <div className="overlay">
-                      <div className="overlay-content">
-                        <img
-                          src="./images/clients/bb.png"
-                          alt="Logo"
-                          className="w-20 h-20 md:w-32 md:h-32"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mb-5">
-                    <h1 className="text-xl md:text-2xl font-bold text-[#0A4251] text-container">
-                      BRICIA BEUTE
-                    </h1>
-                    <p className="text-lg text-gray-500 -mt-2">Skincare</p>
-                  </div>
-                </div>
-
-                <div className="flex-none w-48">
-                  <div className="relative mb-5 hover-container">
-                    <img
-                      src="./images/via2.png"
-                      alt="Wear Yeona"
-                      className="w-full h-64 object-cover"
-                    />
-                    <div className="overlay">
-                      <div className="overlay-content">
-                        <img
-                          src="./images/clients/yeona.png"
-                          alt="Logo"
-                          className="w-20 h-20 md:w-32 md:h-32"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mb-5">
-                    <h1 className="text-xl md:text-2xl font-bold text-[#0A4251] text-container">
-                      WEAR YEONA
-                    </h1>
-                    <p className="text-lg text-gray-500 -mt-2">Clothing</p>
-                  </div>
-                </div>
-
-                <div className="flex-none w-48">
-                  <div className="relative mb-5 hover-container">
-                    <img
-                      src="./images/via3.png"
-                      alt="City of Activity"
-                      className="w-full h-64 object-cover"
-                    />
-                    <div className="overlay">
-                      <div className="overlay-content">
-                        <img
-                          src="./images/clients/cof.png"
-                          alt="Logo"
-                          className="w-20 h-20 md:w-32 md:h-32"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mb-5">
-                    <h1 className="text-xl md:text-2xl font-bold text-[#0A4251] text-container">
-                      CITY OF ACTIVITY
-                    </h1>
-                    <p className="text-lg text-gray-500 -mt-2">
-                      News & Marketing
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex-none w-48">
-                  <div className="relative mb-5 hover-container">
-                    <img
-                      src="./images/via4.png"
-                      alt="Shop at Blow"
-                      className="w-full h-64 object-cover"
-                    />
-                    <div className="overlay">
-                      <div className="overlay-content">
-                        <img
-                          src="./images/clients/bl.png"
-                          alt="Logo"
-                          className="w-20 h-20 md:w-32 md:h-32"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mb-5">
-                    <h1 className="text-xl md:text-2xl font-bold text-[#0A4251] text-container">
-                      SHOP AT BLOW
-                    </h1>
-                    <p className="text-lg text-gray-500 -mt-2">Footwear</p>
-                  </div>
+                <div className="mb-5">
+                  <h1 className="text-xl md:text-2xl font-bold text-[#0A4251] text-container">
+                    SHOP AT BLOW
+                  </h1>
+                  <p className="text-lg text-gray-500 -mt-2">Footwear</p>
                 </div>
               </div>
             </div>
-          </Reveal>
+          </div>
         </div>
         {/* About Silvia */}
 
@@ -541,131 +513,107 @@ function About() {
           {/* Original Grid Layout (Hidden on Mobile) */}
           <div className="hidden md:grid md:grid-cols-4 md:gap-10 md:mt-4 md:px-44 md:py-20">
             <div className="">
-              <Reveal>
-                <h1 class="text-6xl font-bold text-white">01</h1>
-              </Reveal>
-              <Reveal>
-                <div class="mt-5 mb-5 hover-container">
-                  <img
-                    src="./images/sr1.png"
-                    alt="Saff & Co"
-                    class="w-full h-auto object-cover"
-                  />
-                  <div class="overlay">
-                    <div class="overlay-content">
-                      <img
-                        src="./images/clients/snc.png"
-                        alt="Logo"
-                        class="w-32 h-32"
-                      />
-                    </div>
+              <h1 class="text-6xl font-bold text-white">01</h1>
+              <div class="mt-5 mb-5 hover-container">
+                <img
+                  src="./images/sr1.png"
+                  alt="Saff & Co"
+                  class="w-full h-auto object-cover"
+                />
+                <div class="overlay">
+                  <div class="overlay-content">
+                    <img
+                      src="./images/clients/snc.png"
+                      alt="Logo"
+                      class="w-32 h-32"
+                    />
                   </div>
                 </div>
-              </Reveal>
-              <Reveal>
-                <div class="mb-5">
-                  <h1 class="text-4xl font-bold text-[#0A4251] text-container">
-                    SAFF & Co.
-                  </h1>
-                  <p class="text-xl text-gray-500 -mt-2">Perfumes</p>
-                </div>
-              </Reveal>
+              </div>
+              <div class="mb-5">
+                <h1 class="text-4xl font-bold text-[#0A4251] text-container">
+                  SAFF & Co.
+                </h1>
+                <p class="text-xl text-gray-500 -mt-2">Perfumes</p>
+              </div>
             </div>
 
             <div className="mt-28">
-              <Reveal>
-                <div class="mb-5">
-                  <h1 class="text-4xl font-bold text-[#0A4251] text-container">
-                    SEALOP
-                  </h1>
-                  <p class="text-xl text-gray-500 -mt-2">Fashion Bags</p>
-                </div>
-              </Reveal>
-              <Reveal>
-                <div class="mt-5 mb-5 hover-container">
-                  <img
-                    src="./images/sr2.png"
-                    alt="Sealop"
-                    class="w-full h-auto object-cover"
-                  />
-                  <div class="overlay">
-                    <div class="overlay-content">
-                      <img
-                        src="./images/clients/sea.png"
-                        alt="Logo"
-                        class="w-32 h-32"
-                      />
-                    </div>
+              <div class="mb-5">
+                <h1 class="text-4xl font-bold text-[#0A4251] text-container">
+                  SEALOP
+                </h1>
+                <p class="text-xl text-gray-500 -mt-2">Fashion Bags</p>
+              </div>
+              <div class="mt-5 mb-5 hover-container">
+                <img
+                  src="./images/sr2.png"
+                  alt="Sealop"
+                  class="w-full h-auto object-cover"
+                />
+                <div class="overlay">
+                  <div class="overlay-content">
+                    <img
+                      src="./images/clients/sea.png"
+                      alt="Logo"
+                      class="w-32 h-32"
+                    />
                   </div>
                 </div>
-              </Reveal>
-              <Reveal>
-                <h1 class="text-6xl font-bold text-white">02</h1>
-              </Reveal>
+              </div>
+              <h1 class="text-6xl font-bold text-white">02</h1>
             </div>
 
             <div className="">
-              <Reveal>
-                <h1 class="text-6xl font-bold text-white">03</h1>
-              </Reveal>
-              <Reveal>
-                <div class="mt-5 mb-5 hover-container">
-                  <img
-                    src="./images/sr3.png"
-                    alt="Teazzi"
-                    class="w-full h-auto object-cover"
-                  />
-                  <div class="overlay">
-                    <div class="overlay-content">
-                      <img
-                        src="./images/clients/tea.png"
-                        alt="Logo"
-                        class="w-32 h-32"
-                      />
-                    </div>
+              <h1 class="text-6xl font-bold text-white">03</h1>
+              <div class="mt-5 mb-5 hover-container">
+                <img
+                  src="./images/sr3.png"
+                  alt="Teazzi"
+                  class="w-full h-auto object-cover"
+                />
+                <div class="overlay">
+                  <div class="overlay-content">
+                    <img
+                      src="./images/clients/tea.png"
+                      alt="Logo"
+                      class="w-32 h-32"
+                    />
                   </div>
                 </div>
-              </Reveal>
-              <Reveal>
-                <div class="mb-5">
-                  <h1 class="text-4xl font-bold text-[#0A4251] text-container">
-                    TEAZZI
-                  </h1>
-                  <p class="text-xl text-gray-500 -mt-2">Beverages</p>
-                </div>
-              </Reveal>
+              </div>
+              <div class="mb-5">
+                <h1 class="text-4xl font-bold text-[#0A4251] text-container">
+                  TEAZZI
+                </h1>
+                <p class="text-xl text-gray-500 -mt-2">Beverages</p>
+              </div>
             </div>
 
             <div className="mt-28">
-              <Reveal>
-                <div class="mb-5">
-                  <h1 class="text-4xl font-bold text-[#0A4251] text-container">
-                    MAZA GELATO
-                  </h1>
-                  <p class="text-xl text-gray-500 -mt-2">Dessert</p>
-                </div>
-              </Reveal>
-              <Reveal>
-                <div class="mt-5 mb-5 hover-container">
-                  <img
-                    src="./images/sr4.png"
-                    alt="Sample Image"
-                    class="w-full h-auto object-cover"
-                  />
-                  <div class="overlay">
-                    <div class="overlay-content">
-                      <img
-                        src="./images/clients/maza.png"
-                        alt="Logo"
-                        class="w-32 h-32"
-                      />
-                    </div>
+              <div class="mb-5">
+                <h1 class="text-4xl font-bold text-[#0A4251] text-container">
+                  MAZA GELATO
+                </h1>
+                <p class="text-xl text-gray-500 -mt-2">Dessert</p>
+              </div>
+              <div class="mt-5 mb-5 hover-container">
+                <img
+                  src="./images/sr4.png"
+                  alt="Sample Image"
+                  class="w-full h-auto object-cover"
+                />
+                <div class="overlay">
+                  <div class="overlay-content">
+                    <img
+                      src="./images/clients/maza.png"
+                      alt="Logo"
+                      class="w-32 h-32"
+                    />
                   </div>
                 </div>
-              </Reveal>
-              <Reveal>
-                <h1 class="text-6xl font-bold text-white">04</h1>
-              </Reveal>
+              </div>
+              <h1 class="text-6xl font-bold text-white">04</h1>
             </div>
           </div>
 
