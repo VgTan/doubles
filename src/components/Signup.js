@@ -53,6 +53,7 @@ function Signup() {
         <img
           className="object-center object-cover"
           src="../images/homepage.png"
+          alt="Hompage Image"
         />
       </div>
       <div className="flex-col justify-center items-center py-16 px-28 gap-y-2 z-20">

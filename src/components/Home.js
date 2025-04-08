@@ -8,7 +8,7 @@ import "../App.css";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { Reveal } from "./Reveal.tsx";
-import { Helmet } from "react-helmet-async";
+// import { Helmet } from "react-helmet-async";
 
 function Home() {
   const [testimonials, setTestimonials] = useState([]);
