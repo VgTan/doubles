@@ -147,7 +147,7 @@ function About() {
                 <div className="flex-shrink-0">
                   <img
                     className="w-32 h-32 md:w-64 md:h-64 bg-gray-200 object-cover"
-                    src="./images/silvia2.jpg"
+                    src="./images/silvia2.webp"
                     alt="Silvia"
                   />
                 </div>
@@ -468,7 +468,7 @@ function About() {
                 <div className="flex-shrink-0">
                   <img
                     className="w-32 h-32 md:w-96 md:h-96 bg-gray-200 object-cover"
-                    src="./images/sheren1.jpg"
+                    src="./images/sheren1.webp"
                     alt="Sheren larger"
                   />
                 </div>
@@ -477,7 +477,7 @@ function About() {
                 <div className="flex-shrink-0 mt-4 md:mt-0 ml-4">
                   <img
                     className="w-32 h-32 md:w-64 md:h-64 bg-gray-200 object-cover"
-                    src="./images/sheren2.jpg"
+                    src="./images/sheren2.webp"
                     alt="Sheren"
                   />
                 </div>
