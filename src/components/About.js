@@ -195,14 +195,14 @@ function About() {
               <h1 className="text-6xl font-bold text-white">01</h1>
               <div className="mt-5 mb-5 hover-container">
                 <img
-                  src="./images/via1.png"
+                  src="./images/via1.webp"
                   alt="Bricia Beute"
                   className="w-full h-auto object-cover"
                 />
                 <div className="overlay">
                   <div className="overlay-content">
                     <img
-                      src="./images/clients/bb.png"
+                      src="./images/clients/bb.webp"
                       alt="Logo"
                       className="w-32 h-32"
                     />
@@ -226,14 +226,14 @@ function About() {
               </div>
               <div className="mt-5 mb-5 hover-container">
                 <img
-                  src="./images/via2.png"
+                  src="./images/via2.webp"
                   alt="Sample Image"
                   className="w-full h-auto object-cover"
                 />
                 <div className="overlay">
                   <div className="overlay-content">
                     <img
-                      src="./images/clients/yeona.png"
+                      src="./images/clients/yeona.webp"
                       alt="Logo"
                       className="w-32 h-32"
                     />
@@ -247,14 +247,14 @@ function About() {
               <h1 className="text-6xl font-bold text-white">03</h1>
               <div className="mt-5 mb-5 hover-container">
                 <img
-                  src="./images/via3.png"
+                  src="./images/via3.webp"
                   alt="Sample Image"
                   className="w-full h-auto object-cover"
                 />
                 <div className="overlay">
                   <div className="overlay-content">
                     <img
-                      src="./images/clients/cof.png"
+                      src="./images/clients/cof.webp"
                       alt="Logo"
                       className="w-32 h-32"
                     />
@@ -278,14 +278,14 @@ function About() {
               </div>
               <div className="mt-5 mb-5 hover-container">
                 <img
-                  src="./images/via4.png"
+                  src="./images/via4.webp"
                   alt="Sample Image"
                   className="w-full h-auto object-cover"
                 />
                 <div className="overlay">
                   <div className="overlay-content">
                     <img
-                      src="./images/clients/bl.png"
+                      src="./images/clients/bl.webp"
                       alt="Logo"
                       className="w-32 h-32"
                     />
@@ -302,14 +302,14 @@ function About() {
               <div className="flex-none w-48">
                 <div className="relative mb-5 hover-container">
                   <img
-                    src="./images/via1.png"
+                    src="./images/via1.webp"
                     alt="Bricia Beute"
                     className="w-full h-64 object-cover"
                   />
                   <div className="overlay">
                     <div className="overlay-content">
                       <img
-                        src="./images/clients/bb.png"
+                        src="./images/clients/bb.webp"
                         alt="Logo"
                         className="w-20 h-20 md:w-32 md:h-32"
                       />
@@ -327,14 +327,14 @@ function About() {
               <div className="flex-none w-48">
                 <div className="relative mb-5 hover-container">
                   <img
-                    src="./images/via2.png"
+                    src="./images/via2.webp"
                     alt="Wear Yeona"
                     className="w-full h-64 object-cover"
                   />
                   <div className="overlay">
                     <div className="overlay-content">
                       <img
-                        src="./images/clients/yeona.png"
+                        src="./images/clients/yeona.webp"
                         alt="Logo"
                         className="w-20 h-20 md:w-32 md:h-32"
                       />
@@ -352,14 +352,14 @@ function About() {
               <div className="flex-none w-48">
                 <div className="relative mb-5 hover-container">
                   <img
-                    src="./images/via3.png"
+                    src="./images/via3.webp"
                     alt="City of Activity"
                     className="w-full h-64 object-cover"
                   />
                   <div className="overlay">
                     <div className="overlay-content">
                       <img
-                        src="./images/clients/cof.png"
+                        src="./images/clients/cof.webp"
                         alt="Logo"
                         className="w-20 h-20 md:w-32 md:h-32"
                       />
@@ -379,14 +379,14 @@ function About() {
               <div className="flex-none w-48">
                 <div className="relative mb-5 hover-container">
                   <img
-                    src="./images/via4.png"
+                    src="./images/via4.webp"
                     alt="Shop at Blow"
                     className="w-full h-64 object-cover"
                   />
                   <div className="overlay">
                     <div className="overlay-content">
                       <img
-                        src="./images/clients/bl.png"
+                        src="./images/clients/bl.webp"
                         alt="Logo"
                         className="w-20 h-20 md:w-32 md:h-32"
                       />
@@ -516,14 +516,14 @@ function About() {
               <h1 class="text-6xl font-bold text-white">01</h1>
               <div class="mt-5 mb-5 hover-container">
                 <img
-                  src="./images/sr1.png"
+                  src="./images/sr1.webp"
                   alt="Saff & Co"
                   class="w-full h-auto object-cover"
                 />
                 <div class="overlay">
                   <div class="overlay-content">
                     <img
-                      src="./images/clients/snc.png"
+                      src="./images/clients/snc.webp"
                       alt="Logo"
                       class="w-32 h-32"
                     />
@@ -547,14 +547,14 @@ function About() {
               </div>
               <div class="mt-5 mb-5 hover-container">
                 <img
-                  src="./images/sr2.png"
+                  src="./images/sr2.webp"
                   alt="Sealop"
                   class="w-full h-auto object-cover"
                 />
                 <div class="overlay">
                   <div class="overlay-content">
                     <img
-                      src="./images/clients/sea.png"
+                      src="./images/clients/sea.webp"
                       alt="Logo"
                       class="w-32 h-32"
                     />
@@ -568,14 +568,14 @@ function About() {
               <h1 class="text-6xl font-bold text-white">03</h1>
               <div class="mt-5 mb-5 hover-container">
                 <img
-                  src="./images/sr3.png"
+                  src="./images/sr3.webp"
                   alt="Teazzi"
                   class="w-full h-auto object-cover"
                 />
                 <div class="overlay">
                   <div class="overlay-content">
                     <img
-                      src="./images/clients/tea.png"
+                      src="./images/clients/tea.webp"
                       alt="Logo"
                       class="w-32 h-32"
                     />
@@ -599,14 +599,14 @@ function About() {
               </div>
               <div class="mt-5 mb-5 hover-container">
                 <img
-                  src="./images/sr4.png"
+                  src="./images/sr4.webp"
                   alt="Sample Image"
                   class="w-full h-auto object-cover"
                 />
                 <div class="overlay">
                   <div class="overlay-content">
                     <img
-                      src="./images/clients/maza.png"
+                      src="./images/clients/maza.webp"
                       alt="Logo"
                       class="w-32 h-32"
                     />
@@ -623,14 +623,14 @@ function About() {
               <div className="flex-none w-48">
                 <div className="relative mb-5 hover-container">
                   <img
-                    src="./images/sr1.png"
+                    src="./images/sr1.webp"
                     alt="Saff & Co"
                     className="w-full h-64 object-cover"
                   />
                   <div className="overlay">
                     <div className="overlay-content">
                       <img
-                        src="./images/clients/snc.png"
+                        src="./images/clients/snc.webp"
                         alt="Logo"
                         className="w-20 h-20 md:w-32 md:h-32"
                       />
@@ -648,14 +648,14 @@ function About() {
               <div className="flex-none w-48">
                 <div className="relative mb-5 hover-container">
                   <img
-                    src="./images/sr2.png"
+                    src="./images/sr2.webp"
                     alt="Sealop"
                     className="w-full h-64 object-cover"
                   />
                   <div className="overlay">
                     <div className="overlay-content">
                       <img
-                        src="./images/clients/sea.png"
+                        src="./images/clients/sea.webp"
                         alt="Logo"
                         className="w-20 h-20 md:w-32 md:h-32"
                       />
@@ -673,14 +673,14 @@ function About() {
               <div className="flex-none w-48">
                 <div className="relative mb-5 hover-container">
                   <img
-                    src="./images/sr3.png"
+                    src="./images/sr3.webp"
                     alt="Teazzi"
                     className="w-full h-64 object-cover"
                   />
                   <div className="overlay">
                     <div className="overlay-content">
                       <img
-                        src="./images/clients/tea.png"
+                        src="./images/clients/tea.webp"
                         alt="Logo"
                         className="w-20 h-20 md:w-32 md:h-32"
                       />
@@ -698,14 +698,14 @@ function About() {
               <div className="flex-none w-48">
                 <div className="relative mb-5 hover-container">
                   <img
-                    src="./images/sr4.png"
+                    src="./images/sr4.webp"
                     alt="Shop at Blow"
                     className="w-full h-64 object-cover"
                   />
                   <div className="overlay">
                     <div className="overlay-content">
                       <img
-                        src="./images/clients/maza.png"
+                        src="./images/clients/maza.webp"
                         alt="Logo"
                         className="w-20 h-20 md:w-32 md:h-32"
                       />
