@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../index.css";
 import { a } from "react-router-dom";
+
 function Navbar() {
   const [isClicked, setisClicked] = useState(false);
 
@@ -54,7 +55,8 @@ function Navbar() {
               <div className="grid grid-cols-1 h-[70%]">
                 <ul className="md:h-[50%]">
                   <li>
-                    <a href="/"
+                    <a
+                      href="/"
                       to="/"
                       className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
                     >
@@ -62,7 +64,8 @@ function Navbar() {
                     </a>
                   </li>
                   <li className="mt-5">
-                    <a href="/about"
+                    <a
+                      href="/about"
                       to="/about"
                       className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
                     >
@@ -70,11 +73,21 @@ function Navbar() {
                     </a>
                   </li>
                   <li className="mt-5">
-                    <a href="/package"
+                    <a
+                      href="/package"
                       to="/package"
                       className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
                     >
                       Packages
+                    </a>
+                  </li>
+                  <li className="mt-5">
+                    <a
+                      href="/contactus"
+                      to="/contactus"
+                      className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
+                    >
+                      Contact Us
                     </a>
                   </li>
                 </ul>

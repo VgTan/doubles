@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { getDatabase, ref, onValue, remove } from "firebase/database";
+import { app } from "../firebaseConfig";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,7 +8,48 @@ import "../App.css";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { Reveal } from "./Reveal.tsx";
+
 function Home() {
+  const [testimonials, setTestimonials] = useState([]);
+
+  useEffect(() => {
+    const db = getDatabase(app);
+    const testimonialsRef = ref(db, "our_testimony");
+
+    onValue(testimonialsRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const testimonialsArray = Object.keys(data).map((key) => ({
+          id: key,
+          ...data[key],
+        }));
+        setTestimonials(testimonialsArray);
+      } else {
+        setTestimonials([]);
+      }
+    });
+  }, []);
+
+  const [clients, setClients] = useState([]);
+
+  useEffect(() => {
+    const db = getDatabase(app);
+    const clientsRef = ref(db, "our_clients");
+
+    onValue(clientsRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const clientsArray = Object.keys(data).map((key) => ({
+          id: key,
+          ...data[key],
+        }));
+        setClients(clientsArray);
+      } else {
+        setClients([]);
+      }
+    });
+  }, []);
+
   const elementRef = useRef(null);
   const valuesRef = useRef([]);
   const elementsRef = useRef([]);
@@ -79,6 +122,7 @@ function Home() {
     dots: true,
     arrows: false,
     infinite: true,
+    infinite: testimonials.length > 1,
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -90,7 +134,7 @@ function Home() {
     <div className="overflow-clip">
       <section
         className="flex items-center justify-center h-screen md:mb-12 bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: `url("../images/homepage.png")` }}
+        style={{ backgroundImage: `url("../images/homepage.webp")` }}
       >
         <div className="text-center">
           <div className="typewriter-anim relative p-5 text-5xl md:text-7xl lg:text-9xl text-white tracking-wider font-black font-bungee">
@@ -165,7 +209,7 @@ function Home() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-sm md:text-base lg:text- text-nowrap">
+                    <span className="text-sm md:text-base lg:text-lg text-nowrap">
                       SOCIAL MEDIA MANAGEMENT
                     </span>
                   </li>
@@ -237,7 +281,7 @@ function Home() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-sm md:text-base lg:text- text-nowrap">
+                    <span className="text-sm md:text-base lg:text-lg text-nowrap">
                       KOL OR INFLUENCER
                     </span>
                   </li>
@@ -255,7 +299,7 @@ function Home() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-sm md:text-base lg:text- text-nowrap">
+                    <span className="text-sm md:text-base lg:text-lg text-nowrap">
                       ADVERTISING
                     </span>
                   </li>
@@ -268,7 +312,7 @@ function Home() {
           {/* Parallax Border */}
           <div
             className="flex items-center justify-center h-72 bg-fixed bg-top md:bg-cover "
-            style={{ backgroundImage: `url("../images/border1.png")` }}
+            style={{ backgroundImage: `url("../images/border1.webp")` }}
           >
             <div className="overflow-hidden">
               <div className="p-5 text-9xl text-transparent tracking-wider font-black font-bungee ">
@@ -347,7 +391,7 @@ function Home() {
           {/* Our Work */}
           <Reveal>
             <div className="text-center py-12 overflow-hidden">
-              <div className="mt-10 mb-10">
+              <div className="mt-10">
                 <h2 className="text-3xl md:text-5xl font-extrabold text-[#0A4251] md:mb-4 autoshow-anim transit">
                   Our Work
                 </h2>
@@ -370,7 +414,7 @@ function Home() {
                   </div>
                   <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[11rem] md:h-[23rem]">
                     <img
-                      src="/images/product2.jpg"
+                      src="/images/product2.webp"
                       className="w-full object-contain"
                     />
                   </div>
@@ -386,13 +430,13 @@ function Home() {
                   </div>
                   <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[11rem] md:h-[23rem]">
                     <img
-                      src="/images/product5.png"
+                      src="/images/product5.webp"
                       className="w-full object-contain"
                     />
                   </div>
                   <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[11rem] md:h-[23rem]">
                     <img
-                      src="/images/product3.png"
+                      src="/images/product3.webp"
                       className="w-full object-contain"
                     />
                   </div>
@@ -409,7 +453,7 @@ function Home() {
                   </div>
                   <div className="relative w-full overflow-hidden bg-cover bg-no-repeat scale-0 h-[11rem] md:h-[23rem]">
                     <img
-                      src="/images/product6.png"
+                      src="/images/product6.webp"
                       className="w-full object-contain"
                     />
                   </div>
@@ -484,8 +528,8 @@ function Home() {
                       </p>
                       <p className="text-xs md:text-sm text-[#0A4251] text-left w-full md:w-3/4 font-medium mt-2 md:mt-0">
                         Enhance your Instagram presence with our package,
-                        including content planning, photography, reels, graphic design,
-                        and story creation for an engaging feed.
+                        including content planning, photography, reels, graphic
+                        design, and story creation for an engaging feed.
                       </p>
                     </div>
                   </div>
@@ -617,7 +661,7 @@ function Home() {
                       <div>
                         <span
                           ref={(el) => (valuesRef.current[1] = el)}
-                          data-val="25"
+                          data-val="30"
                           className="countNum text-2xl md:text-6xl text-[#0A4251] font-bold"
                         >
                           0+
@@ -643,66 +687,32 @@ function Home() {
                 </div>
               </div>
               <Slider {...settings} className="mt-8 md:-mt-14">
-                <div className="px-0">
-                  <div className="grid grid-cols-3 md:grid-cols-5 gap-4 items-center">
-                    <div className="flex justify-start col-span-1 md:col-start-1 md:col-end-2">
-                      <img
-                        src="/images/clients/uspizza.png"
-                        alt="Logo"
-                        className="w-full h-auto md:w-full md:h-full object-contain"
-                      />
+                {testimonials && testimonials.length > 0 ? (
+                  testimonials.map((testimonial) => (
+                    <div key={testimonial.id} className="px-4 md:px-0">
+                      <div className="grid grid-cols-3 md:grid-cols-5 gap-4 items-center">
+                        <div className="flex justify-start col-span-1 md:col-start-1 md:col-end-2">
+                          <img
+                            src={testimonial.companyLogo}
+                            alt="Logo"
+                            className="w-full h-auto md:w-full md:h-full object-contain"
+                          />
+                        </div>
+                        <div className="flex flex-col justify-start col-span-2 md:col-start-3 md:col-span-3">
+                          <p className="text-sm md:text-2xl text-[#0A4251] mb-3 md:mb-5 pl-4 md:pl-12">
+                            "{testimonial.testimony}"
+                          </p>
+                          <p className="text-xs md:text-2xl text-[#0A4251] pl-4 md:pl-12 font-medium">
+                            - {testimonial.reviewerName},{" "}
+                            {testimonial.reviewerPosition}
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex flex-col justify-start col-span-2 md:col-start-3 md:col-span-3">
-                      <p className="text-sm md:text-2xl text-[#0A4251] mb-3 md:mb-5 pl-4 md:pl-12">
-                        "Thank you! Content dua ini, engagementnya amazing
-                        banget!!"
-                      </p>
-                      <p className="text-xs md:text-2xl text-[#0A4251] pl-4 md:pl-12 font-medium">
-                        - L****, Brand Manager
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="px-4 md:px-0">
-                  <div className="grid grid-cols-3 md:grid-cols-5 gap-4 items-center">
-                    <div className="flex justify-start col-span-1 md:col-start-1 md:col-end-2">
-                      <img
-                        src="/images/clients/greyhound.png"
-                        alt="Logo"
-                        className="w-full h-auto md:w-full md:h-full object-contain"
-                      />
-                    </div>
-                    <div className="flex flex-col justify-start col-span-2 md:col-start-3 md:col-span-3">
-                      <p className="text-sm md:text-2xl text-[#0A4251] mb-3 md:mb-5 pl-4 md:pl-12">
-                        "Kontennya udah ok banget, aku mau suggest untuk brand
-                        yang lain juga"
-                      </p>
-                      <p className="text-xs md:text-2xl text-[#0A4251] pl-4 md:pl-12 font-medium">
-                        - A****, Brand Manager
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="px-4 md:px-0">
-                  <div className="grid grid-cols-3 md:grid-cols-5 gap-4 items-center">
-                    <div className="flex justify-start col-span-1 md:col-start-1 md:col-end-2">
-                      <img
-                        src="/images/clients/tuva.png"
-                        alt="Logo"
-                        className="w-full h-auto md:w-full md:h-full object-contain"
-                      />
-                    </div>
-                    <div className="flex flex-col justify-start col-span-2 md:col-start-3 md:col-span-3">
-                      <p className="text-sm md:text-2xl text-[#0A4251] mb-3 md:mb-5 pl-4 md:pl-12">
-                        "video pertama views-nya lumayan banyak nih, di tiktok
-                        juga. Makasih ya guys"
-                      </p>
-                      <p className="text-xs md:text-2xl text-[#0A4251] pl-4 md:pl-12 font-medium">
-                        - G****, Brand Owner
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                  ))
+                ) : (
+                  <p>No testimonials found.</p>
+                )}
               </Slider>
             </div>
           </div>
@@ -718,102 +728,19 @@ function Home() {
                 <p className="text-lg md:text-xl text-[#0A4251] md:mt-2 mb-4 md:mb-8 autoshow-anim transit">
                   Proud To Partner With These Amazing Brand
                 </p>
-                <div className="grid grid-cols-3 md:grid-cols-5">
-                  <img
-                    src="/images/clients/sushi.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/bakmie.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/bakso.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/eleanor.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/goodhouse.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/hongtang.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/madja.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/mpok.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/nooma.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/ot.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/sugoi.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/uspizza.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/greyhound.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/pempek.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/bakmi51.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/tuva.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/kungfu.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/seribu.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
-                  <img
-                    src="/images/clients/kyoto.png"
-                    alt="Logo"
-                    className="autoshow-anim transit w-full sm:grayscale hover:grayscale-0 transition duration-500"
-                  />
+                <div className="grid grid-cols-4 md:grid-cols-6 gap-4 md:gap-10">
+                  {clients && clients.length > 0 ? (
+                    clients.map((client) => (
+                      <img
+                        key={client.id}
+                        src={client.clientLogo}
+                        alt="Logo"
+                        className="w-56 h-56 object-cover autoshow-anim transit sm:grayscale hover:grayscale-0 transition duration-500"
+                      />
+                    ))
+                  ) : (
+                    <p>No Clients found.</p>
+                  )}
                 </div>
               </div>
             </div>
