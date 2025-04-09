@@ -76,21 +76,21 @@ function Package() {
           </div>
         </div>
 
-        <div className="bg-[#fce6b9] py-12 lg:py-24">
+        <div className="bg-[#fce6b9] py-12 md:py-24 px-10 md:px-24">
           <h1 className="text-[#0A4251] text-center text-3xl sm:text-4xl lg:text-5xl font-extrabold">
             Our Packages
           </h1>
           <p className="text-[#0A4251] text-center text-base sm:text-lg mt-2 lg:mb-8 mb-6 md:mb-10">
             Pick A Pack Best-Suited For Your Brand
           </p>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10 justify-items-center px-7 md:px-16 lg:px-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 px-4 md:px-8">
             {packages && packages.length > 0 ? (
               packages
                 .slice()
                 .reverse()
-                .map((pckg) => (
-                  <Reveal>
-                    <div className="bg-white p-4 md:p-8 pb-20 w-80 rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col relative">
+                .map((pckg, index) => (
+                  <Reveal key={index}>
+                    <div className="bg-white p-4 md:p-8 w-full rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col relative">
                       <div className="relative">
                         <img
                           src={pckg.packageImage}
@@ -107,34 +107,34 @@ function Package() {
                           </div>
                         )}
                       </div>
-                      <div className="mt-6 sm:mt-8">
+                      <div className="mt-6 sm:mt-8 flex flex-col justify-between flex-grow">
                         <h1 className="text-md sm:text-2xl font-semibold pb-3 text-[#0A4251]">
                           {pckg.packageName}
                         </h1>
-                        <div>
-                          <ul className="list-disc list-outside pl-5 text-xs md:text-sm text-[#0A4251]">
-                            {pckg.packageContent.map((item, index) => (
-                              <li key={index}>{item}</li>
-                            ))}
-                          </ul>
+                        <ul className="list-disc list-outside pl-5 text-xs md:text-sm text-[#0A4251] mb-6">
+                          {pckg.packageContent.map((item, index) => (
+                            <li key={index}>{item}</li>
+                          ))}
+                        </ul>
+                        <div className="mt-auto flex justify-between px-2 md:px-4">
+                          <button
+                            onClick={handleRedirect}
+                            className="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-xs md:text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
+                          >
+                            Start Creating
+                          </button>
+                          <p className="text-md md:text-2xl self-center font-bold capitalize">
+                            {pckg.packagePrice}.
+                          </p>
                         </div>
-                      </div>
-                      <div className="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-4 md:px-10 pb-6">
-                        <button
-                          onClick={handleRedirect}
-                          class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-xs md:text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
-                        >
-                          Start Creating
-                        </button>
-                        <p className="text-md md:text-2xl self-center font-bold capitalize">
-                          {pckg.packagePrice}.
-                        </p>
                       </div>
                     </div>
                   </Reveal>
                 ))
             ) : (
-              <p>No testimonials found.</p>
+              <p className="col-span-full text-center">
+                No testimonials found.
+              </p>
             )}
           </div>
         </div>
