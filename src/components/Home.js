@@ -729,14 +729,14 @@ function Home() {
                 <p className="text-lg md:text-xl text-[#0A4251] md:mt-2 mb-4 md:mb-8 autoshow-anim transit">
                   Proud To Partner With These Amazing Brand
                 </p>
-                <div className="grid grid-cols-4 md:grid-cols-6 gap-4 md:gap-10">
+                <div className="grid grid-cols-4 md:grid-cols-6 gap-1 md:gap-10">
                   {clients && clients.length > 0 ? (
                     clients.map((client) => (
                       <img
                         key={client.id}
                         src={client.clientLogo}
                         alt="Logo"
-                        className="w-56 h-56 object-cover autoshow-anim transit sm:grayscale hover:grayscale-0 transition duration-500"
+                        className="md:w-56 md:h-56 w-20 object-cover autoshow-anim transit sm:grayscale hover:grayscale-0 transition duration-500"
                       />
                     ))
                   ) : (

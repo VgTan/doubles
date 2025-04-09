@@ -11,6 +11,14 @@ function AdminRoute({ children }) {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
         const userRef = ref(db, `users/${user.uid}`);
@@ -30,9 +38,21 @@ function AdminRoute({ children }) {
     return () => unsubscribe();
   }, [auth, db, navigate]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <img src="../video/loading_screen.gif" alt="Loading..." style={{ width: "50%" }} />
+      </div>
+    );
+
   return isAdmin ? children : null;
 }
 
 export default AdminRoute;
-

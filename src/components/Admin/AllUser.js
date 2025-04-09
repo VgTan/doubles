@@ -72,10 +72,6 @@ function AllUser() {
     }
   };
 
-  const handleEdit = (usr) => {
-    navigate(`/admin/add-user/${usr.id}`);
-  };
-
   const handleCheckboxChange = (id) => {
     setSelectedUsers((prevSelected) =>
       prevSelected.includes(id)
@@ -103,7 +99,7 @@ function AllUser() {
   return (
     <AdminLayout>
       <div className="flex-col justify-center">
-        <div className="flex items-center justify-end border border-b-2 border-gray-200 h-20 px-12">
+        <div className="flex items-center justify-end border border-b-2 border-gray-200 h-20 px-8 md:px-12">
           <IconContext.Provider
             value={{
               color: "#0A4251",
@@ -114,13 +110,13 @@ function AllUser() {
             <div className="flex">
               <IoPersonCircleOutline />
               <h1 className="font-semibold text-lg tracking-wide pl-2 text-[#0A4251]">
-                Hello (Admin Name)
+                Hello Admin!
               </h1>
             </div>
           </IconContext.Provider>
         </div>
 
-        <div className="py-12 px-14">
+        <div className="py-8 md:py-12 px-8 md:px-14">
           {/* SMALL NAVIGATION */}
           <div>
             <p className="flex items-center space-x-2">
@@ -140,23 +136,23 @@ function AllUser() {
           </div>
 
           {/* START TABLE */}
-          <div className="flex items-center pt-6 pb-4">
+          <div className="flex-col md:flex-row md:flex items-center pt-6 pb-4">
             <div className="basis-1/3">
-              <h1 className="font-medium text-2xl">All Users</h1>
+              <h1 className="font-medium text-lg md:text-2xl md:pb-0 pb-2">All Users</h1>
             </div>
             {/* Search Bar & Filter Dropdown */}
-            <div className="flex justify-end basis-[80%] space-x-4 text-sm">
+            <div className="flex-col md:flex-row md:flex justify-end basis-[100%] md:basis-[80%] md:space-x-4 text-sm">
               <input
                 type="text"
                 placeholder="🔎 Search user..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="border p-2 bg-[#FAFAFA] w-1/3 rounded"
+                className="border p-2 bg-[#FAFAFA] w-2/3 md:w-1/3 rounded mb-3 md:mb-0 mr-3 md:mr-0"
               />
               <select
                 value={filterType}
                 onChange={(e) => setFilterType(e.target.value)}
-                className="border p-2 rounded"
+                className="border p-2 rounded mb-3 md:mb-0"
               >
                 {roles.map((pos, index) => (
                   <option key={index} value={pos}>
@@ -164,18 +160,19 @@ function AllUser() {
                   </option>
                 ))}
               </select>
-              {selectedUsers.length > 0 && (
-                <button
-                  onClick={handleDeleteSelected}
-                  className="bg-red-500 text-white p-2 rounded"
-                >
-                  Delete Selected ({selectedUsers.length})
-                </button>
-              )}
-              <div className="flex">
+              <div className="flex space-x-2 md:space-x-4">
+                {selectedUsers.length > 0 && (
+                  <button
+                    onClick={handleDeleteSelected}
+                    className="bg-red-500 text-white p-2 rounded text-xs md:text-sm"
+                  >
+                    Delete Selected ({selectedUsers.length})
+                  </button>
+                )}
+
                 <a
-                  href="/admin/add-testimony"
-                  className="bg-[#0A4251] text-white p-2 rounded flex items-center justify-center gap-2 hover:bg-[#086173]"
+                  href="/admin/add-user"
+                  className="bg-[#0A4251] text-white text-xs md:text-sm p-2 rounded flex items-center justify-center gap-2 hover:bg-[#086173]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -186,83 +183,131 @@ function AllUser() {
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
                   </svg>
-                  Add New Testimony
+                  Add New User
                 </a>
               </div>
             </div>
           </div>
 
           {/* TABLE */}
-          <table className="w-full border-collapse border-2 border-[#EAECF0]">
-            <thead className="bg-[#F5F5FF]">
-              <tr className="text-left text-sm">
-                <th className="p-4">
-                  <input
-                    type="checkbox"
-                    className="w-4 h-4"
-                    onChange={handleSelectAll}
-                    checked={
-                      selectedUsers.length === filteredUsers.length &&
-                      filteredUsers.length > 0
-                    }
-                  />
-                </th>
-                <th className="p-2 font-normal">Users</th>
-                <th className="p-2 font-normal">Phone Number</th>
-                <th className="p-2 font-normal">Roles</th>
-                <th className="p-2 font-normal">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredUsers && filteredUsers.length > 0 ? (
-                filteredUsers.map((usr) => (
-                  <tr
-                    key={usr.id}
-                    className="border-2 border-[#EAECF0] h-[80px] text-[#232D42]"
-                  >
-                    <td className="p-4">
-                      <input
-                        type="checkbox"
-                        className="w-4 h-4"
-                        checked={selectedUsers.includes(usr.id)}
-                        onChange={() => handleCheckboxChange(usr.id)}
-                      />
-                    </td>
-                    <td className="p-2">
-                      <div className="flex flex-col">
-                        <p className="capitalize">{usr.name}</p>
-                        <p>{usr.email}</p>
-                      </div>
-                    </td>
-                    <td className="p-2 px-2">{usr.phone_number}</td>
-                    <td className="p-2 px-2 capitalize">{usr.role}</td>
-                    <td className="p-2 px-2">
-                      <div className="flex items-center space-x-4 h-full">
-                        <button
-                          className="text-[#667085] hover:text-blue-500"
-                          onClick={() => handleEdit(usr.id)}
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            class="w-5 h-5"
-                            viewBox="0 0 16 16"
+          <div className="hidden md:block space-y-4">
+            <table className="w-full border-collapse border-2 border-[#EAECF0]">
+              <thead className="bg-[#F5F5FF]">
+                <tr className="text-left text-sm">
+                  <th className="p-4">
+                    <input
+                      type="checkbox"
+                      className="w-4 h-4"
+                      onChange={handleSelectAll}
+                      checked={
+                        selectedUsers.length === filteredUsers.length &&
+                        filteredUsers.length > 0
+                      }
+                    />
+                  </th>
+                  <th className="p-2 font-normal">Users</th>
+                  <th className="p-2 font-normal">Phone Number</th>
+                  <th className="p-2 font-normal">Roles</th>
+                  <th className="p-2 font-normal">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredUsers && filteredUsers.length > 0 ? (
+                  filteredUsers.map((usr) => (
+                    <tr
+                      key={usr.id}
+                      className="border-2 border-[#EAECF0] h-[80px] text-[#232D42]"
+                    >
+                      <td className="p-4">
+                        <input
+                          type="checkbox"
+                          className="w-4 h-4"
+                          checked={selectedUsers.includes(usr.id)}
+                          onChange={() => handleCheckboxChange(usr.id)}
+                        />
+                      </td>
+                      <td className="p-2">
+                        <div className="flex flex-col">
+                          <p className="capitalize">{usr.name}</p>
+                          <p>{usr.email}</p>
+                        </div>
+                      </td>
+                      <td className="p-2 px-2">{usr.phone_number}</td>
+                      <td className="p-2 px-2 capitalize">{usr.role}</td>
+                      <td className="p-2 px-2">
+                        <div className="flex items-center h-full">
+                          <button
+                            className="text-[#667085] hover:text-red-500"
+                            onClick={() => confirmDelete(usr.id)}
                           >
-                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                            <path
-                              fill-rule="evenodd"
-                              d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"
-                            />
-                          </svg>
-                        </button>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="currentColor"
+                              class="w-5 h-5"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                              <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                            </svg>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="5" className="text-center py-4">
+                      No usr. available
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+
+          {/* TABLE MOBILE */}
+          <div className="block md:hidden space-y-4">
+            {filteredUsers && filteredUsers.length > 0 ? (
+              filteredUsers.map((usr) => (
+                <div
+                  key={usr.id}
+                  className="border border-[#EAECF0] rounded-lg shadow-sm p-4 text-sm text-[#232D42]"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex flex-col">
+                      <p className="font-semibold capitalize">{usr.name}</p>
+                      <p className="text-gray-500 text-xs">{usr.email}</p>
+                    </div>
+                    <input
+                      type="checkbox"
+                      className="w-4 h-4"
+                      checked={selectedUsers.includes(usr.id)}
+                      onChange={() => handleCheckboxChange(usr.id)}
+                    />
+                  </div>
+
+                  <details className="mt-3">
+                    <summary className="cursor-pointer text-[#667085] text-sm hover:underline">
+                      More Details
+                    </summary>
+                    <div className="mt-2 space-y-1">
+                      <p>
+                        <span className="font-medium">Phone:</span>{" "}
+                        {usr.phone_number}
+                      </p>
+                      <p>
+                        <span className="font-medium">Role:</span>{" "}
+                        <span className="capitalize">{usr.role}</span>
+                      </p>
+                      <div className="flex justify-end mt-2">
                         <button
-                          className="text-[#667085] hover:text-red-500"
+                          className="text-red-500"
                           onClick={() => confirmDelete(usr.id)}
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="currentColor"
-                            class="w-5 h-5"
+                            className="w-5 h-5"
                             viewBox="0 0 16 16"
                           >
                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
@@ -270,18 +315,14 @@ function AllUser() {
                           </svg>
                         </button>
                       </div>
-                    </td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan="5" className="text-center py-4">
-                    No usr. available
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
+                    </div>
+                  </details>
+                </div>
+              ))
+            ) : (
+              <p className="text-center text-gray-500">No users available</p>
+            )}
+          </div>
         </div>
       </div>
 

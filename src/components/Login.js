@@ -26,7 +26,7 @@ function Login() {
       if (snapshot.exists()) {
         const userData = snapshot.val();
         if (userData.role === "admin") {
-          navigate("/admin/dashboard");
+          navigate("/admin/all-message");
         } else {
           navigate("/");
         }
@@ -40,8 +40,8 @@ function Login() {
   };
 
   return (
-    <div className="relative grid grid-cols-2 font-poppins overflow-hidden">
-      <div className="absolute inset-0 right-2.5 flex justify-center items-center z-10">
+    <div className="relative grid grid-cols-1 md:grid-cols-2 font-poppins overflow-hidden">
+      <div className="hidden absolute inset-0 right-2.5 md:flex justify-center items-center z-10">
         <p
           className="text-[8.5rem] text-white font-semibold transform rotate-90 whitespace-nowrap relative half-color2"
           data-content="LOGIN"
@@ -49,7 +49,7 @@ function Login() {
           LOGIN
         </p>
       </div>
-      <div className="flex-col justify-center items-center py-16 px-40 gap-y-2 z-20">
+      <div className="flex-col justify-center items-center py-8 md:py-16 px-8 md:px-28 md:gap-y-2 z-20">
         <div className="pt-20 pb-10">
           <p className="text-center text-4xl font-semibold text-[#e68d79] drop-shadow-2xl">
             Login
@@ -133,7 +133,7 @@ function Login() {
           </form>
         </div>
       </div>
-      <div className="flex h-screen">
+      <div className="hidden md:flex h-screen">
         <img
           className="object-center object-cover"
           src="../images/homepage_2.webp"

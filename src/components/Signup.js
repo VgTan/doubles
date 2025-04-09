@@ -40,8 +40,8 @@ function Signup() {
   };
 
   return (
-    <div className="relative grid grid-cols-2 font-poppins overflow-hidden">
-      <div className="absolute inset-0 right-2.5 flex justify-center items-center z-10">
+    <div className="relative grid grid-cols-1 md:grid-cols-2 font-poppins overflow-hidden">
+      <div className="hidden absolute inset-0 right-2.5 md:flex justify-center items-center z-10">
         <p
           className="text-[8.5rem] text-white font-semibold transform rotate-90 whitespace-nowrap relative half-color"
           data-content="SIGN UP"
@@ -49,22 +49,22 @@ function Signup() {
           SIGN UP
         </p>
       </div>
-      <div className="flex h-screen">
+      <div className="hidden md:flex h-screen">
         <img
           className="object-center object-cover"
           src="../images/homepage.png"
           alt="Hompage Image"
         />
       </div>
-      <div className="flex-col justify-center items-center py-16 px-28 gap-y-2 z-20">
-        <div className="pb-10">
-          <p className="text-center text-4xl font-semibold text-[#0A4251] drop-shadow-2xl">
+      <div className="flex-col justify-center items-center py-8 md:py-16 px-8 md:px-28 md:gap-y-2 z-20">
+        <div className="pt-10 md:pt-0 pb-10">
+          <p className="text-center text-2xl md:text-4xl font-semibold text-[#0A4251] drop-shadow-2xl">
             Sign Up
           </p>
         </div>
         <div className="max-h-screen overflow-hidden flex justify-center">
           <form onSubmit={handleSignup}>
-            <div className="grid md:grid-cols-2 md:gap-4 mb-7">
+            <div className="flex gap-3 md:grid md:grid-cols-2 md:gap-4 mb-5 md:mb-7">
               {/* Full Name Input */}
               <div className="border border-[#0A4251] p-2 px-5 rounded-md shadow-md shadow-[#0A4251]/20">
                 <label
@@ -131,7 +131,7 @@ function Signup() {
             </div>
 
             {/* Email Input */}
-            <div className="border border-[#0A4251] p-2 px-5 rounded-md shadow-md shadow-[#0A4251]/20 mb-7">
+            <div className="border border-[#0A4251] p-2 px-5 rounded-md shadow-md shadow-[#0A4251]/20 mb-5 md:mb-7">
               <label for="email_input" class="block mb-2 text-xs text-gray-500">
                 Email Address
               </label>
@@ -159,7 +159,7 @@ function Signup() {
             </div>
 
             {/* Phone Input */}
-            <div className="border border-[#0A4251] p-2 px-5 rounded-md shadow-md shadow-[#0A4251]/20 mb-7">
+            <div className="border border-[#0A4251] p-2 px-5 rounded-md shadow-md shadow-[#0A4251]/20 mb-5  md:mb-7">
               <label for="phone_input" class="block mb-2 text-xs text-gray-500">
                 Phone Number
               </label>
@@ -190,7 +190,7 @@ function Signup() {
             </div>
 
             {/* Password Input */}
-            <div className="border border-[#0A4251] p-2 px-5 rounded-md shadow-md shadow-[#0A4251]/20 mb-7">
+            <div className="border border-[#0A4251] p-2 px-5 rounded-md shadow-md shadow-[#0A4251]/20 mb-5  md:mb-7">
               <label
                 for="password_input"
                 class="block mb-2 text-xs text-gray-500"
@@ -224,7 +224,7 @@ function Signup() {
             </div>
             <div className="flex justify-center pt-5">
               <button
-                className="bg-[#0A4251] text-sm text-white font-medium p-3 w-1/2 rounded-sm hover:bg-[#0A4251]/90"
+                className="bg-[#0A4251] text-sm text-white font-medium p-3 w-2/3 md:w-1/2 rounded-sm hover:bg-[#0A4251]/90"
                 type="submit"
               >
                 Create Account

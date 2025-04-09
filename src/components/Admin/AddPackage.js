@@ -76,7 +76,7 @@ function AddPackage() {
   const removeContentField = (index) => {
     const updatedContent = packageContent.filter((_, i) => i !== index);
     setPackageContent(updatedContent);
-  }; 
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -152,13 +152,13 @@ function AddPackage() {
             <div className="flex">
               <IoPersonCircleOutline />
               <h1 className="font-semibold text-lg tracking-wide pl-2 text-[#0A4251]">
-                Hello (Admin Name)
+                Hello Admin!
               </h1>
             </div>
           </IconContext.Provider>
         </div>
 
-        <div className="py-12 px-14">
+        <div className="py-8 md:py-12 px-8 md:px-14">
           {/* SMALL NAVIGATION */}
           <div>
             <p className="flex items-center space-x-2">
@@ -184,12 +184,12 @@ function AddPackage() {
             </p>
           </div>
 
-          <h1 className="font-medium text-2xl pt-6 pb-4">
+          <h1 className="font-medium text-lg md:text-2xl pt-6 pb-4">
             {id ? "Edit Package" : "Add New Package"}
           </h1>
 
           {/* FORM START */}
-          <div className="flex justify-between space-x-10">
+          <div className="flex-col space-y-8 md:space-y-0 md:flex md:flex-row justify-between md:space-x-10">
             {/* Left Side - File Upload */}
             <div className="w-full rounded-xl shadow-md border pt-8 p-4 px-7">
               <p className="pb-5 text-sm">Add Package Photo</p>
@@ -206,7 +206,7 @@ function AddPackage() {
                 ) : (
                   <>
                     <IoCloudUploadOutline size={48} className="text-gray-400" />
-                    <p className="text-sm">
+                    <p className="text-xs md:text-sm">
                       Drop your files here or{" "}
                       <span className="text-blue-500">Browse</span>
                     </p>
@@ -240,7 +240,7 @@ function AddPackage() {
                       value={package_name}
                       onChange={(e) => setPackageName(e.target.value)}
                       required
-                      className="border p-2 w-full rounded-md"
+                      className="text-sm md:text-base border p-2 w-full rounded-md"
                     />
                   </div>
                   <div>
@@ -251,7 +251,7 @@ function AddPackage() {
                       value={package_price}
                       onChange={(e) => setPackagePrice(e.target.value)}
                       required
-                      className="border p-2 w-full rounded-md"
+                      className="text-sm md:text-base border p-2 w-full rounded-md"
                     />
                   </div>
                   <div>
@@ -263,7 +263,7 @@ function AddPackage() {
                       value={package_style}
                       onChange={(e) => setPackageStyle(e.target.value)}
                       required
-                      className="border p-2 w-full rounded-md"
+                      className="text-sm md:text-base border p-2 w-full rounded-md"
                     >
                       <option value="" disabled hidden>
                         Choose Style
@@ -288,7 +288,7 @@ function AddPackage() {
                               handleContentChange(index, e.target.value)
                             }
                             required
-                            className="border p-2 w-full rounded-md"
+                            className="text-sm md:text-base border p-2 w-full rounded-md"
                           />
                           <button
                             type="button"
@@ -333,7 +333,7 @@ function AddPackage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="bg-[#0A4251] text-sm text-white p-2 rounded-lg w-[40%] flex items-center justify-center gap-2 hover:bg-[#086173]"
+                    className="bg-[#0A4251] text-sm text-white p-2 rounded-lg w-fit md:w-[40%] flex items-center justify-center gap-2 hover:bg-[#086173]"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

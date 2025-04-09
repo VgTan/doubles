@@ -19,6 +19,7 @@ import AddTestimony from "./components/Admin/AddTestimony";
 import AllPackage from "./components/Admin/AllPackage";
 import AddPackage from "./components/Admin/AddPackage";
 import AllUser from "./components/Admin/AllUser";
+import AddUser from "./components/Admin/AddUser";
 import AllMessage from "./components/Admin/AllMessage";
 
 // import { HelmetProvider } from "react-helmet-async";
@@ -86,6 +87,14 @@ function App() {
               element={
                 <AdminRoute>
                   <AllUser />
+                </AdminRoute>
+              }
+            />
+            <Route
+              path="/admin/add-user"
+              element={
+                <AdminRoute>
+                  <AddUser />
                 </AdminRoute>
               }
             />

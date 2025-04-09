@@ -1,19 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-    .hamburger div:first-child {
-        @apply rotate-45 md:translate-y-2 translate-y-2.5 bg-white z-[1];
-    }
+  .hamburger div:first-child {
+    @apply rotate-45 mt-3 md:translate-y-1 translate-y-2 bg-white z-[1];
+  }
 
-    .hamburger div:nth-child(2) {
-        @apply -rotate-45 md:-translate-y-1.5 translate-y-0.5 bg-white z-[1];
+  .hamburger div:nth-child(2) {
+    @apply -rotate-45 md:-translate-y-1.5 translate-y-0.5 bg-white z-[1];
+  }
+  .hamburger div:last-child {
+    @apply -rotate-45 md:-translate-y-4 -translate-y-1 bg-white z-[1];
+  }
+}
 
-    }
-    .hamburger div:last-child{
-        @apply -rotate-45 md:-translate-y-5 -translate-y-1.5 bg-white z-[1];
-    }
-    
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #0a4251;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.loader-overlay.slide-up {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-gif {
+  width: 10%;
+}
+
+@media (max-width: 800px) {
+  .loader-gif {
+    width: 30%;
+  }
 }

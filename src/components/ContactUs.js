@@ -84,44 +84,44 @@ function ContactUs() {
           </div>
         </div>
 
-        <div className="flex justify-between space-x-16 p-32">
-          <div className="flex-col w-full">
-            <p className="text-5xl text-[#0A4251] font-bold pb-10">
+        <div className="flex-col md:flex justify-between md:space-x-16 p-8 md:p-32">
+          <div className="flex-col w-full pb-8 md:pb-0">
+            <p className="text-2xl md:text-5xl text-[#0A4251] font-bold pb-2 md:pb-10">
               Ask Us Anything!
             </p>
-            <p className="text-[#0A4251] text-xl line-clamp-2">
+            <p className="text-[#0A4251] text-md md:text-xl line-clamp-2">
               Got any questions or suggestions? Just fill out the form!
             </p>
           </div>
 
-          <div className="bg-[#FCE6B9]/50 w-full p-10 rounded-3xl">
-            <p className="text-center text-4xl text-[#0A4251] font-semibold pb-10">
+          <div className="bg-[#FCE6B9]/50 w-full p-5 md:p-10 rounded-3xl">
+            <p className="text-center text-xl md:text-4xl text-[#0A4251] font-semibold pb-5 md:pb-10">
               Message Us
             </p>
 
             <form className="flex-col" onSubmit={handleSubmit}>
-              <div className="flex justify-between space-x-5">
+              <div className="flex justify-between space-x-2 md:space-x-5">
                 {/* Name Input */}
-                <div className="bg-white border w-full border-[#0A4251] p-2 px-5 rounded-md shadow-md shadow-[#0A4251]/20 mb-7">
-                  <label className="block mb-2 text-xs text-gray-500">
+                <div className="bg-white border w-full border-[#0A4251] p-2 px-2 md:px-5 rounded-md shadow-md shadow-[#0A4251]/20 mb-4 md:mb-7">
+                  <label className="block mb-1 md:mb-2 text-[0.6rem] md:text-xs text-gray-500">
                     Name
                   </label>
                   <input
                     type="text"
-                    className="text-gray-900 text-sm block w-full appearance-none focus:outline-none focus:ring-0"
+                    className="text-gray-900 text-xs md:text-sm block w-full appearance-none focus:outline-none focus:ring-0"
                     value={name}
                     readOnly
                   />
                 </div>
 
                 {/* Email Input */}
-                <div className="bg-white border w-full border-[#0A4251] p-2 px-5 rounded-md shadow-md shadow-[#0A4251]/20 mb-7">
-                  <label className="block mb-2 text-xs text-gray-500">
+                <div className="bg-white border w-full border-[#0A4251] p-2 px-2 md:px-5 rounded-md shadow-md shadow-[#0A4251]/20 mb-4 md:mb-7">
+                  <label className="block mb-1 md:mb-2 text-[0.6rem] md:text-xs text-gray-500">
                     Email
                   </label>
                   <input
                     type="email"
-                    className="text-gray-900 text-sm block w-full appearance-none focus:outline-none focus:ring-0"
+                    className="text-gray-900 text-xs md:text-sm block w-full appearance-none focus:outline-none focus:ring-0"
                     value={email}
                     readOnly
                   />
@@ -129,25 +129,25 @@ function ContactUs() {
               </div>
 
               {/* Phone Number Input */}
-              <div className="bg-white w-full border border-[#0A4251] p-2 px-5 rounded-md shadow-md shadow-[#0A4251]/20 mb-7">
-                <label className="block mb-2 text-xs text-gray-500">
+              <div className="bg-white w-full border border-[#0A4251] p-2 px-2 md:px-5 rounded-md shadow-md shadow-[#0A4251]/20 mb-4 md:mb-7">
+                <label className="block mb-1 md:mb-2 text-[0.6rem] md:text-xs text-gray-500">
                   Phone Number
                 </label>
                 <input
                   type="text"
-                  className="text-gray-900 text-sm block w-full ps-6 appearance-none focus:outline-none focus:ring-0"
+                  className="text-gray-900 text-xs md:text-sm block w-full ps-6 appearance-none focus:outline-none focus:ring-0"
                   value={phone_number}
                   readOnly
                 />
               </div>
 
               {/* Message Input */}
-              <div className="bg-white w-full border border-[#0A4251] p-2 px-5 rounded-md shadow-md shadow-[#0A4251]/20 mb-7">
-                <label className="block mb-2 text-xs text-gray-500">
+              <div className="bg-white w-full border border-[#0A4251] p-2 px-2 md:px-5 rounded-md shadow-md shadow-[#0A4251]/20 mb-4 md:mb-7">
+                <label className="block mb-1 md:mb-2 text-[0.6rem] md:text-xs text-gray-500">
                   Message
                 </label>
                 <textarea
-                  className="text-gray-900 text-sm block w-full appearance-none focus:outline-none focus:ring-0"
+                  className="text-gray-900 text-xs md:text-sm block w-full appearance-none focus:outline-none focus:ring-0"
                   placeholder="Type your message here..."
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
@@ -157,7 +157,7 @@ function ContactUs() {
 
               <div className="flex justify-center pt-5">
                 <button
-                  className="bg-[#0A4251] text-sm text-white font-medium p-3 w-1/2 rounded-md hover:bg-[#0A4251]/90"
+                  className="bg-[#0A4251] text-sm text-white font-medium p-1.5 md:p-3 w-1/2 rounded-md hover:bg-[#0A4251]/90"
                   type="submit"
                 >
                   Send Message

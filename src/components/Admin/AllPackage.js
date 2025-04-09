@@ -53,7 +53,7 @@ function AllPackage() {
   const confirmDelete = (id) => {
     setSelectedPackage(id);
     setShowModal(true);
-    showAlert("Package successfully deleted!", "success")
+    showAlert("Package successfully deleted!", "success");
   };
 
   const handleDeleteConfirmed = () => {
@@ -62,7 +62,7 @@ function AllPackage() {
       remove(ref(db, `our_packages/${selectedPackage}`));
       setShowModal(false);
       setSelectedPackage(null);
-      showAlert("Package successfully deleted!", "success")
+      showAlert("Package successfully deleted!", "success");
     }
   };
 
@@ -78,19 +78,19 @@ function AllPackage() {
   return (
     <AdminLayout>
       <div className="flex flex-col justify-center">
-        <div className="flex items-center justify-end border-b-2 border-gray-200 h-20 px-12">
+        <div className="flex items-center justify-end border-b-2 border-gray-200 h-20 px-8 md:px-12">
           <IconContext.Provider value={{ color: "#0A4251", size: "26" }}>
             <div className="flex">
               <IoPersonCircleOutline />
               <h1 className="font-semibold text-lg tracking-wide pl-2 text-[#0A4251]">
-                Hello (Admin Name)
+                Hello Admin!
               </h1>
             </div>
           </IconContext.Provider>
         </div>
       </div>
 
-      <div className="py-12 px-14">
+      <div className="py-8 md:py-12 px-8 md:px-14">
         {/* SMALL NAVIGATION */}
         <div>
           <p className="flex items-center space-x-2">
@@ -109,22 +109,22 @@ function AllPackage() {
           </p>
         </div>
 
-        <div className="flex items-center pt-6 pb-4">
+        <div className="flex-col md:flex-row md:flex items-center pt-6 pb-4">
           <div className="basis-1/3">
-            <h1 className="font-medium text-2xl">All Packages</h1>
+            <h1 className="font-medium text-lg md:text-2xl md:pb-0 pb-2">All Packages</h1>
           </div>
-          <div className="flex justify-end basis-2/3 space-x-4 text-sm">
+          <div className="flex-col md:flex-row md:flex justify-end basis-[100%] md:basis-[80%] md:space-x-4 text-sm">
             <input
               type="text"
               placeholder="🔎 Search packages..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="border p-2 bg-[#FAFAFA] w-1/3 rounded"
+              className="border p-2 bg-[#FAFAFA] w-[49%] md:w-1/3 rounded mb-3 md:mb-0 mr-3 md:mr-0"
             />
             <select
               value={filterType}
               onChange={(e) => setFilterType(e.target.value)}
-              className="border p-2 rounded"
+              className="border p-2 rounded mb-3 md:mb-0"
             >
               {priceOptions.map((price, index) => (
                 <option key={index} value={price}>
@@ -132,10 +132,9 @@ function AllPackage() {
                 </option>
               ))}
             </select>
-
             <a
               href="/admin/add-package"
-              className="bg-[#0A4251] text-white p-2 rounded flex items-center gap-2 hover:bg-[#086173]"
+              className="bg-[#0A4251] text-white text-xs md:text-sm p-2 rounded flex items-center gap-2 hover:bg-[#086173] w-fit md:w-fukl"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +150,7 @@ function AllPackage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-5 pt-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pt-4">
           {filteredPackages.length > 0 ? (
             filteredPackages.map((pkg) => (
               <div
@@ -187,7 +186,7 @@ function AllPackage() {
                     <div className="flex items-center justify-end space-x-3">
                       <button
                         onClick={() => confirmDelete(pkg.id)}
-                        className="text-[#0A4251] hover:text-red-500"
+                        className="text-[#0A4251] hover:text-blue-500"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"

@@ -96,7 +96,7 @@ function AllMessage() {
   return (
     <AdminLayout>
       <div className="flex-col justify-center">
-        <div className="flex items-center justify-end border border-b-2 border-gray-200 h-20 px-12">
+        <div className="flex items-center justify-end border border-b-2 border-gray-200 h-20 px-8 md:px-12">
           <IconContext.Provider
             value={{
               color: "#0A4251",
@@ -107,13 +107,13 @@ function AllMessage() {
             <div className="flex">
               <IoPersonCircleOutline />
               <h1 className="font-semibold text-lg tracking-wide pl-2 text-[#0A4251]">
-                Hello (Admin Name)
+                Hello Admin!
               </h1>
             </div>
           </IconContext.Provider>
         </div>
 
-        <div className="py-12 px-14">
+        <div className="py-8 md:py-12 px-8 md:px-14">
           {/* SMALL NAVIGATION */}
           <div>
             <p className="flex items-center space-x-2">
@@ -133,23 +133,25 @@ function AllMessage() {
           </div>
 
           {/* START TABLE */}
-          <div className="flex items-center pt-6 pb-4">
+          <div className="flex-col md:flex-row md:flex items-center pt-6 pb-4">
             <div className="basis-1/3">
-              <h1 className="font-medium text-2xl">All Messages</h1>
+              <h1 className="font-medium text-lg md:text-2xl md:pb-0 pb-2">
+                All Messages
+              </h1>
             </div>
             {/* Search Bar & Filter Dropdown */}
-            <div className="flex justify-end basis-[80%] space-x-4 text-sm">
+            <div className="flex-col md:flex-row md:flex justify-end basis-[100%] md:basis-[80%] md:space-x-4 text-sm">
               <input
                 type="text"
                 placeholder="🔎 Search message..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="border p-2 bg-[#FAFAFA] w-1/3 rounded"
+                className="border p-2 bg-[#FAFAFA] w-2/3 md:w-1/3 rounded mb-3 md:mb-0 mr-3 md:mr-0"
               />
               {selectedMessages.length > 0 && (
                 <button
                   onClick={handleDeleteSelected}
-                  className="bg-red-500 text-white p-2 rounded"
+                  className="bg-red-500 text-white p-2 rounded text-xs md:text-sm"
                 >
                   Delete Selected ({selectedMessages.length})
                 </button>
@@ -158,61 +160,126 @@ function AllMessage() {
           </div>
 
           {/* TABLE */}
-          <table className="w-full border-collapse border-2 border-[#EAECF0]">
-            <thead className="bg-[#F5F5FF]">
-              <tr className="text-left text-sm">
-                <th className="p-4">
-                  <input
-                    type="checkbox"
-                    className="w-4 h-4"
-                    onChange={handleSelectAll}
-                    checked={
-                      selectedMessages.length === filteredMessages.length &&
-                      filteredMessages.length > 0
-                    }
-                  />
-                </th>
-                <th className="p-2 font-normal">Users</th>
-                <th className="p-2 font-normal">Phone Number</th>
-                <th className="p-2 font-normal">Messages</th>
-                <th className="p-2 font-normal"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredMessages && filteredMessages.length > 0 ? (
-                filteredMessages.map((msg) => (
-                  <tr
-                    key={msg.id}
-                    className="border-2 border-[#EAECF0] h-[80px] text-[#232D42]"
-                  >
-                    <td className="p-4">
-                      <input
-                        type="checkbox"
-                        className="w-4 h-4"
-                        checked={selectedMessages.includes(msg.id)}
-                        onChange={() => handleCheckboxChange(msg.id)}
-                      />
+          <div className="hidden md:block space-y-4">
+            <table className="w-full border-collapse border-2 border-[#EAECF0]">
+              <thead className="bg-[#F5F5FF]">
+                <tr className="text-left text-sm">
+                  <th className="p-4">
+                    <input
+                      type="checkbox"
+                      className="w-4 h-4"
+                      onChange={handleSelectAll}
+                      checked={
+                        selectedMessages.length === filteredMessages.length &&
+                        filteredMessages.length > 0
+                      }
+                    />
+                  </th>
+                  <th className="p-2 font-normal">Users</th>
+                  <th className="p-2 font-normal">Phone Number</th>
+                  <th className="p-2 font-normal">Messages</th>
+                  <th className="p-2 font-normal"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredMessages && filteredMessages.length > 0 ? (
+                  filteredMessages.map((msg) => (
+                    <tr
+                      key={msg.id}
+                      className="border-2 border-[#EAECF0] h-[80px] text-[#232D42]"
+                    >
+                      <td className="p-4">
+                        <input
+                          type="checkbox"
+                          className="w-4 h-4"
+                          checked={selectedMessages.includes(msg.id)}
+                          onChange={() => handleCheckboxChange(msg.id)}
+                        />
+                      </td>
+                      <td className="p-2 w-1/4">
+                        <div className="flex flex-col">
+                          <p className="capitalize">{msg.name}</p>
+                          <p>{msg.email}</p>
+                        </div>
+                      </td>
+                      <td className="p-2 px-2">{msg.phone_number}</td>
+                      <td className="p-2 px-4 max-w-[200px]">
+                        <p className="">{msg.message}</p>
+                      </td>
+                      <td className="p-2 px-2">
+                        <div className="flex items-center h-full">
+                          <button
+                            className="text-[#667085] hover:text-red-500"
+                            onClick={() => confirmDelete(msg.id)}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="currentColor"
+                              class="w-5 h-5"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                              <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                            </svg>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="5" className="text-center py-4">
+                      No msg. available
                     </td>
-                    <td className="p-2 w-1/4">
-                      <div className="flex flex-col">
-                        <p className="capitalize">{msg.name}</p>
-                        <p>{msg.email}</p>
-                      </div>
-                    </td>
-                    <td className="p-2 px-2">{msg.phone_number}</td>
-                    <td className="p-2 px-4 max-w-[200px]">
-                      <p className="">{msg.message}</p>
-                    </td>
-                    <td className="p-2 px-2">
-                      <div className="flex items-center h-full">
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+
+          {/* TABLE MOBILE */}
+          <div className="block md:hidden space-y-4">
+            {filteredMessages && filteredMessages.length > 0 ? (
+              filteredMessages.map((msg) => (
+                <div
+                  key={msg.id}
+                  className="border border-[#EAECF0] rounded-lg shadow-sm p-4 text-sm text-[#232D42]"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex flex-col">
+                      <p className="font-semibold capitalize">{msg.name}</p>
+                      <p className="text-gray-500 text-xs">{msg.email}</p>
+                    </div>
+                    <input
+                      type="checkbox"
+                      className="w-4 h-4"
+                      checked={selectedMessages.includes(msg.id)}
+                      onChange={() => handleCheckboxChange(msg.id)}
+                    />
+                  </div>
+
+                  <details className="mt-3">
+                    <summary className="cursor-pointer text-[#667085] text-sm hover:underline">
+                      More Details
+                    </summary>
+                    <div className="mt-2 space-y-1">
+                      <p>
+                        <span className="font-medium">Phone:</span>{" "}
+                        {msg.phone_number}
+                      </p>
+                      <p>
+                        <span className="font-medium">Message:</span>{" "}
+                        <span className="capitalize">{msg.message}</span>
+                      </p>
+                      <div className="flex justify-end mt-2">
                         <button
-                          className="text-[#667085] hover:text-red-500"
+                          className="text-red-500"
                           onClick={() => confirmDelete(msg.id)}
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="currentColor"
-                            class="w-5 h-5"
+                            className="w-5 h-5"
                             viewBox="0 0 16 16"
                           >
                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
@@ -220,18 +287,14 @@ function AllMessage() {
                           </svg>
                         </button>
                       </div>
-                    </td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan="5" className="text-center py-4">
-                    No msg. available
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
+                    </div>
+                  </details>
+                </div>
+              ))
+            ) : (
+              <p className="text-center text-gray-500">No users available</p>
+            )}
+          </div>
         </div>
       </div>
 

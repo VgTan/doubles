@@ -83,53 +83,55 @@ function Package() {
           <p className="text-[#0A4251] text-center text-base sm:text-lg mt-2 lg:mb-8 mb-6 md:mb-10">
             Pick A Pack Best-Suited For Your Brand
           </p>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 justify-items-center px-7 md:px-16 lg:px-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10 justify-items-center px-7 md:px-16 lg:px-32">
             {packages && packages.length > 0 ? (
               packages
                 .slice()
                 .reverse()
                 .map((pckg) => (
-                  <div className="bg-white p-8 pb-20 max-w-full rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col relative">
-                    <div className="relative">
-                      <img
-                        src={pckg.packageImage}
-                        className="w-full h-96 shadow rounded-lg overflow-hidden border object-cover"
-                      />
-                      {(pckg.packageStyle === "Best Deal" ||
-                        pckg.packageStyle === "Most Benefit") && (
-                        <div className="absolute top-0 right-0">
-                          <div className="w-32 h-8 absolute top-4 -right-8">
-                            <div className="h-full w-full bg-red-500 text-white text-center leading-8 font-semibold transform rotate-45 uppercase">
-                              {pckg.packageStyle}
+                  <Reveal>
+                    <div className="bg-white p-4 md:p-8 pb-20 w-80 rounded-2xl hover:shadow-xl hover:shadow-[#0a42515f] flex flex-col relative">
+                      <div className="relative">
+                        <img
+                          src={pckg.packageImage}
+                          className="w-full h-40 md:h-96 shadow rounded-lg overflow-hidden border object-cover"
+                        />
+                        {(pckg.packageStyle === "Best Deal" ||
+                          pckg.packageStyle === "Most Benefit") && (
+                          <div className="absolute top-0 right-0">
+                            <div className="w-32 h-8 absolute top-4 -right-8">
+                              <div className="text-sm md:text-md h-full w-full bg-red-500 text-white text-center leading-8 font-semibold transform rotate-45 uppercase">
+                                {pckg.packageStyle}
+                              </div>
                             </div>
                           </div>
+                        )}
+                      </div>
+                      <div className="mt-6 sm:mt-8">
+                        <h1 className="text-md sm:text-2xl font-semibold pb-3 text-[#0A4251]">
+                          {pckg.packageName}
+                        </h1>
+                        <div>
+                          <ul className="list-disc list-outside pl-5 text-xs md:text-sm text-[#0A4251]">
+                            {pckg.packageContent.map((item, index) => (
+                              <li key={index}>{item}</li>
+                            ))}
+                          </ul>
                         </div>
-                      )}
-                    </div>
-                    <div className="mt-6 sm:mt-8">
-                      <h1 className="text-xl sm:text-2xl font-semibold pb-3 text-[#0A4251]">
-                        {pckg.packageName}
-                      </h1>
-                      <div>
-                        <ul className="list-disc list-outside pl-5 text-sm text-[#0A4251]">
-                          {pckg.packageContent.map((item, index) => (
-                            <li key={index}>{item}</li>
-                          ))}
-                        </ul>
+                      </div>
+                      <div className="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-4 md:px-10 pb-6">
+                        <button
+                          onClick={handleRedirect}
+                          class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-xs md:text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
+                        >
+                          Start Creating
+                        </button>
+                        <p className="text-md md:text-2xl self-center font-bold capitalize">
+                          {pckg.packagePrice}.
+                        </p>
                       </div>
                     </div>
-                    <div className="absolute bottom-0 flex justify-between left-1/2 -translate-x-1/2 w-full px-10 pb-6">
-                      <button
-                        onClick={handleRedirect}
-                        class="inline-flex items-center rounded-md border border-transparent bg-[#0A4251] px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-[#1b363e]"
-                      >
-                        Start Creating
-                      </button>
-                      <p className="text-2xl self-center font-bold capitalize">
-                        {pckg.packagePrice}.
-                      </p>
-                    </div>
-                  </div>
+                  </Reveal>
                 ))
             ) : (
               <p>No testimonials found.</p>

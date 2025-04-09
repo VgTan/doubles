@@ -21,14 +21,28 @@ function Navbar() {
   });
   return (
     <div id="header" className="fixed z-[100] transition duration-300 w-screen">
-      <div className="flex items-center overflow-hidden md:px-8 md:p-5 p-3 px-5">
+      <div className="flex items-center overflow-hidden md:px-8 md:p-2.5 p-3 px-5">
         <img
-          className="md:w-16 w-10 text-white"
+          className="md:w-9 w-6 text-white"
           aria-hidden="true"
           src="/images/logo.png"
           alt="Logo"
         />
-        <div className="flex items-center justify-end w-full h-full md:pr-10 pr-5">
+        <div className="flex items-center justify-end w-full h-full md:pr-6 pr-0">
+          <a className="pr-4" href="/signup">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="md:w-7 w-5 text-white"
+              viewBox="0 0 16 16"
+            >
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+              <path
+                fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+              />
+            </svg>
+          </a>
           <input
             type="checkbox"
             name="hamburger"
@@ -41,9 +55,9 @@ function Navbar() {
             className="peer-checked:hamburger block cursor-pointer z-[10]"
             onClick={(e) => handleClick()}
           >
-            <div className="m-auto relative md:h-1.5 md:w-12 h-1 w-8 rounded border-[1px] border-white transition duration-150 z-[100]"></div>
-            <div className="m-auto relative md:mt-2 md:h-1.5 md:w-12 h-1 w-8 mt-1 rounded border-[1px] border-white transition duration-duration-150 z-[100]"></div>
-            <div className="m-auto relative md:mt-2 md:h-1.5 md:w-12 h-1 w-8 mt-1 rounded border-[1px] border-white transition duration-duration-150 z-[100]"></div>
+            <div className="m-auto relative md:h-1 md:w-10 h-0.5 w-7 rounded border-[1px] border-white transition duration-150 z-[100]"></div>
+            <div className="m-auto relative md:mt-1.5 md:h-1 md:w-10 h-0.5 w-7 mt-1 rounded border-[1px] border-white transition duration-duration-150 z-[100]"></div>
+            <div className="m-auto relative md:mt-1.5 md:h-1 md:w-10 h-0.5 w-7 mt-1 rounded border-[1px] border-white transition duration-duration-150 z-[100]"></div>
           </label>
           <div className="fixed peer-checked:backdrop-blur-[2px] peer-checked:bg-[#00000065] peer-checked:w-full peer-checked:h-full top-0 left-0 transition duration-500"></div>
 
@@ -51,14 +65,14 @@ function Navbar() {
             id="component"
             className="peer-checked:-translate-x-0 fixed inset-0 translate-x-[-100%] w-[100%] shadow-xl transition duration-300 p-0 m-0"
           >
-            <div className="flex relative bg-[#eceaea] md:w-[40%] w-[60%] h-screen shadow-2xl items-center justify-start md:pl-14 pl-10">
+            <div className="flex relative bg-[#ffff] md:w-[40%] w-[60%] h-screen shadow-2xl items-center justify-start md:pl-14 pl-10">
               <div className="grid grid-cols-1 h-[70%]">
                 <ul className="md:h-[50%]">
                   <li>
                     <a
                       href="/"
                       to="/"
-                      className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
+                      className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 hover:text-[#0A4251] hover:underline hover:underline-offset-2"
                     >
                       Home
                     </a>
@@ -67,7 +81,7 @@ function Navbar() {
                     <a
                       href="/about"
                       to="/about"
-                      className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
+                      className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 hover:text-[#0A4251] hover:underline hover:underline-offset-2"
                     >
                       About Us
                     </a>
@@ -76,7 +90,7 @@ function Navbar() {
                     <a
                       href="/package"
                       to="/package"
-                      className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
+                      className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 hover:text-[#0A4251] hover:underline hover:underline-offset-2"
                     >
                       Packages
                     </a>
@@ -85,7 +99,7 @@ function Navbar() {
                     <a
                       href="/contactus"
                       to="/contactus"
-                      className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2"
+                      className="group font-poppins lg:text-xl sm:text-sm md:text-2xl text-center relative before:absolute before:inset-x-0 before:bottom-0 before:h-2 hover:text-[#0A4251] hover:underline hover:underline-offset-2"
                     >
                       Contact Us
                     </a>
@@ -119,10 +133,10 @@ function Navbar() {
                   </a>
                 </div>
               </div>
-              <div className="absolute z-[5] h-screen md:w-[20%] w-[25%] top-0 right-0 bg-[#0A4251]">
+              <div className="absolute z-[5] h-screen md:w-[12%] w-[25%] top-0 right-0 bg-[#0A4251]">
                 <div className="flex justify-center md:pt-5 pt-3">
                   <img
-                    className="md:w-16 w-10 text-white"
+                    className="md:w-10 w-8 text-white"
                     aria-hidden="true"
                     src="/images/logo.png"
                     alt="Logo"

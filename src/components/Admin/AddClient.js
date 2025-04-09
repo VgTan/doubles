@@ -172,12 +172,12 @@ function AddClient() {
             <div className="flex">
               <IoPersonCircleOutline />
               <h1 className="font-semibold text-lg tracking-wide pl-2 text-[#0A4251]">
-                Hello (Admin Name)
+                Hello Admin!
               </h1>
             </div>
           </IconContext.Provider>
         </div>
-        <div className="py-12 px-14">
+        <div className="py-8 md:py-12 px-8 md:px-14">
           {/* SMALL NAVIGATION */}
           <div>
             <p className="flex items-center space-x-2">
@@ -195,10 +195,12 @@ function AddClient() {
               <p className="text-[#0A4251] font-medium">Our Client</p>
             </p>
           </div>
-          <h1 className="font-medium text-2xl pt-6 pb-4">Add New Client</h1>
+          <h1 className="font-medium text-lg md:text-2xl pt-6 pb-4">
+            Add New Client
+          </h1>
 
           {/* FORM START */}
-          <div className="flex justify-between space-x-10">
+          <div className="flex-col space-y-8 md:space-y-0 md:flex md:flex-row justify-between md:space-x-10">
             <div className="w-full">
               <form
                 onSubmit={handleSubmit}
@@ -237,7 +239,7 @@ function AddClient() {
                         size={48}
                         className="text-gray-400 mb-2"
                       />
-                      <p className="text-sm">
+                      <p className="text-xs md:text-sm">
                         Drop your files here or{" "}
                         <span className="text-blue-500">Browse</span>
                       </p>
@@ -258,7 +260,7 @@ function AddClient() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="bg-[#0A4251] text-sm text-white p-2 rounded-lg w-[40%] flex items-center justify-center gap-2 hover:bg-[#086173]"
+                    className="bg-[#0A4251] text-sm text-white p-2 rounded-lg w-fit md:w-[40%] flex items-center justify-center gap-2 hover:bg-[#086173]"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -277,8 +279,8 @@ function AddClient() {
 
             {/* LIST OF CLIENTS */}
             <div className="w-full p-4 px-7 border rounded-xl shadow-md">
-              <div className="flex justify-between items-center">
-                <p className="pb-2 font-medium">Our Clients</p>
+              <div className="flex-col md:flex-row md:flex justify-between items-center">
+                <p className="pb-4 md:pb-2 font-medium">Our Clients</p>
                 <div className="flex gap-2">
                   <button
                     onClick={toggleSelectMode}
@@ -310,7 +312,7 @@ function AddClient() {
                     <img
                       src={client.clientLogo}
                       alt={client.clientName}
-                      className={`w-28 h-28 object-cover mx-auto rounded ${
+                      className={`w-16 h-16 md:w-28 md:h-28 object-cover mx-auto rounded ${
                         selectMode ? "opacity-90 border border-gray-300" : ""
                       }`}
                       style={{ pointerEvents: selectMode ? "none" : "auto" }}

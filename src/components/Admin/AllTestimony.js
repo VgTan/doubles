@@ -69,7 +69,7 @@ export default function AllTestimony() {
       remove(ref(db, `our_testimony/${selectedTestimonials}`));
       setShowModal(false);
       setSelectedTestimonials([]);
-      showAlert("Testimony successfully deleted!", "success")
+      showAlert("Testimony successfully deleted!", "success");
     }
   };
 
@@ -99,7 +99,7 @@ export default function AllTestimony() {
       remove(ref(db, `our_testimony/${id}`))
     );
     setSelectedTestimonials([]);
-    showAlert("Testimony successfully deleted!", "success")
+    showAlert("Testimony successfully deleted!", "success");
   };
 
   const positions = [
@@ -110,7 +110,7 @@ export default function AllTestimony() {
   return (
     <AdminLayout>
       <div className="flex-col justify-center">
-        <div className="flex items-center justify-end border border-b-2 border-gray-200 h-20 px-12">
+        <div className="flex items-center justify-end border border-b-2 border-gray-200 h-20 px-8 md:px-12">
           <IconContext.Provider
             value={{
               color: "#0A4251",
@@ -121,13 +121,13 @@ export default function AllTestimony() {
             <div className="flex">
               <IoPersonCircleOutline />
               <h1 className="font-semibold text-lg tracking-wide pl-2 text-[#0A4251]">
-                Hello (Admin Name)
+                Hello Admin!
               </h1>
             </div>
           </IconContext.Provider>
         </div>
 
-        <div className="py-12 px-14">
+        <div className="py-8 md:py-12 px-8 md:px-14">
           {/* SMALL NAVIGATION */}
           <div>
             <p className="flex items-center space-x-2">
@@ -147,23 +147,25 @@ export default function AllTestimony() {
           </div>
 
           {/* START TABLE */}
-          <div className="flex items-center pt-6 pb-4">
+          <div className="flex-col md:flex-row md:flex items-center pt-6 pb-4">
             <div className="basis-1/3">
-              <h1 className="font-medium text-2xl">All Testimonials</h1>
+              <h1 className="font-medium text-lg md:text-2xl md:pb-0 pb-2">
+                All Testimonials
+              </h1>
             </div>
             {/* Search Bar & Filter Dropdown */}
-            <div className="flex justify-end basis-[80%] space-x-4 text-sm">
+            <div className="flex-col md:flex-row md:flex justify-end basis-[100%] md:basis-[80%] md:space-x-4 text-sm">
               <input
                 type="text"
                 placeholder="🔎 Search testimony..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="border p-2 bg-[#FAFAFA] w-1/3 rounded"
+                className="border p-2 bg-[#FAFAFA] w-[49%] md:w-1/3 rounded mb-3 md:mb-0 mr-3 md:mr-0"
               />
               <select
                 value={filterType}
                 onChange={(e) => setFilterType(e.target.value)}
-                className="border p-2 rounded"
+                className="border p-2 rounded mb-3 md:mb-0"
               >
                 {positions.map((pos, index) => (
                   <option key={index} value={pos}>
@@ -171,18 +173,19 @@ export default function AllTestimony() {
                   </option>
                 ))}
               </select>
-              {selectedTestimonials.length > 0 && (
-                <button
-                  onClick={handleDeleteSelected}
-                  className="bg-red-500 text-white p-2 rounded w-fit"
-                >
-                  Delete Selected ({selectedTestimonials.length})
-                </button>
-              )}
-              <div className="flex">
+              <div className="flex space-x-2 md:space-x-4">
+                {selectedTestimonials.length > 0 && (
+                  <button
+                    onClick={handleDeleteSelected}
+                    className="bg-red-500 text-white p-2 rounded w-fit text-xs md:text-sm"
+                  >
+                    Delete Selected ({selectedTestimonials.length})
+                  </button>
+                )}
+
                 <a
                   href="/admin/add-testimony"
-                  className="bg-[#0A4251] text-white p-2 rounded flex items-center justify-center gap-2 hover:bg-[#086173] w-fit"
+                  className="bg-[#0A4251] text-white text-xs md:text-sm p-2 rounded flex items-center justify-center gap-2 hover:bg-[#086173]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -200,103 +203,178 @@ export default function AllTestimony() {
           </div>
 
           {/* TESTIMONY TABLE */}
-          <table className="w-full border-collapse border-2 border-[#EAECF0]">
-            <thead className="bg-[#F5F5FF]">
-              <tr className="text-left text-sm">
-                <th className="p-4">
-                  <input
-                    type="checkbox"
-                    className="w-4 h-4"
-                    onChange={handleSelectAll}
-                    checked={
-                      selectedTestimonials.length ===
-                        filteredTestimonials.length &&
-                      filteredTestimonials.length > 0
-                    }
-                  />
-                </th>
-                <th className="p-2 font-normal">Company</th>
-                <th className="p-2 font-normal">Testimony</th>
-                <th className="p-2 font-normal">Reviewer</th>
-                <th className="p-2 font-normal">Position</th>
-                <th className="p-2 font-normal">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredTestimonials && filteredTestimonials.length > 0 ? (
-                filteredTestimonials.map((testimonial) => (
-                  <tr
-                    key={testimonial.id}
-                    className="border-2 border-[#EAECF0] h-[80px] text-[#232D42]"
-                  >
-                    <td className="p-4">
-                      <input
-                        type="checkbox"
-                        className="w-4 h-4"
-                        checked={selectedTestimonials.includes(testimonial.id)}
-                        onChange={() => handleCheckboxChange(testimonial.id)}
-                      />
-                    </td>
-                    <td className="p-2">
-                      <img
-                        src={testimonial.companyLogo}
-                        alt="Company Logo"
-                        className="w-16 h-16"
-                      />
-                    </td>
-                    <td className="p-2 px-4 max-w-[180px]">
-                      <p className="line-clamp-2 overflow-hidden text-ellipsis">
-                        {testimonial.testimony}
-                      </p>
-                    </td>
-                    <td className="p-2 px-4 capitalize">{testimonial.reviewerName}</td>
-                    <td className="p-2 px-4 capitalize">{testimonial.reviewerPosition}</td>
-                    <td className="p-2 px-4">
-                      <div className="flex items-center space-x-4 h-full">
-                        <button
-                          className="text-[#667085] hover:text-blue-500"
-                          onClick={() => handleEdit(testimonial)}
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            class="w-5 h-5"
-                            viewBox="0 0 16 16"
+          <div className="hidden md:block">
+            <table className="w-full border-collapse border-2 border-[#EAECF0]">
+              <thead className="bg-[#F5F5FF]">
+                <tr className="text-left text-sm">
+                  <th className="p-4">
+                    <input
+                      type="checkbox"
+                      className="w-4 h-4"
+                      onChange={handleSelectAll}
+                      checked={
+                        selectedTestimonials.length ===
+                          filteredTestimonials.length &&
+                        filteredTestimonials.length > 0
+                      }
+                    />
+                  </th>
+                  <th className="p-2 font-normal">Company</th>
+                  <th className="p-2 font-normal">Testimony</th>
+                  <th className="p-2 font-normal">Reviewer</th>
+                  <th className="p-2 font-normal">Position</th>
+                  <th className="p-2 font-normal">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredTestimonials && filteredTestimonials.length > 0 ? (
+                  filteredTestimonials.map((testimonial) => (
+                    <tr
+                      key={testimonial.id}
+                      className="border-2 border-[#EAECF0] h-[80px] text-[#232D42]"
+                    >
+                      <td className="p-4">
+                        <input
+                          type="checkbox"
+                          className="w-4 h-4"
+                          checked={selectedTestimonials.includes(
+                            testimonial.id
+                          )}
+                          onChange={() => handleCheckboxChange(testimonial.id)}
+                        />
+                      </td>
+                      <td className="p-2">
+                        <img
+                          src={testimonial.companyLogo}
+                          alt="Company Logo"
+                          className="w-16 h-16"
+                        />
+                      </td>
+                      <td className="p-2 px-4 max-w-[180px]">
+                        <p className="line-clamp-2 overflow-hidden text-ellipsis">
+                          {testimonial.testimony}
+                        </p>
+                      </td>
+                      <td className="p-2 px-4 capitalize">
+                        {testimonial.reviewerName}
+                      </td>
+                      <td className="p-2 px-4 capitalize">
+                        {testimonial.reviewerPosition}
+                      </td>
+                      <td className="p-2 px-4">
+                        <div className="flex items-center space-x-4 h-full">
+                          <button
+                            className="text-[#667085] hover:text-blue-500"
+                            onClick={() => handleEdit(testimonial)}
                           >
-                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                            <path
-                              fill-rule="evenodd"
-                              d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"
-                            />
-                          </svg>
-                        </button>
-                        <button
-                          className="text-[#667085] hover:text-red-500"
-                          onClick={() => confirmDelete(testimonial.id)}
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            class="w-5 h-5"
-                            viewBox="0 0 16 16"
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="currentColor"
+                              class="w-5 h-5"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                              <path
+                                fill-rule="evenodd"
+                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"
+                              />
+                            </svg>
+                          </button>
+                          <button
+                            className="text-[#667085] hover:text-red-500"
+                            onClick={() => confirmDelete(testimonial.id)}
                           >
-                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
-                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
-                          </svg>
-                        </button>
-                      </div>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="currentColor"
+                              class="w-5 h-5"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                              <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                            </svg>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="6" className="text-center py-4">
+                      No testimonials available
                     </td>
                   </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan="6" className="text-center py-4">
-                    No testimonials available
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
+                )}
+              </tbody>
+            </table>
+          </div>
+
+          {/* TABLE MOBILE */}
+          <div className="md:hidden space-y-4">
+            {filteredTestimonials?.map((testimonial) => (
+              <div
+                key={testimonial.id}
+                className="border-2 border-[#EAECF0] rounded-lg p-4 text-sm shadow-sm"
+              >
+                <div className="flex items-start gap-3 mb-2">
+                  <input
+                    type="checkbox"
+                    className="w-4 h-4 mt-1"
+                    checked={selectedTestimonials.includes(testimonial.id)}
+                    onChange={() => handleCheckboxChange(testimonial.id)}
+                  />
+                  <img
+                    src={testimonial.companyLogo}
+                    alt="Company Logo"
+                    className="w-12 h-12 object-contain"
+                  />
+                </div>
+                <div className="mb-2">
+                  <strong>Testimony:</strong>
+                  <p className="mt-1 text-[#555]">{testimonial.testimony}</p>
+                </div>
+                <div className="mb-1">
+                  <strong>Reviewer:</strong> {testimonial.reviewerName}
+                </div>
+                <div className="mb-2">
+                  <strong>Position:</strong> {testimonial.reviewerPosition}
+                </div>
+                <div className="flex justify-end gap-4">
+                  <button
+                    className="text-blue-500"
+                    onClick={() => handleEdit(testimonial)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      class="w-5 h-5"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                      <path
+                        fill-rule="evenodd"
+                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    className="text-red-500"
+                    onClick={() => confirmDelete(testimonial.id)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      class="w-5 h-5"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                      <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

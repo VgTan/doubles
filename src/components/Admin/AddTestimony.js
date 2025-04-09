@@ -135,12 +135,12 @@ function AddTestimony() {
             <div className="flex">
               <IoPersonCircleOutline />
               <h1 className="font-semibold text-lg tracking-wide pl-2 text-[#0A4251]">
-                Hello (Admin Name)
+                Hello Admin!
               </h1>
             </div>
           </IconContext.Provider>
         </div>
-        <div className="py-12 px-14">
+        <div className="py-8 md:py-12 px-8 md:px-14">
           <div>
             <p className="flex items-center space-x-2">
               <a href="/admin/dashboard">
@@ -164,10 +164,10 @@ function AddTestimony() {
               <p className="font-medium text-[#0A4251]">Add Testimony</p>
             </p>
           </div>
-          <h1 className="font-medium text-2xl pt-6 pb-4">
+          <h1 className="font-medium text-lg md:text-2xl pt-6 pb-4">
             {id ? "Edit Testimony" : "Add Testimonials"}
           </h1>
-          <div className="flex justify-between md:flex-row space-x-10">
+          <div className="flex-col space-y-8 md:space-y-0 md:flex md:flex-row justify-between md:space-x-10">
             {/* Left Side - File Upload */}
             <div className="w-full rounded-xl shadow-md border pt-8 p-4 px-7">
               <p className="pb-5 text-sm">Add Client Logo</p>
@@ -180,18 +180,11 @@ function AddTestimony() {
                   className="hidden"
                 />
                 {preview ? (
-                  <img
-                    src={preview}
-                    alt="Preview"
-                    className="object-cover"
-                  />
+                  <img src={preview} alt="Preview" className="object-cover" />
                 ) : (
                   <>
-                    <IoCloudUploadOutline
-                      size={48}
-                      className="text-gray-400"
-                    />
-                    <p className="text-sm">
+                    <IoCloudUploadOutline size={48} className="text-gray-400" />
+                    <p className="text-xs md:text-sm">
                       Drop your files here or{" "}
                       <span className="text-blue-500">Browse</span>
                     </p>
@@ -225,7 +218,7 @@ function AddTestimony() {
                       value={reviewer_name}
                       onChange={(e) => setReviewerName(e.target.value)}
                       required
-                      className="border p-2 w-full rounded-md"
+                      className="text-sm md:text-base border p-2 w-full rounded-md"
                     />
                   </div>
                   <div>
@@ -236,7 +229,7 @@ function AddTestimony() {
                       value={reviewer_position}
                       onChange={(e) => setReviewerPosition(e.target.value)}
                       required
-                      className="border p-2 w-full rounded-md"
+                      className="text-sm md:text-base border p-2 w-full rounded-md"
                     />
                   </div>
                   <div>
@@ -247,13 +240,13 @@ function AddTestimony() {
                       value={testimony}
                       onChange={(e) => setTestimony(e.target.value)}
                       required
-                      className="border p-2 w-full rounded-md"
+                      className="text-sm md:text-base border p-2 w-full rounded-md"
                     />
                   </div>
                   <div className="flex justify-end pt-10">
                     <button
                       type="submit"
-                      className="bg-[#0A4251] text-sm text-white p-2 rounded-lg w-[40%] flex items-center justify-center gap-2 hover:bg-[#086173]"
+                      className="bg-[#0A4251] text-sm text-white p-2 rounded-lg w-[70%] md:w-[40%] flex items-center justify-center gap-2 hover:bg-[#086173]"
                       disabled={loading}
                     >
                       <svg
