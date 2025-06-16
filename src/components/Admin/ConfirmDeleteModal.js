@@ -1,14 +1,15 @@
 import React from "react";
 
-const ConfirmDeleteModal = ({ isOpen, onClose, onConfirm }) => {
+const ConfirmDeleteModal = ({ isOpen, onClose, confirmDelete, cancelDelete }) => {
   if (!isOpen) return null;
 
   return (
-    <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div class="relative p-4 w-full max-w-md h-full md:h-auto">
         <div class="relative p-4 text-center bg-white rounded-lg shadow sm:p-5 flex flex-col items-center">
           <button
             type="button"
+            onClick={onClose}
             class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
             data-modal-toggle="deleteModal"
           >
@@ -51,13 +52,13 @@ const ConfirmDeleteModal = ({ isOpen, onClose, onConfirm }) => {
 
           <div class="flex justify-center items-center space-x-4">
             <button
-              onClick={onClose}
+              onClick={cancelDelete}
               class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10"
             >
               No, cancel
             </button>
             <button
-              onClick={onConfirm}
+              onClick={confirmDelete}
               class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300"
             >
               Yes, I'm sure

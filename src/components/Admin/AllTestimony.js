@@ -15,6 +15,8 @@ export default function AllTestimony() {
   const [filterType, setFilterType] = useState("All");
   const [showModal, setShowModal] = useState(false);
   const [selectedTestimonials, setSelectedTestimonials] = useState([]);
+  const [testimonyToDelete, setTestimonyToDelete] = useState(null);
+  const [selectMode, setSelectMode] = useState(false);
   const navigate = useNavigate();
   const { showAlert } = useAlert();
 
@@ -58,11 +60,6 @@ export default function AllTestimony() {
     setFilteredTestimonials(filtered);
   }, [searchQuery, filterType, testimonials]);
 
-  const confirmDelete = (id) => {
-    setSelectedTestimonials(id);
-    setShowModal(true);
-  };
-
   const handleDeleteConfirmed = () => {
     if (selectedTestimonials) {
       const db = getDatabase(app);
@@ -93,13 +90,50 @@ export default function AllTestimony() {
     }
   };
 
-  const handleDeleteSelected = () => {
+  // const handleDeleteSelected = () => {
+  //   const db = getDatabase(app);
+  //   selectedTestimonials.forEach((id) =>
+  //     remove(ref(db, `our_testimony/${id}`))
+  //   );
+  //   setSelectedTestimonials([]);
+  //   showAlert("Testimony successfully deleted!", "success");
+  // };
+
+  const handleDeleteSelected = async () => {
+    if (!selectedTestimonials.length) {
+      showAlert("No Testimony selected.", "error");
+      return;
+    }
+
+    setShowModal(true);
+  };
+
+  const confirmDelete = async () => {
     const db = getDatabase(app);
-    selectedTestimonials.forEach((id) =>
-      remove(ref(db, `our_testimony/${id}`))
-    );
-    setSelectedTestimonials([]);
-    showAlert("Testimony successfully deleted!", "success");
+
+    try {
+      if (testimonyToDelete) {
+        await remove(ref(db, `our_testimony/${testimonyToDelete}`));
+        showAlert("Testimony deleted successfully", "success");
+        setTestimonyToDelete(null);
+      } else {
+        for (const id of selectedTestimonials) {
+          await remove(ref(db, `our_testimony/${id}`));
+        }
+        setSelectedTestimonials([]);
+        setSelectMode(false);
+        showAlert("Selected testimonials deleted!", "success");
+      }
+    } catch (error) {
+      showAlert("Failed to delete user(s): " + error.message, "error");
+    } finally {
+      setShowModal(false);
+    }
+  };
+
+  const cancelDelete = () => {
+    setShowModal(false);
+    setTestimonyToDelete(null);
   };
 
   const positions = [
@@ -282,7 +316,10 @@ export default function AllTestimony() {
                           </button>
                           <button
                             className="text-[#667085] hover:text-red-500"
-                            onClick={() => confirmDelete(testimonial.id)}
+                            onClick={() => {
+                              setTestimonyToDelete(testimonial.id);
+                              setShowModal(true);
+                            }}
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -359,7 +396,10 @@ export default function AllTestimony() {
                   </button>
                   <button
                     className="text-red-500"
-                    onClick={() => confirmDelete(testimonial.id)}
+                    onClick={() => {
+                      setTestimonyToDelete(testimonial.id);
+                      setShowModal(true);
+                    }}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -381,8 +421,9 @@ export default function AllTestimony() {
       {/* Delete Confirmation PopUP */}
       <ConfirmDeleteModal
         isOpen={showModal}
-        onClose={() => setShowModal(false)}
-        onConfirm={handleDeleteConfirmed}
+        onClose={cancelDelete}
+        cancelDelete={cancelDelete}
+        confirmDelete={confirmDelete}
       />
     </AdminLayout>
   );

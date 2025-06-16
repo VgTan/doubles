@@ -2,10 +2,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { getDatabase, ref, get } from "firebase/database";
+import { useAlert } from "./Contexts/AlertContext";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { showAlert } = useAlert();
   const navigate = useNavigate();
   const auth = getAuth();
   const db = getDatabase();
@@ -25,6 +27,9 @@ function Login() {
 
       if (snapshot.exists()) {
         const userData = snapshot.val();
+
+        showAlert("Login successful!", "success");
+
         if (userData.role === "admin") {
           navigate("/admin/all-message");
         } else {
@@ -32,10 +37,30 @@ function Login() {
         }
       } else {
         console.error("User data not found");
-        alert("User data not found in database.");
+
+        showAlert("User data not found in database.", "error");
       }
     } catch (error) {
-      alert("Login failed: " + error.message);
+      let errorMessage = "";
+
+      switch (error.code) {
+        case "auth/user-not-found":
+          errorMessage = "No user found with this email.";
+          break;
+        case "auth/wrong-password":
+          errorMessage = "Incorrect password.";
+          break;
+        case "auth/invalid-email":
+          errorMessage = "Invalid email format.";
+          break;
+        case "auth/invalid-credential":
+          errorMessage = "Invalid Email or Password.";
+          break;
+        default:
+          errorMessage = "Login failed: " + error.message;
+      }
+
+      showAlert(errorMessage, "error");
     }
   };
 

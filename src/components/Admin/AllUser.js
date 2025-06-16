@@ -1,11 +1,19 @@
 import { useState, useEffect } from "react";
-import { getDatabase, ref, onValue, remove } from "firebase/database";
+import {
+  getDatabase,
+  push,
+  ref,
+  set,
+  remove,
+  onValue,
+} from "firebase/database";
 import { app } from "../../firebaseConfig";
 import { useNavigate } from "react-router-dom";
 import AdminLayout from "./AdminLayout";
 import ConfirmDeleteModal from "./ConfirmDeleteModal";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { IconContext } from "react-icons";
+import { useAlert } from "../Contexts/AlertContext";
 
 function AllUser() {
   const [users, setUsers] = useState([]);
@@ -13,7 +21,10 @@ function AllUser() {
   const [searchQuery, setSearchQuery] = useState("");
   const [filterType, setFilterType] = useState("All");
   const [showModal, setShowModal] = useState(false);
+  const [selectMode, setSelectMode] = useState(false);
   const [selectedUsers, setSelectedUsers] = useState([]);
+  const [userToDelete, setUserToDelete] = useState(null);
+  const { showAlert } = useAlert();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -58,19 +69,14 @@ function AllUser() {
     setFilteredUsers(filtered);
   }, [searchQuery, filterType, users]);
 
-  const confirmDelete = (id) => {
-    setSelectedUsers(id);
-    setShowModal(true);
-  };
-
-  const handleDeleteConfirmed = () => {
-    if (selectedUsers) {
-      const db = getDatabase(app);
-      remove(ref(db, `users/${selectedUsers}`));
-      setShowModal(false);
-      setSelectedUsers([]);
-    }
-  };
+  // const handleDeleteConfirmed = () => {
+  //   if (selectedUsers) {
+  //     const db = getDatabase(app);
+  //     remove(ref(db, `users/${selectedUsers}`));
+  //     setShowModal(false);
+  //     setSelectedUsers([]);
+  //   }
+  // };
 
   const handleCheckboxChange = (id) => {
     setSelectedUsers((prevSelected) =>
@@ -88,10 +94,47 @@ function AllUser() {
     }
   };
 
-  const handleDeleteSelected = () => {
+  // const handleDeleteSelected = () => {
+  //   const db = getDatabase(app);
+  //   selectedUsers.forEach((id) => remove(ref(db, `users/${id}`)));
+  //   setSelectedUsers([]);
+  // };
+
+  const handleDeleteSelected = async () => {
+    if (!selectedUsers.length) {
+      showAlert("No users selected.", "error");
+      return;
+    }
+
+    setShowModal(true);
+  };
+
+  const confirmDelete = async () => {
     const db = getDatabase(app);
-    selectedUsers.forEach((id) => remove(ref(db, `users/${id}`)));
-    setSelectedUsers([]);
+
+    try {
+      if (userToDelete) {
+        await remove(ref(db, `users/${userToDelete}`));
+        showAlert("User deleted successfully", "success");
+        setUserToDelete(null);
+      } else {
+        for (const id of selectedUsers) {
+          await remove(ref(db, `users/${id}`));
+        }
+        setSelectedUsers([]);
+        setSelectMode(false);
+        showAlert("Selected users deleted!", "success");
+      }
+    } catch (error) {
+      showAlert("Failed to delete user(s): " + error.message, "error");
+    } finally {
+      setShowModal(false);
+    }
+  };
+
+  const cancelDelete = () => {
+    setShowModal(false);
+    setUserToDelete(null);
   };
 
   const roles = ["All", ...new Set(users.map((t) => t.role))];
@@ -138,7 +181,9 @@ function AllUser() {
           {/* START TABLE */}
           <div className="flex-col md:flex-row md:flex items-center pt-6 pb-4">
             <div className="basis-1/3">
-              <h1 className="font-medium text-lg md:text-2xl md:pb-0 pb-2">All Users</h1>
+              <h1 className="font-medium text-lg md:text-2xl md:pb-0 pb-2">
+                All Users
+              </h1>
             </div>
             {/* Search Bar & Filter Dropdown */}
             <div className="flex-col md:flex-row md:flex justify-end basis-[100%] md:basis-[80%] md:space-x-4 text-sm">
@@ -238,7 +283,10 @@ function AllUser() {
                         <div className="flex items-center h-full">
                           <button
                             className="text-[#667085] hover:text-red-500"
-                            onClick={() => confirmDelete(usr.id)}
+                            onClick={() => {
+                              setUserToDelete(usr.id);
+                              setShowModal(true);
+                            }}
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -302,7 +350,10 @@ function AllUser() {
                       <div className="flex justify-end mt-2">
                         <button
                           className="text-red-500"
-                          onClick={() => confirmDelete(usr.id)}
+                          onClick={() => {
+                            setUserToDelete(usr.id);
+                            setShowModal(true);
+                          }}
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -329,8 +380,9 @@ function AllUser() {
       {/* Delete Confirmation PopUP */}
       <ConfirmDeleteModal
         isOpen={showModal}
-        onClose={() => setShowModal(false)}
-        onConfirm={handleDeleteConfirmed}
+        onClose={cancelDelete}
+        cancelDelete={cancelDelete}
+        confirmDelete={confirmDelete}
       />
     </AdminLayout>
   );

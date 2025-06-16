@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AdminRoute from "./components/Admin/AdminRoute";
 import { AlertProvider } from "./components/Contexts/AlertContext.js";
+import { ToastContainer } from 'react-toastify';
 
 // Public Pages
 import About from "./components/About";

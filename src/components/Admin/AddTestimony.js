@@ -63,6 +63,13 @@ function AddTestimony() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!company_logo) {
+      showAlert("Please select a client logo.", "warning");
+      setLoading(false);
+      return;
+    }
+    
     setLoading(true);
 
     try {
@@ -111,7 +118,7 @@ function AddTestimony() {
       setTestimony("");
       setReviewerName("");
       setReviewerPosition("");
-      setCompanyLogo(null);
+      setCompanyLogo("");
       setPreview(null);
       e.target.reset();
     } catch (error) {

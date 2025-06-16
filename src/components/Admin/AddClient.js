@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getDatabase, push, ref, set, onValue } from "firebase/database";
 import { app } from "../../firebaseConfig";
 import AdminLayout from "./AdminLayout";
+import ConfirmDeleteModal from "./ConfirmDeleteModal";
 import { IoPersonCircleOutline, IoCloudUploadOutline } from "react-icons/io5";
 import { IconContext } from "react-icons";
 import { useAlert } from "../Contexts/AlertContext";
@@ -13,6 +14,7 @@ function AddClient() {
   const [clients, setClients] = useState([]);
   const [selectMode, setSelectMode] = useState(false);
   const [selectedClients, setSelectedClients] = useState([]);
+  const [showModal, setShowModal] = useState(false);
   const { showAlert } = useAlert();
 
   const toggleSelectMode = () => {
@@ -29,23 +31,33 @@ function AddClient() {
   };
 
   const handleDeleteSelected = async () => {
-    if (!selectedClients.length) return alert("No clients selected.");
-    const confirm = window.confirm(
-      "Are you sure you want to delete selected clients?"
-    );
-    if (!confirm) return;
+    if (!selectedClients.length) {
+      showAlert("No clients selected.", "error");
+      return;
+    }
 
+    setShowModal(true);
+  };
+
+  const confirmDelete = async () => {
     const db = getDatabase(app);
     try {
       for (const id of selectedClients) {
         await set(ref(db, `our_clients/${id}`), null);
       }
+
       setSelectedClients([]);
       setSelectMode(false);
       showAlert("Selected clients deleted!", "success");
     } catch (error) {
       showAlert("Failed to delete clients: " + error.message, "error");
+    } finally {
+      setShowModal(false);
     }
+  };
+
+  const cancelDelete = () => {
+    setShowModal(false);
   };
 
   useEffect(() => {
@@ -103,12 +115,14 @@ function AddClient() {
   };
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
+    
     if (!client_name || !client_logo) {
       showAlert("Please enter client name and select a logo.", "warning");
       setLoading(false);
       return;
     }
-    e.preventDefault();
+    
     setLoading(true);
 
     try {
@@ -324,6 +338,14 @@ function AddClient() {
           </div>
         </div>
       </div>
+
+      {/* Delete Confirmation PopUP */}
+      <ConfirmDeleteModal
+        isOpen={showModal}
+        onClose={cancelDelete}
+        cancelDelete={cancelDelete}
+        confirmDelete={confirmDelete}
+      />
     </AdminLayout>
   );
 }

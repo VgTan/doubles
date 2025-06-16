@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { getDatabase, ref, set } from "firebase/database";
 import { app } from "../firebaseConfig";
+import { useAlert } from "./Contexts/AlertContext";
 import "../App.css";
 
 function Signup() {
@@ -11,6 +12,7 @@ function Signup() {
   const [phone_number, setPhone] = useState("");
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
+  const { showAlert } = useAlert();
   const navigate = useNavigate();
   const auth = getAuth();
   const db = getDatabase(app);
@@ -33,9 +35,27 @@ function Signup() {
         role: "user",
       });
 
+      showAlert("Account created successfully! Please log in.", "success");
       navigate("/login");
+
     } catch (error) {
-      alert("Sign-up failed: " + error.message);
+    let errorMessage = "";
+
+    switch (error.code) {
+      case "auth/email-already-in-use":
+        errorMessage = "This email is already registered. Try logging in.";
+        break;
+      case "auth/invalid-email":
+        errorMessage = "Invalid email address format.";
+        break;
+      case "auth/weak-password":
+        errorMessage = "Password should be at least 6 characters.";
+        break;
+      default:
+        errorMessage = "Sign-up failed: " + error.message;
+    }
+
+      showAlert(errorMessage, "error");
     }
   };
 

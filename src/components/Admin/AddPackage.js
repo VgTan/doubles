@@ -80,6 +80,13 @@ function AddPackage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!packageImage) {
+      showAlert("Please select a package image.", "warning");
+      setLoading(false);
+      return;
+    }
+
     setLoading(true);
 
     try {

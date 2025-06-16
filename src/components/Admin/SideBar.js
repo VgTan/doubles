@@ -37,7 +37,11 @@ const Sidebar = () => {
           path: "/admin/acceptance-letter",
           icon: <PiFileText />,
         },
-        { name: "Messages", path: "/admin/all-message", icon: <PiChatCenteredText /> },
+        {
+          name: "Messages",
+          path: "/admin/all-message",
+          icon: <PiChatCenteredText />,
+        },
       ],
     },
     {
@@ -66,23 +70,34 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 z-40 bg-white w-64 min-h-screen p-7 font-poppins shadow-md transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 z-40 bg-white w-64 h-screen p-7 font-poppins shadow-md transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } md:translate-x-0 md:static`}
+        } md:translate-x-0 md:sticky md:top-0`}
       >
         <IconContext.Provider
-          value={{ color: "black", className: "global-class-name", size: "20" }}
+          value={{
+            color: "black",
+            className: "global-class-name",
+            size: "20",
+          }}
         >
           {/* Logo */}
           <div className="mb-6 flex space-x-2 items-center">
-            <img src="../images/mainlogo.webp" className="w-8 h-8 rounded-full" />
-            <h2 className="text-md md:text-lg font-semibold text-[#0A4251]">DoubleS Creative</h2>
+            <img
+              src="../images/mainlogo.webp"
+              className="w-8 h-8 rounded-full"
+            />
+            <h2 className="text-md md:text-lg font-semibold text-[#0A4251]">
+              DoubleS Creative
+            </h2>
           </div>
 
           {/* Navigation */}
           {menuSections.map((section, index) => (
             <div key={index} className="mb-4">
-              <h3 className="text-gray-400 text-xs md:text-sm uppercase mb-2">{section.title}</h3>
+              <h3 className="text-gray-400 text-xs md:text-sm uppercase mb-2">
+                {section.title}
+              </h3>
               <ul>
                 {section.items.map((item) => (
                   <li key={item.path} className="text-sm md:text-md mb-2">

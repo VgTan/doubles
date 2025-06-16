@@ -6,6 +6,7 @@ import AdminLayout from "./AdminLayout";
 import ConfirmDeleteModal from "./ConfirmDeleteModal";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { IconContext } from "react-icons";
+import { useAlert } from "../Contexts/AlertContext";
 
 function AllMessage() {
   const [messages, setMessages] = useState([]);
@@ -14,6 +15,9 @@ function AllMessage() {
   const [filterType, setFilterType] = useState("All");
   const [showModal, setShowModal] = useState(false);
   const [selectedMessages, setSelectedMessages] = useState([]);
+  const [selectMode, setSelectMode] = useState(false);
+  const [messageToDelete, setMessageToDelete] = useState(null);
+  const { showAlert } = useAlert();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -57,18 +61,41 @@ function AllMessage() {
     setFilteredMessages(filtered);
   }, [searchQuery, filterType, messages]);
 
-  const confirmDelete = (id) => {
-    setSelectedMessages(id);
+  const handleDeleteSelected = async () => {
+    if (!selectedMessages.length) {
+      showAlert("No messages selected.", "error");
+      return;
+    }
+
     setShowModal(true);
   };
 
-  const handleDeleteConfirmed = () => {
-    if (selectedMessages) {
-      const db = getDatabase(app);
-      remove(ref(db, `messages/${selectedMessages}`));
+  const confirmDelete = async () => {
+    const db = getDatabase(app);
+
+    try {
+      if (messageToDelete) {
+        await remove(ref(db, `messages/${messageToDelete}`));
+        showAlert("Message deleted successfully", "success");
+        setMessageToDelete(null);
+      } else {
+        for (const id of selectedMessages) {
+          await remove(ref(db, `messages/${id}`));
+        }
+        setSelectedMessages([]);
+        setSelectMode(false);
+        showAlert("Selected messages deleted!", "success");
+      }
+    } catch (error) {
+      showAlert("Failed to delete message(s): " + error.message, "error");
+    } finally {
       setShowModal(false);
-      setSelectedMessages([]);
     }
+  };
+
+  const cancelDelete = () => {
+    setShowModal(false);
+    setMessageToDelete(null);
   };
 
   const handleCheckboxChange = (id) => {
@@ -87,11 +114,11 @@ function AllMessage() {
     }
   };
 
-  const handleDeleteSelected = () => {
-    const db = getDatabase(app);
-    selectedMessages.forEach((id) => remove(ref(db, `messages/${id}`)));
-    setSelectedMessages([]);
-  };
+  // const handleDeleteSelected = () => {
+  //   const db = getDatabase(app);
+  //   selectedMessages.forEach((id) => remove(ref(db, `messages/${id}`)));
+  //   setSelectedMessages([]);
+  // };
 
   return (
     <AdminLayout>
@@ -210,7 +237,10 @@ function AllMessage() {
                         <div className="flex items-center h-full">
                           <button
                             className="text-[#667085] hover:text-red-500"
-                            onClick={() => confirmDelete(msg.id)}
+                            onClick={() => {
+                              setMessageToDelete(msg.id);
+                              setShowModal(true);
+                            }}
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -274,7 +304,10 @@ function AllMessage() {
                       <div className="flex justify-end mt-2">
                         <button
                           className="text-red-500"
-                          onClick={() => confirmDelete(msg.id)}
+                          onClick={() => {
+                            setMessageToDelete(msg.id);
+                            setShowModal(true);
+                          }}
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -301,8 +334,9 @@ function AllMessage() {
       {/* Delete Confirmation PopUP */}
       <ConfirmDeleteModal
         isOpen={showModal}
-        onClose={() => setShowModal(false)}
-        onConfirm={handleDeleteConfirmed}
+        onClose={cancelDelete}
+        cancelDelete={cancelDelete}
+        confirmDelete={confirmDelete}
       />
     </AdminLayout>
   );

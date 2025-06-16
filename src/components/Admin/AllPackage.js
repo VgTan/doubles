@@ -50,20 +50,44 @@ function AllPackage() {
     setFilteredPackages(filtered);
   }, [searchQuery, filterType, packages]);
 
-  const confirmDelete = (id) => {
-    setSelectedPackage(id);
+  // const confirmDelete = (id) => {
+  //   setSelectedPackage(id);
+  //   setShowModal(true);
+  //   showAlert("Package successfully deleted!", "success");
+  // };
+
+  // const handleDeleteConfirmed = () => {
+  //   if (selectedPackage) {
+  //     const db = getDatabase(app);
+  //     remove(ref(db, `our_packages/${selectedPackage}`));
+  //     setShowModal(false);
+  //     setSelectedPackage(null);
+  //     showAlert("Package successfully deleted!", "success");
+  //   }
+  // };
+
+  const handleDeleteClick = (pkgId) => {
+    setSelectedPackage(pkgId);
     setShowModal(true);
-    showAlert("Package successfully deleted!", "success");
   };
 
-  const handleDeleteConfirmed = () => {
-    if (selectedPackage) {
-      const db = getDatabase(app);
-      remove(ref(db, `our_packages/${selectedPackage}`));
-      setShowModal(false);
+  const confirmDelete = async (selectedPackage) => {
+    const db = getDatabase(app);
+
+    try {
+      await remove(ref(db, `our_packages/${selectedPackage}`));
+      showAlert("Testimony deleted successfully", "success");
       setSelectedPackage(null);
-      showAlert("Package successfully deleted!", "success");
+    } catch (error) {
+      showAlert("Failed to delete user(s): " + error.message, "error");
+    } finally {
+      setShowModal(false);
     }
+  };
+
+  const cancelDelete = () => {
+    setShowModal(false);
+    setSelectedPackage(null);
   };
 
   const handleEdit = (pkg) => {
@@ -111,7 +135,9 @@ function AllPackage() {
 
         <div className="flex-col md:flex-row md:flex items-center pt-6 pb-4">
           <div className="basis-1/3">
-            <h1 className="font-medium text-lg md:text-2xl md:pb-0 pb-2">All Packages</h1>
+            <h1 className="font-medium text-lg md:text-2xl md:pb-0 pb-2">
+              All Packages
+            </h1>
           </div>
           <div className="flex-col md:flex-row md:flex justify-end basis-[100%] md:basis-[80%] md:space-x-4 text-sm">
             <input
@@ -185,8 +211,8 @@ function AllPackage() {
                     </p>
                     <div className="flex items-center justify-end space-x-3">
                       <button
-                        onClick={() => confirmDelete(pkg.id)}
-                        className="text-[#0A4251] hover:text-blue-500"
+                        onClick={() => handleDeleteClick(pkg.id)}
+                        className="text-[#0A4251] hover:text-red-500"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -200,7 +226,7 @@ function AllPackage() {
                       </button>
                       <button
                         onClick={() => handleEdit(pkg)}
-                        className="text-[#0A4251] hover:text-red-500"
+                        className="text-[#0A4251] hover:text-blue-500"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -229,8 +255,9 @@ function AllPackage() {
       {/* Delete Confirmation PopUP */}
       <ConfirmDeleteModal
         isOpen={showModal}
-        onClose={() => setShowModal(false)}
-        onConfirm={handleDeleteConfirmed}
+        onClose={cancelDelete}
+        cancelDelete={cancelDelete}
+        confirmDelete={() => confirmDelete(selectedPackage)}
       />
     </AdminLayout>
   );

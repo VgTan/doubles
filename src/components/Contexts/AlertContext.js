@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { BiMessageSquareCheck, iMessageSquareX, BiMessageSquareError } from "react-icons/bi";
+import { BiMessageSquareCheck, BiMessageSquareX, BiMessageSquareError } from "react-icons/bi";
 
 const AlertContext = createContext();
 
@@ -30,7 +30,7 @@ export const AlertProvider = ({ children }) => {
 
   const icons = {
     success: <BiMessageSquareCheck className="w-4 h-4 md:w-5 md:h-5" />,
-    error: <iMessageSquareX className="w-4 h-4 md:w-5 md:h-5" />,
+    error: <BiMessageSquareX className="w-4 h-4 md:w-5 md:h-5" />,
     warning: <BiMessageSquareError className="w-4 h-4 md:w-5 md:h-5" />,
   };
 

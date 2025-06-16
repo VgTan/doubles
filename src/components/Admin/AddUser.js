@@ -3,6 +3,8 @@ import { getDatabase, push, ref, set, onValue } from "firebase/database";
 import { app } from "../../firebaseConfig";
 import AdminLayout from "./AdminLayout";
 import { IoPersonCircleOutline, IoCloudUploadOutline } from "react-icons/io5";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { secondaryAuth } from "../../firebaseConfig";
 import { IconContext } from "react-icons";
 import { useAlert } from "../Contexts/AlertContext";
 
@@ -22,10 +24,18 @@ function AddUser() {
     e.preventDefault();
     setLoading(true);
 
+    // const secondaryAuth = getAuth(app);
+
     try {
-      const db = getDatabase(app);
-      const newUserRef = push(ref(db, "users"));
-      await set(newUserRef, {
+      const userCredential = await createUserWithEmailAndPassword(
+        secondaryAuth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+
+      const userRef = ref(db, `users/${user.uid}`);
+      await set(userRef, {
         name,
         username,
         email,
@@ -43,7 +53,23 @@ function AddUser() {
       setRole("");
       e.target.reset();
     } catch (error) {
-      showAlert("Failed to create new user: " + error.message, "error");
+      let errorMessage = "";
+
+      switch (error.code) {
+        case "auth/email-already-in-use":
+          errorMessage = "This email is already registered.";
+          break;
+        case "auth/invalid-email":
+          errorMessage = "Invalid email address format.";
+          break;
+        case "auth/weak-password":
+          errorMessage = "Password should be at least 6 characters.";
+          break;
+        default:
+          errorMessage = "Sign-up failed: " + error.message;
+      }
+
+      showAlert(errorMessage, "error");
     }
 
     setLoading(false);
@@ -83,7 +109,7 @@ function AddUser() {
               </a>
               <span className="text-gray-300"> / </span>
               <a
-                href="/admin/all-testimony"
+                href="/admin/all-user"
                 className="font-medium hover:text-[#0A4251] hover:underline hover:underline-offset-2"
               >
                 All Users
@@ -92,7 +118,9 @@ function AddUser() {
               <p className="font-medium text-[#0A4251]">Add User</p>
             </p>
           </div>
-          <h1 className="font-medium text-lg md:text-2xl pt-6 pb-4">Add New User</h1>
+          <h1 className="font-medium text-lg md:text-2xl pt-6 pb-4">
+            Add New User
+          </h1>
 
           <div>
             <form
@@ -169,7 +197,6 @@ function AddUser() {
               </select>
               <div className="flex justify-end pt-10">
                 <button
-                  type="submit"
                   disabled={loading}
                   className="bg-[#0A4251] text-sm text-white p-2 rounded-lg w-fit md:w-[20%] flex items-center justify-center gap-2 hover:bg-[#086173]"
                 >
