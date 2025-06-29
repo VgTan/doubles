@@ -21,7 +21,7 @@ export const AlertProvider = ({ children }) => {
     }
   }, [alert]);
 
-  const baseStyle = "fixed top-5 left-1/2 -translate-x-1/2 z-50 px-4 py-3 rounded-lg shadow-lg flex items-center gap-2 text-sm md:text-lg";
+  const baseStyle = "fixed top-5 left-1/2 -translate-x-1/2 z-[110] px-4 py-3 rounded-lg shadow-lg flex items-center gap-2 text-sm md:text-lg";
   const styles = {
     success: "bg-green-100 text-green-700 border border-green-300",
     error: "bg-red-100 text-red-700 border border-red-300",

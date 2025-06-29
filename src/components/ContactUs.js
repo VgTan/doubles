@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getDatabase, ref, get, set, push } from "firebase/database";
 import { useNavigate, Link } from "react-router-dom";
+import { useAlert } from "./Contexts/AlertContext";
 import Footer from "./Footer";
 
 function ContactUs() {
@@ -10,6 +11,7 @@ function ContactUs() {
   const [email, setEmail] = useState("");
   const [phone_number, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const { showAlert } = useAlert();
 
   const auth = getAuth();
   const db = getDatabase();
@@ -39,7 +41,7 @@ function ContactUs() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!message.trim()) {
-      alert("Message cannot be empty.");
+      showAlert("Message cannot be empty.", "warning");
       return;
     }
 
@@ -56,11 +58,11 @@ function ContactUs() {
         timestamp: new Date().toISOString(),
       });
 
-      alert("Message sent successfully!");
+      showAlert("Message sent successfully!", "success");
       setMessage("");
     } catch (error) {
       console.error("Error sending message:", error);
-      alert("Failed to send message. Please try again.");
+      showAlert("Failed to send message. Please try again.", "error");
     }
   };
 
@@ -84,9 +86,9 @@ function ContactUs() {
           </div>
         </div>
 
-        <div className="flex-col md:flex justify-between md:space-x-16 p-8 md:p-32">
-          <div className="flex-col w-full pb-8 md:pb-0">
-            <p className="text-2xl md:text-5xl text-[#0A4251] font-bold pb-2 md:pb-10">
+        <div className="flex-col md:flex justify-between p-8 md:p-32">
+          <div className="flex-col w-full pb-8 md:pb-0 md:mb-16">
+            <p className="text-2xl md:text-5xl text-[#0A4251] font-bold pb-2 md:pb-6">
               Ask Us Anything!
             </p>
             <p className="text-[#0A4251] text-md md:text-xl line-clamp-2">
@@ -94,7 +96,7 @@ function ContactUs() {
             </p>
           </div>
 
-          <div className="bg-[#FCE6B9]/50 w-full p-5 md:p-10 rounded-3xl">
+          <div className="bg-[#FCE6B9]/50 p-16 rounded-3xl w-2/3">
             <p className="text-center text-xl md:text-4xl text-[#0A4251] font-semibold pb-5 md:pb-10">
               Message Us
             </p>
@@ -135,7 +137,7 @@ function ContactUs() {
                 </label>
                 <input
                   type="text"
-                  className="text-gray-900 text-xs md:text-sm block w-full ps-6 appearance-none focus:outline-none focus:ring-0"
+                  className="text-gray-900 text-xs md:text-sm block w-full appearance-none focus:outline-none focus:ring-0"
                   value={phone_number}
                   readOnly
                 />
@@ -157,7 +159,7 @@ function ContactUs() {
 
               <div className="flex justify-center pt-5">
                 <button
-                  className="bg-[#0A4251] text-sm text-white font-medium p-1.5 md:p-3 w-1/2 rounded-md hover:bg-[#0A4251]/90"
+                  className="bg-[#0A4251] text-sm text-white font-medium p-1.5 md:p-3 md:px-8 w-fit rounded-md hover:bg-[#0A4251]/90"
                   type="submit"
                 >
                   Send Message
