@@ -6,7 +6,6 @@ import {
   PiPackage,
   PiPencilLine,
   PiUserCircle,
-  PiFileText,
   PiChatCenteredText,
 } from "react-icons/pi";
 import { IconContext } from "react-icons";
@@ -32,11 +31,6 @@ const Sidebar = () => {
       title: "Admin Panel",
       items: [
         { name: "Users", path: "/admin/all-user", icon: <PiUserCircle /> },
-        {
-          name: "Acceptance Letter",
-          path: "/admin/acceptance-letter",
-          icon: <PiFileText />,
-        },
         {
           name: "Messages",
           path: "/admin/all-message",
@@ -86,6 +80,7 @@ const Sidebar = () => {
             <img
               src="../images/mainlogo.webp"
               className="w-8 h-8 rounded-full"
+              alt="main logo"
             />
             <h2 className="text-md md:text-lg font-semibold text-[#0A4251]">
               DoubleS Creative
